@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "materialize";
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 
-html {
-  height: 100%;
-}
-
+html,
 body {
   height: 100%;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
   overflow: hidden;
   background-color: aliceblue;
 }
@@ -18,27 +18,28 @@ body {
   height: 100%;
   margin: auto;
   max-width: 768px;
-  position: relative;
 }
 
 .title-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-family: 'Pacifico', cursive;
+  span {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 .character-select {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  width: 90%;
-}
-
-.collection-item {
-  height: 100px;
-
+  position: relative;
+  width: 100%;
+  .mat-list-base .mat-list-item {
+    height: 100px;
+  }
+  .mat-list-base .mat-list-item .mat-list-item-content {
+    display: block;
+  }
   .portrait {
     height: 100%;
   }
@@ -47,7 +48,7 @@ body {
     position: relative;
     left: 15px;
     bottom: 35%;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     font-size: 30px;
   }
 
@@ -56,7 +57,7 @@ body {
     position: relative;
     top: 25%;
     right: 10px;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     font-size: 50px;
   }
 }
@@ -71,7 +72,7 @@ body {
 
   img {
     height: 100%;
-    width: 100%
+    width: 100%;
   }
 
   h2 {
@@ -94,7 +95,7 @@ body {
 
   img {
     height: 100%;
-    width: 100%
+    width: 100%;
   }
 }
 
@@ -108,9 +109,6 @@ body {
 
   img {
     height: 100%;
-    width: 100%
+    width: 100%;
   }
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
