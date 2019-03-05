@@ -44,11 +44,18 @@ body {
   }
 
   .name {
+    position: relative;
+    left: 15px;
+    bottom: 35%;
     font-family: 'Pacifico', cursive;
     font-size: 30px;
   }
 
   .number {
+    float: right;
+    position: relative;
+    top: 25%;
+    right: 10px;
     font-family: 'Pacifico', cursive;
     font-size: 50px;
   }
