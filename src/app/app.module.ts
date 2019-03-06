@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material';
+import { PlayerDialogComponent } from './player-dialog/player-dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: MenuComponent },
@@ -19,7 +21,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, PlayComponent],
+  declarations: [AppComponent, MenuComponent, PlayComponent, PlayerDialogComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
@@ -27,9 +29,10 @@ const appRoutes: Routes = [
       enabled: environment.production
     }),
     BrowserAnimationsModule,
-    MatListModule, MatButtonModule
+    MatListModule, MatButtonModule, MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PlayerDialogComponent]
 })
 export class AppModule { }
