@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
+import { SettingsService } from '../settings.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -23,18 +27,19 @@ export class MenuComponent implements OnInit {
     morgana: false
   };
 
-  playerNumber = 5;
+  playerNumber: number;
   servantNumber: number;
   minionNumber: number;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog, private settingsService: SettingsService) { }
 
   ngOnInit() {
-    this.updateNumbers();
+    this.playerNumber = this.settingsService.playerNumber;
+    this.updateServants();
   }
 
   play() {
-    this.router.navigate(['/play', this.playerNumber]);
+    this.router.navigate(['/play']);
   }
 
   toggleCharacter(char) {
@@ -45,10 +50,10 @@ export class MenuComponent implements OnInit {
         this.characters[char] = !this.characters[char];
       }
     }
-    this.updateNumbers();
+    this.updateServants();
   }
 
-  updateNumbers() {
+  updateServants() {
     this.minionNumber =
       this.evil[this.playerNumber] -
       (~~this.characters['mordred'] +
@@ -59,5 +64,18 @@ export class MenuComponent implements OnInit {
       this.evil[this.playerNumber] -
       ~~this.characters['percival'] -
       1;
+  }
+
+  openPlayerDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = false;
+
+    const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      this.playerNumber = this.settingsService.playerNumber;
+      this.updateServants();
+    });
   }
 }
