@@ -4,12 +4,12 @@
   </div>
   <div class="character-select">
     <mat-action-list>
-      <mat-list-item (click)="openPlayerNumber()">
+      <mat-list-item>
         <img src="/assets/characters/loyal-servant.jpg" class="portrait" />
         <span class="name">Loyal Servant</span>
         <span class="number">{{ servantNumber }}</span>
       </mat-list-item>
-      <mat-list-item (click)="openPlayerNumber()">
+      <mat-list-item>
         <img src="/assets/characters/minion.jpg" class="portrait" />
         <span class="name">Minion of Mordred</span>
         <span class="number">{{ minionNumber }}</span>
@@ -46,14 +46,14 @@
       </mat-list-item>
     </mat-action-list>
   </div>
-  <a (click)="openPlayerNumber()" mat-button class="player-button">
-    <img src="/assets/player-button.jpg" class="player-button-image" />
+  <a (click)="openPlayerDialog()" mat-button class="player-button">
+    <img src="/assets/buttons/player-dialog.jpg" class="player-button-image" />
     <span class="player-button-text">{{ playerNumber }}</span>
   </a>
   <a mat-button class="play-button">
-    <img src="/assets/play-button.jpg" />
+    <img src="/assets/buttons/play.jpg" />
   </a>
   <a mat-button class="settings-button">
-    <img src="/assets/settings-button.jpg" />
+    <img src="/assets/buttons/settings.jpg" />
   </a>
 </div>

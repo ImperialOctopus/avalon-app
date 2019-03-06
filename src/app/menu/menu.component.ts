@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
 
 @Component({
   selector: 'app-menu',
@@ -27,7 +29,7 @@ export class MenuComponent implements OnInit {
   servantNumber: number;
   minionNumber: number;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.updateNumbers();
@@ -59,5 +61,22 @@ export class MenuComponent implements OnInit {
       this.evil[this.playerNumber] -
       ~~this.characters['percival'] -
       1;
+  }
+
+  openPlayerDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.data = {
+      playerNum: this.playerNumber
+    };
+
+    const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      data => this.playerNumber = data
+    );
   }
 }
