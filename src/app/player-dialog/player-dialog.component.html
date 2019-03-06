@@ -1,14 +1,16 @@
 <div class="dialog-container">
   <div class="arrow">
-    <a (click)="left()" mat-button>
+    <a (click)="down()" mat-button>
       <img src="/assets/buttons/left-arrow.jpg" />
     </a>
   </div>
   <div class="number">
-    <span>5</span>
+    <a (click)="close()" mat-button>
+      <span>{{ playerNum }}</span>
+    </a>
   </div>
   <div class="arrow">
-    <a (click)="right()" mat-button>
+    <a (click)="up()" mat-button>
       <img src="/assets/buttons/right-arrow.jpg" />
     </a>
   </div>
