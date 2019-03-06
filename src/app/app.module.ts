@@ -32,7 +32,6 @@ const appRoutes: Routes = [
     MatListModule, MatButtonModule, MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [PlayerDialogComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

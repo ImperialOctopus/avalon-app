@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+
 
 @Component({
   selector: 'app-player-dialog',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerDialogComponent implements OnInit {
 
-  constructor() { }
+  description: string;
 
-  ngOnInit() {
+  constructor(
+    private dialogRef: MatDialogRef<PlayerDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data) {
+
+    this.description = data.description;
   }
+
+  ngOnInit() { }
+
+  save() {
+    this.dialogRef.close('data');
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+
 
 }
