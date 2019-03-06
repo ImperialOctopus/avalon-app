@@ -40,11 +40,9 @@ export class MenuComponent implements OnInit {
   toggleCharacter(char) {
     if (char == "percival") {
       this.characters["percival"] = !this.characters["percival"];
-    }
-    if (char == "mordred") {
-      if (this.characters["mordred"] || this.minionNumber > 0) {
-        this.characters["mordred"] = !this.characters["mordred"];
-      } else {
+    } else {
+      if (this.characters[char] || this.minionNumber > 0) {
+        this.characters[char] = !this.characters[char];
       }
     }
 

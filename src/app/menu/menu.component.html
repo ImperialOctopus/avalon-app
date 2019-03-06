@@ -14,6 +14,16 @@
         <span class="name">Minion of Mordred</span>
         <span class="number">{{ minionNumber }}</span>
       </mat-list-item>
+      <mat-list-item>
+        <img src="/assets/characters/merlin.jpg" class="portrait" />
+        <span class="name">Merlin</span>
+        <span class="number">1</span>
+      </mat-list-item>
+      <mat-list-item>
+        <img src="/assets/characters/assassin.jpg" class="portrait" />
+        <span class="name">Assassin</span>
+        <span class="number">{{ characters["percival"] ? 1 : 0 }}</span>
+      </mat-list-item>
       <mat-list-item (click)="toggleCharacter('percival')">
         <img src="/assets/characters/percival.jpg" class="portrait" />
         <span
