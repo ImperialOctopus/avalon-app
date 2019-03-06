@@ -22,36 +22,26 @@
       <mat-list-item>
         <img src="/assets/characters/assassin.jpg" class="portrait" />
         <span class="name">Assassin</span>
-        <span class="number">{{ characters["percival"] ? 1 : 0 }}</span>
+        <span class="number">1</span>
       </mat-list-item>
       <mat-list-item (click)="toggleCharacter('percival')">
         <img src="/assets/characters/percival.jpg" class="portrait" />
-        <span
-          class="name"
-          [ngClass]="{ strikethrough: !characters['percival'] }"
-          >Percival</span
-        >
+        <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }">Percival</span>
         <span class="number">{{ characters["percival"] ? 1 : 0 }}</span>
       </mat-list-item>
       <mat-list-item (click)="toggleCharacter('mordred')">
         <img src="/assets/characters/mordred.jpg" class="portrait" />
-        <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }"
-          >Mordred</span
-        >
+        <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }">Mordred</span>
         <span class="number">{{ characters["mordred"] ? 1 : 0 }}</span>
       </mat-list-item>
       <mat-list-item (click)="toggleCharacter('oberon')">
         <img src="/assets/characters/oberon.jpg" class="portrait" />
-        <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }"
-          >Oberon</span
-        >
+        <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }">Oberon</span>
         <span class="number">{{ characters["oberon"] ? 1 : 0 }}</span>
       </mat-list-item>
       <mat-list-item (click)="toggleCharacter('morgana')">
         <img src="/assets/characters/morgana.jpg" class="portrait" />
-        <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }"
-          >Morgana</span
-        >
+        <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }">Morgana</span>
         <span class="number">{{ characters["morgana"] ? 1 : 0 }}</span>
       </mat-list-item>
     </mat-action-list>
