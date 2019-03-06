@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material';
 import { PlayerDialogComponent } from './player-dialog/player-dialog.component';
+import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: MenuComponent },
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, PlayComponent, PlayerDialogComponent],
+  declarations: [AppComponent, MenuComponent, PlayComponent, PlayerDialogComponent, SettingsDialogComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
