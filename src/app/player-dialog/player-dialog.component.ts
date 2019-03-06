@@ -9,14 +9,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 })
 export class PlayerDialogComponent implements OnInit {
 
-  description: string;
   playerNum: number;
 
   constructor(
     private dialogRef: MatDialogRef<PlayerDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
-
-    this.description = data.description;
     this.playerNum = data.playerNum;
   }
 
@@ -33,11 +30,7 @@ export class PlayerDialogComponent implements OnInit {
     }
   }
 
-  save() {
-    this.dialogRef.close(this.playerNum);
-  }
-
   close() {
-    this.dialogRef.close();
+    this.dialogRef.close(this.playerNum);
   }
 }

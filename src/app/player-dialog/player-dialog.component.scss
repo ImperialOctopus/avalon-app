@@ -1,3 +1,6 @@
+$font-family: "Pacifico",
+cursive;
+
 .dialog-container {
   display: flex;
   flex-direction: row;
@@ -24,11 +27,18 @@
   }
 
   .number {
-    span {
-      text-align: center;
-      font-size: 70px;
-      margin-left: 50px;
-      margin-right: 50px;
+    .mat-button {
+      height: 100px;
+      width: 100px;
+
+      span {
+        font-family: $font-family;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 90px;
+        text-align: center;
+        font-size: 70px;
+      }
     }
   }
 }

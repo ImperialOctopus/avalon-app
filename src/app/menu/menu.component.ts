@@ -70,13 +70,13 @@ export class MenuComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
-      description: 'DescriptionData'
+      playerNum: this.playerNumber
     };
 
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-      data => console.log('Dialog output:', data)
+      data => this.playerNumber = data
     );
   }
 }
