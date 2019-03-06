@@ -34,12 +34,12 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router, private dialog: MatDialog, private settingsService: SettingsService) { }
 
   ngOnInit() {
-    this.playerNumber = this.settingsService.getPlayerNumber();
+    this.playerNumber = this.settingsService.playerNumber;
     this.updateServants();
   }
 
   play() {
-    this.router.navigate(['/play', this.playerNumber]);
+    this.router.navigate(['/play']);
   }
 
   toggleCharacter(char) {
@@ -72,14 +72,10 @@ export class MenuComponent implements OnInit {
 
     dialogConfig.autoFocus = false;
 
-    dialogConfig.data = {
-      playerNum: this.playerNumber
-    };
-
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(
-      data => this.playerNumber = data
-    );
+    dialogRef.afterClosed().subscribe(result => {
+      this.playerNumber = this.settingsService.playerNumber;
+      this.updateServants();
+    });
   }
 }

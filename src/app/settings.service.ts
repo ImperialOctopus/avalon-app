@@ -11,8 +11,4 @@ export class SettingsService {
   setPlayerNumber(n: number): void {
     this.playerNumber = n;
   }
-  getPlayerNumber(): number {
-    return this.playerNumber;
-  }
-
 }
