@@ -27,14 +27,15 @@ export class MenuComponent implements OnInit {
     morgana: false
   };
 
-  playerNumber = 5;
+  playerNumber: number;
   servantNumber: number;
   minionNumber: number;
 
   constructor(private router: Router, private dialog: MatDialog, private settingsService: SettingsService) { }
 
   ngOnInit() {
-    this.updateNumbers();
+    this.playerNumber = this.settingsService.getPlayerNumber();
+    this.updateServants();
   }
 
   play() {
@@ -49,10 +50,10 @@ export class MenuComponent implements OnInit {
         this.characters[char] = !this.characters[char];
       }
     }
-    this.updateNumbers();
+    this.updateServants();
   }
 
-  updateNumbers() {
+  updateServants() {
     this.minionNumber =
       this.evil[this.playerNumber] -
       (~~this.characters['mordred'] +

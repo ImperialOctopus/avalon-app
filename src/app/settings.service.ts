@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SettingsService {
   constructor() { }
 
-  playerNumber: number;
+  playerNumber = 5;
 
   setPlayerNumber(n: number): void {
     this.playerNumber = n;
