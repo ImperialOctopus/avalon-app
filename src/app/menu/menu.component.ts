@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
+import { SettingsService } from '../settings.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -29,7 +31,7 @@ export class MenuComponent implements OnInit {
   servantNumber: number;
   minionNumber: number;
 
-  constructor(private router: Router, private dialog: MatDialog) { }
+  constructor(private router: Router, private dialog: MatDialog, private settingsService: SettingsService) { }
 
   ngOnInit() {
     this.updateNumbers();
