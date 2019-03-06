@@ -1,8 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { SettingsService } from "../settings.service";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @Component({
   selector: "app-settings-dialog",

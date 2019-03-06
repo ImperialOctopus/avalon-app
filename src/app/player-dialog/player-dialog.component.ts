@@ -1,18 +1,19 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { SettingsService } from '../settings.service';
-
+import { Component, OnInit, Inject } from "@angular/core";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
+import { SettingsService } from "../settings.service";
 
 @Component({
-  selector: 'app-player-dialog',
-  templateUrl: './player-dialog.component.html',
-  styleUrls: ['./player-dialog.component.scss']
+  selector: "app-player-dialog",
+  templateUrl: "./player-dialog.component.html",
+  styleUrls: ["./player-dialog.component.scss"]
 })
 export class PlayerDialogComponent implements OnInit {
-
   playerNum: number;
 
-  constructor(private dialogRef: MatDialogRef<PlayerDialogComponent>, private settingsService: SettingsService) { }
+  constructor(
+    private dialogRef: MatDialogRef<PlayerDialogComponent>,
+    private settingsService: SettingsService
+  ) {}
 
   ngOnInit() {
     this.playerNum = this.settingsService.playerNumber;

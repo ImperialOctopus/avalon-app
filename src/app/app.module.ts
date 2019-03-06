@@ -12,8 +12,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatListModule } from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material";
-import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatSliderModule } from "@angular/material/slider";
 
 import { PlayerDialogComponent } from "./player-dialog/player-dialog.component";
 import { SettingsDialogComponent } from "./settings-dialog/settings-dialog.component";
@@ -42,11 +42,11 @@ const appRoutes: Routes = [
     MatListModule,
     MatButtonModule,
     MatDialogModule,
-    MatFormFieldModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PlayerDialogComponent]
+  entryComponents: [PlayerDialogComponent, SettingsDialogComponent]
 })
 export class AppModule {}
