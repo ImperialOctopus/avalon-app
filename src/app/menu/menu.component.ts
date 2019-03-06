@@ -67,7 +67,7 @@ export class MenuComponent implements OnInit {
 
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.autoFocus = true;
+    dialogConfig.autoFocus = false;
 
     dialogConfig.data = {
       playerNum: this.playerNumber
