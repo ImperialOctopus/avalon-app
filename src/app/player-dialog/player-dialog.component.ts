@@ -27,6 +27,4 @@ export class PlayerDialogComponent implements OnInit {
   close() {
     this.dialogRef.close();
   }
-
-
 }
