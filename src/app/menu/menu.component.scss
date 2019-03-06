@@ -35,6 +35,10 @@ $font-family: "Pacifico", cursive;
   }
 }
 
+.mat-button {
+  text-align: unset;
+}
+
 .character-list {
   width: 100%;
   flex: 1 1 0;
@@ -44,9 +48,9 @@ $font-family: "Pacifico", cursive;
   align-items: stretch;
 
   .character-row {
-    position: relative;
     min-height: 20px;
     flex: 1 1 0;
+    position: relative;
   }
 
   .portrait {
@@ -66,8 +70,9 @@ $font-family: "Pacifico", cursive;
   }
 
   .number {
-    position: relative;
-    float: right;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 15px;
     font-family: $font-family;
     font-size: 50px;

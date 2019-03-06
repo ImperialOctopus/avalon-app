@@ -4,50 +4,61 @@
   </div>
 
   <div class="character-list">
-    <div class="character-row">
+    <a mat-button class="character-row">
       <img src="/assets/characters/loyal-servant.jpg" class="portrait" />
       <span class="name">Loyal Servant</span>
       <span class="number">{{ servantNumber }}</span>
-    </div>
-    <div class="character-row">
+    </a>
+    <a mat-button class="character-row">
       <img src="/assets/characters/minion.jpg" class="portrait" />
       <span class="name">Minion of Mordred</span>
       <span class="number">{{ minionNumber }}</span>
-    </div>
-    <div class="character-row">
+    </a>
+    <a mat-button class="character-row">
       <img src="/assets/characters/merlin.jpg" class="portrait" />
       <span class="name">Merlin</span>
       <span class="number">1</span>
-    </div>
-    <div class="character-row">
+    </a>
+    <a mat-button class="character-row">
       <img src="/assets/characters/assassin.jpg" class="portrait" />
       <span class="name">Assassin</span>
       <span class="number">1</span>
-    </div>
-    <div class="character-row" (click)="toggleCharacter('percival')">
+    </a>
+    <a mat-button class="character-row" (click)="toggleCharacter('percival')">
       <img src="/assets/characters/percival.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }">Percival</span>
+      <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }"
+        >Percival</span
+      >
       <span class="number">{{ characters["percival"] ? 1 : 0 }}</span>
-    </div>
-    <div class="character-row" (click)="toggleCharacter('mordred')">
+    </a>
+    <a mat-button class="character-row" (click)="toggleCharacter('mordred')">
       <img src="/assets/characters/mordred.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }">Mordred</span>
+      <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }"
+        >Mordred</span
+      >
       <span class="number">{{ characters["mordred"] ? 1 : 0 }}</span>
-    </div>
-    <div class="character-row" (click)="toggleCharacter('oberon')">
+    </a>
+    <a mat-button class="character-row" (click)="toggleCharacter('oberon')">
       <img src="/assets/characters/oberon.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }">Oberon</span>
+      <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }"
+        >Oberon</span
+      >
       <span class="number">{{ characters["oberon"] ? 1 : 0 }}</span>
-    </div>
-    <div class="character-row" (click)="toggleCharacter('morgana')">
+    </a>
+    <a mat-button class="character-row" (click)="toggleCharacter('morgana')">
       <img src="/assets/characters/morgana.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }">Morgana</span>
+      <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }"
+        >Morgana</span
+      >
       <span class="number">{{ characters["morgana"] ? 1 : 0 }}</span>
-    </div>
+    </a>
   </div>
   <div class="footer-menu">
-    <a (click)="openPlayerDialog()" mat-button class="player-button">
-      <img src="/assets/buttons/player-dialog.jpg" class="player-button-image" />
+    <a mat-button (click)="openPlayerDialog()" class="player-button">
+      <img
+        src="/assets/buttons/player-dialog.jpg"
+        class="player-button-image"
+      />
       <span class="player-button-text">{{ playerNumber }}</span>
     </a>
     <a mat-button class="play-button">
