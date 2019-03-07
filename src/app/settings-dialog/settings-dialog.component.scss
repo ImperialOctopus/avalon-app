@@ -1,1 +1,10 @@
 $font-family: "Pacifico", cursive;
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+
+  .form-container {
+    margin: 15px;
+  }
+}

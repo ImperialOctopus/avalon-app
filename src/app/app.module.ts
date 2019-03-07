@@ -14,6 +14,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSliderModule } from "@angular/material/slider";
+import { MatSelectModule } from "@angular/material/select";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { PlayerDialogComponent } from "./player-dialog/player-dialog.component";
 import { SettingsDialogComponent } from "./settings-dialog/settings-dialog.component";
@@ -43,7 +45,9 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatDialogModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
