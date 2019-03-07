@@ -9,7 +9,7 @@ import { SettingsService } from '../settings.service';
 })
 export class PlayerDialogComponent implements OnInit {
 
-  playerNumber: number;
+  private _playerNumber: number;
 
   constructor(
     private dialogRef: MatDialogRef<PlayerDialogComponent>,
@@ -17,20 +17,22 @@ export class PlayerDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this._playerNumber = this.settingsService.playerNumber;
   }
 
   down() {
-    if (this.settingsService.playerNumber > 5) {
-      this.settingsService.playerNumber -= 1;
+    if (this._playerNumber > 5) {
+      this._playerNumber -= 1;
     }
   }
   up() {
-    if (this.settingsService.playerNumber < 10) {
-      this.settingsService.playerNumber += 1;
+    if (this._playerNumber < 10) {
+      this._playerNumber += 1;
     }
   }
 
   close() {
+    this.settingsService.playerNumber = this._playerNumber;
     this.dialogRef.close();
   }
 }
