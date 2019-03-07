@@ -8,7 +8,7 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./settings-dialog.component.scss']
 })
 export class SettingsDialogComponent implements OnInit {
-  selected: string;
+  announcer: string;
 
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
@@ -16,7 +16,7 @@ export class SettingsDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.selected = 'cathy';
+    this.announcer = 'cathy';
   }
 
   close() {
