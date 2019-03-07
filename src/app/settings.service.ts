@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SettingsService implements OnInit {
+export class SettingsService {
   constructor() { }
 
   playerNumber: number;
@@ -12,10 +12,6 @@ export class SettingsService implements OnInit {
   verbose: boolean;
   flair: boolean;
   tiger: boolean;
-
-  ngOnInit() {
-    this.loadSettings();
-  }
 
   loadSettings(): void {
     this.playerNumber = 5;

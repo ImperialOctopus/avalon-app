@@ -26,40 +26,29 @@
     </a>
     <a mat-button class="character-row" (click)="toggleCharacter('percival')">
       <img src="/assets/characters/percival.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }"
-        >Percival</span
-      >
+      <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }">Percival</span>
       <span class="number">{{ characters["percival"] ? 1 : 0 }}</span>
     </a>
     <a mat-button class="character-row" (click)="toggleCharacter('mordred')">
       <img src="/assets/characters/mordred.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }"
-        >Mordred</span
-      >
+      <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }">Mordred</span>
       <span class="number">{{ characters["mordred"] ? 1 : 0 }}</span>
     </a>
     <a mat-button class="character-row" (click)="toggleCharacter('oberon')">
       <img src="/assets/characters/oberon.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }"
-        >Oberon</span
-      >
+      <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }">Oberon</span>
       <span class="number">{{ characters["oberon"] ? 1 : 0 }}</span>
     </a>
     <a mat-button class="character-row" (click)="toggleCharacter('morgana')">
       <img src="/assets/characters/morgana.jpg" class="portrait" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }"
-        >Morgana</span
-      >
+      <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }">Morgana</span>
       <span class="number">{{ characters["morgana"] ? 1 : 0 }}</span>
     </a>
   </div>
   <div class="footer-menu">
     <a mat-button (click)="openPlayerDialog()" class="player-button">
-      <img
-        src="/assets/buttons/player-dialog.jpg"
-        class="player-button-image"
-      />
-      <span class="player-button-text">{{ playerNumber }}</span>
+      <img src="/assets/buttons/player-dialog.jpg" class="player-button-image" />
+      <span class="player-button-text">{{ settingsService.playerNumber }}</span>
     </a>
     <a mat-button class="play-button">
       <img src="/assets/buttons/play.jpg" />
