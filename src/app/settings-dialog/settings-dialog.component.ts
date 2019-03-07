@@ -10,7 +10,7 @@ import { SettingsService } from '../settings.service';
 })
 export class SettingsDialogComponent implements OnInit {
 
-  private _announcer: number;
+  private _announcer: string;
   private _verbose: boolean;
   private _flair: boolean;
   private _tiger: boolean;

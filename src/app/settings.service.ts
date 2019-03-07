@@ -8,7 +8,7 @@ export class SettingsService {
   constructor() { }
 
   private _playerNumber: number;
-  private _announcer: number;
+  private _announcer: string;
   private _verbose: boolean;
   private _flair: boolean;
   private _tiger: boolean;
@@ -19,11 +19,11 @@ export class SettingsService {
   set playerNumber(n: number) {
     this._playerNumber = n;
   }
-  get announcer(): number {
+  get announcer(): string {
     return this._announcer;
   }
-  set announcer(n: number) {
-    this._announcer = n;
+  set announcer(s: string) {
+    this._announcer = s;
   }
   get verbose(): boolean {
     return this._verbose;
@@ -46,7 +46,7 @@ export class SettingsService {
 
   loadSettings(): void {
     this.playerNumber = 5;
-    this.announcer = 0;
+    this.announcer = 'screaming';
     this.verbose = false;
     this.flair = false;
     this.tiger = true;
