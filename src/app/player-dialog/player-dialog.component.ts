@@ -8,6 +8,9 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./player-dialog.component.scss']
 })
 export class PlayerDialogComponent implements OnInit {
+
+  playerNumber: number;
+
   constructor(
     private dialogRef: MatDialogRef<PlayerDialogComponent>,
     private settingsService: SettingsService

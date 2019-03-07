@@ -7,30 +7,48 @@ import { Injectable } from '@angular/core';
 export class SettingsService {
   constructor() { }
 
-  playerNumber: number;
-  announcer: number;
-  verbose: boolean;
-  flair: boolean;
-  tiger: boolean;
+  private _playerNumber: number;
+  private _announcer: number;
+  private _verbose: boolean;
+  private _flair: boolean;
+  private _tiger: boolean;
+
+  get playerNumber(): number {
+    return this._playerNumber;
+  }
+  set playerNumber(n: number) {
+    this._playerNumber = n;
+  }
+  get announcer(): number {
+    return this._announcer;
+  }
+  set announcer(n: number) {
+    this._announcer = n;
+  }
+  get verbose(): boolean {
+    return this._verbose;
+  }
+  set verbose(b: boolean) {
+    this._verbose = b;
+  }
+  get flair(): boolean {
+    return this._flair;
+  }
+  set flair(b: boolean) {
+    this._flair = b;
+  }
+  get tiger(): boolean {
+    return this._tiger;
+  }
+  set tiger(b: boolean) {
+    this._tiger = b;
+  }
 
   loadSettings(): void {
     this.playerNumber = 5;
     this.announcer = 0;
-  }
-
-  setPlayerNumber(n: number): void {
-    this.playerNumber = n;
-  }
-  setAnnouncer(n: number): void {
-    this.announcer = n;
-  }
-  setVerbose(b: boolean): void {
-    this.verbose = b;
-  }
-  setFlair(b: boolean): void {
-    this.flair = b;
-  }
-  setTiger(b: boolean): void {
-    this.tiger = b;
+    this.verbose = false;
+    this.flair = false;
+    this.tiger = true;
   }
 }
