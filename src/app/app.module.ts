@@ -1,30 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { PlayComponent } from './play/play.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { AppComponent } from "./app.component";
+import { MenuComponent } from "./menu/menu.component";
+import { PlayComponent } from "./play/play.component";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { environment } from "../environments/environment";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatListModule } from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
+import { MatDialogModule } from "@angular/material";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatSelectModule } from "@angular/material/select";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import { PlayerDialogComponent } from './player-dialog/player-dialog.component';
-import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
+import { PlayerDialogComponent } from "./player-dialog/player-dialog.component";
+import { SettingsDialogComponent } from "./settings-dialog/settings-dialog.component";
 
 const appRoutes: Routes = [
-  { path: '', component: MenuComponent },
-  { path: 'play/:n', component: PlayComponent },
-  { path: '**', component: MenuComponent }
+  { path: "", component: MenuComponent },
+  { path: "play/:n", component: PlayComponent },
+  { path: "**", component: MenuComponent }
 ];
 
 @NgModule({
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     }),
     BrowserAnimationsModule,
@@ -49,10 +50,11 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatSelectModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [PlayerDialogComponent, SettingsDialogComponent]
 })
-export class AppModule { }
+export class AppModule {}

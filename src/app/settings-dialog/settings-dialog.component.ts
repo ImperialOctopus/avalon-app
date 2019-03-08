@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { FormControl } from '@angular/forms';
 
 import { SettingsService } from '../settings.service';
 
@@ -9,11 +10,13 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./settings-dialog.component.scss']
 })
 export class SettingsDialogComponent implements OnInit {
-
   private _announcer: string;
   private _verbose: boolean;
   private _flair: boolean;
   private _tiger: boolean;
+
+  name: FormControl;
+
 
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
@@ -21,10 +24,17 @@ export class SettingsDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.name = new FormControl('duck');
+    this.name.registerOnChange(this.save);
+
     this._announcer = this.settingsService.announcer;
     this._verbose = this.settingsService.verbose;
     this._flair = this.settingsService.flair;
     this._tiger = this.settingsService.tiger;
+  }
+
+  save() {
+    console.log('Save');
   }
 
   close() {
