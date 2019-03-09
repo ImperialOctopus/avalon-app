@@ -15,18 +15,12 @@ export class SettingsDialogComponent implements OnInit {
   private _flair: boolean;
   private _tiger: boolean;
 
-  name: FormControl;
-
-
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
     private settingsService: SettingsService
   ) { }
 
   ngOnInit() {
-    this.name = new FormControl('duck');
-    this.name.registerOnChange(this.save);
-
     this._announcer = this.settingsService.announcer;
     this._verbose = this.settingsService.verbose;
     this._flair = this.settingsService.flair;
