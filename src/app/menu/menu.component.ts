@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatListModule } from '@angular/material/list';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
 import { SettingsService } from '../settings.service';
