@@ -76,11 +76,15 @@ export class MenuComponent implements OnInit {
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
       this.update();
+      // Player menu closed
     });
   }
   openSettingsDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      // Settings menu closed
+    });
   }
 }
