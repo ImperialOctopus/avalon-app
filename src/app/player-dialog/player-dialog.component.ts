@@ -2,7 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { SettingsService } from '../settings.service';
 
-
 @Component({
   selector: 'app-player-dialog',
   templateUrl: './player-dialog.component.html',
@@ -10,28 +9,30 @@ import { SettingsService } from '../settings.service';
 })
 export class PlayerDialogComponent implements OnInit {
 
-  playerNum: number;
+  private _playerNumber: number;
 
-  constructor(private dialogRef: MatDialogRef<PlayerDialogComponent>, private settingsService: SettingsService) { }
+  constructor(
+    private dialogRef: MatDialogRef<PlayerDialogComponent>,
+    private settingsService: SettingsService
+  ) { }
 
   ngOnInit() {
-    this.playerNum = this.settingsService.playerNumber;
+    this._playerNumber = this.settingsService.playerNumber;
   }
 
   down() {
-    if (this.playerNum > 5) {
-      this.playerNum -= 1;
+    if (this._playerNumber > 5) {
+      this._playerNumber -= 1;
     }
-    this.settingsService.setPlayerNumber(this.playerNum);
   }
   up() {
-    if (this.playerNum < 10) {
-      this.playerNum += 1;
+    if (this._playerNumber < 10) {
+      this._playerNumber += 1;
     }
-    this.settingsService.setPlayerNumber(this.playerNum);
   }
 
-  close() {
+  save() {
+    this.settingsService.playerNumber = this._playerNumber;
     this.dialogRef.close();
   }
 }
