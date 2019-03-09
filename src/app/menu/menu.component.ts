@@ -4,7 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
 import { SettingsService } from '../settings.service';
-
+import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-menu',
@@ -27,15 +27,18 @@ export class MenuComponent implements OnInit {
     morgana: false
   };
 
-  playerNumber: number;
   servantNumber: number;
   minionNumber: number;
 
-  constructor(private router: Router, private dialog: MatDialog, private settingsService: SettingsService) { }
+  constructor(
+    private router: Router,
+    private dialog: MatDialog,
+    private settingsService: SettingsService
+  ) { }
 
   ngOnInit() {
-    this.playerNumber = this.settingsService.playerNumber;
-    this.updateServants();
+    this.settingsService.loadSettings();
+    this.update();
   }
 
   play() {
@@ -50,32 +53,34 @@ export class MenuComponent implements OnInit {
         this.characters[char] = !this.characters[char];
       }
     }
-    this.updateServants();
+    this.update();
   }
 
-  updateServants() {
+  update() {
     this.minionNumber =
-      this.evil[this.playerNumber] -
+      this.evil[this.settingsService.playerNumber] -
       (~~this.characters['mordred'] +
         ~~this.characters['morgana'] +
-        ~~this.characters['oberon'] + 1);
+        ~~this.characters['oberon'] +
+        1);
     this.servantNumber =
-      this.playerNumber -
-      this.evil[this.playerNumber] -
+      this.settingsService.playerNumber -
+      this.evil[this.settingsService.playerNumber] -
       ~~this.characters['percival'] -
       1;
   }
 
   openPlayerDialog() {
-
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.autoFocus = false;
-
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      this.playerNumber = this.settingsService.playerNumber;
-      this.updateServants();
+      this.update();
     });
+  }
+  openSettingsDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
+    const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
   }
 }
