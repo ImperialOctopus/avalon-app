@@ -91,6 +91,16 @@ cursive;
     font-family: $font-family;
     font-size: 50px;
   }
+
+  .enabled {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    min-height: 20px;
+    height: 40%;
+    width: auto;
+  }
 }
 
 .footer-menu {
