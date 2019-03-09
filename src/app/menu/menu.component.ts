@@ -90,17 +90,33 @@ export class MenuComponent implements OnInit {
 
   update() {
     this._playerNumber = this.settingsService.playerNumber;
+    this.autoDisableEvil();
     this._minionNumber =
       this.evil[this._playerNumber] -
-      (~~this.characters['mordred'] +
-        ~~this.characters['morgana'] +
-        ~~this.characters['oberon'] +
-        1);
+      this.getEvilNumber();
     this._servantNumber =
-      this._playerNumber -
-      this.evil[this._playerNumber] -
-      ~~this.characters['percival'] -
-      1;
+      (this._playerNumber - this.evil[this._playerNumber]) -
+      this.getGoodNumber();
+  }
+
+  getEvilNumber(): number {
+    const evil = (~~this.characters['mordred'] + ~~this.characters['morgana'] + ~~this.characters['oberon'] + 1);
+    return evil;
+  }
+  getGoodNumber(): number {
+    const good = (~~this.characters['percival'] + 1);
+    return good;
+  }
+  autoDisableEvil() {
+    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
+      this.characters['oberon'] = false;
+    }
+    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
+      this.characters['mordred'] = false;
+    }
+    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
+      this.characters['morgana'] = false;
+    }
   }
 
   openPlayerDialog() {
