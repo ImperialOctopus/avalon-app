@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
     9: 3,
     10: 4
   };
-  characters: object = {
+  _characters: object = {
     percival: false,
     mordred: false,
     oberon: false,
@@ -39,8 +39,19 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.settingsService.loadSettings();
+    this.loadSettings();
+    this.updateServants();
+  }
+
+  loadSettings() {
+    this._playerNumber = this.settingsService.playerNumber;
     this._mute = this.settingsService.mute;
-    this.update();
+    this._characters = this.settingsService.characters;
+  }
+  saveSettings() {
+    this.settingsService.playerNumber = this._playerNumber;
+    this.settingsService.mute = this._mute;
+    this.settingsService.characters = this._characters;
   }
 
   play() {
@@ -50,45 +61,45 @@ export class MenuComponent implements OnInit {
   toggleCharacter(char) {
     // Genuinely disgusting: please fix
     if (char === 'percival') {
-      this.characters['percival'] = !this.characters['percival'];
-    } else { // Evil characters
-      if (this.characters[char]) { // Disabling
-        this.characters[char] = false;
+      this._characters['percival'] = !this._characters['percival'];
+    } else { // Evil _characters
+      if (this._characters[char]) { // Disabling
+        this._characters[char] = false;
       } else if (this._minionNumber > 0) { // Safe to enable
-        this.characters[char] = true;
+        this._characters[char] = true;
       } else { // Must disable a character
         if (char === 'morgana') {
-          if (this.characters['oberon']) {
-            this.characters['oberon'] = false;
-            this.characters['morgana'] = true;
-          } else if (this.characters['mordred']) {
-            this.characters['mordred'] = false;
-            this.characters['morgana'] = true;
+          if (this._characters['oberon']) {
+            this._characters['oberon'] = false;
+            this._characters['morgana'] = true;
+          } else if (this._characters['mordred']) {
+            this._characters['mordred'] = false;
+            this._characters['morgana'] = true;
           }
         } else if (char === 'mordred') {
-          if (this.characters['oberon']) {
-            this.characters['oberon'] = false;
-            this.characters['mordred'] = true;
-          } else if (this.characters['morgana']) {
-            this.characters['morgana'] = false;
-            this.characters['mordred'] = true;
+          if (this._characters['oberon']) {
+            this._characters['oberon'] = false;
+            this._characters['mordred'] = true;
+          } else if (this._characters['morgana']) {
+            this._characters['morgana'] = false;
+            this._characters['mordred'] = true;
           }
         } else {
-          if (this.characters['mordred']) {
-            this.characters['mordred'] = false;
-            this.characters['oberon'] = true;
-          } else if (this.characters['morgana']) {
-            this.characters['morgana'] = false;
-            this.characters['oberon'] = true;
+          if (this._characters['mordred']) {
+            this._characters['mordred'] = false;
+            this._characters['oberon'] = true;
+          } else if (this._characters['morgana']) {
+            this._characters['morgana'] = false;
+            this._characters['oberon'] = true;
           }
         }
       }
     }
-    this.update();
+    this.saveSettings();
+    this.updateServants();
   }
 
-  update() {
-    this._playerNumber = this.settingsService.playerNumber;
+  updateServants() {
     this.autoDisableEvil();
     this._minionNumber =
       this.evil[this._playerNumber] -
@@ -99,22 +110,22 @@ export class MenuComponent implements OnInit {
   }
 
   getEvilNumber(): number {
-    const evil = (~~this.characters['mordred'] + ~~this.characters['morgana'] + ~~this.characters['oberon'] + 1);
+    const evil = (~~this._characters['mordred'] + ~~this._characters['morgana'] + ~~this._characters['oberon'] + 1);
     return evil;
   }
   getGoodNumber(): number {
-    const good = (~~this.characters['percival'] + 1);
+    const good = (~~this._characters['percival'] + 1);
     return good;
   }
   autoDisableEvil() {
     if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this.characters['oberon'] = false;
+      this._characters['oberon'] = false;
     }
     if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this.characters['mordred'] = false;
+      this._characters['mordred'] = false;
     }
     if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this.characters['morgana'] = false;
+      this._characters['morgana'] = false;
     }
   }
 
@@ -123,7 +134,8 @@ export class MenuComponent implements OnInit {
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      this.update();
+      this.loadSettings();
+      this.updateServants();
       // Player menu closed
     });
   }
@@ -132,11 +144,12 @@ export class MenuComponent implements OnInit {
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
+      this.loadSettings();
       // Settings menu closed
     });
   }
   muteButton() {
     this._mute = !this._mute;
-    this.settingsService.mute = this._mute;
+    this.saveSettings();
   }
 }

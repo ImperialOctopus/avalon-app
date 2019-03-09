@@ -17,8 +17,8 @@
     </a>
     <a mat-button class="character-row good" (click)="toggleCharacter('percival')">
       <img class="portrait" src="/assets/characters/percival.jpg" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['percival'] }">Percival</span>
-      <img class="enabled" [src]="characters['percival'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
+      <span class="name" [ngClass]="{ strikethrough: !_characters['percival'] }">Percival</span>
+      <img class="enabled" [src]="_characters['percival'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
     </a>
     <a mat-button class="character-row evil">
       <img class="portrait" src="/assets/characters/minion.jpg" />
@@ -31,26 +31,26 @@
     </a>
     <a mat-button class="character-row evil" (click)="toggleCharacter('morgana')">
       <img class="portrait" src="/assets/characters/morgana.jpg" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['morgana'] }">Morgana</span>
-      <img class="enabled" [src]="characters['morgana'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
+      <span class="name" [ngClass]="{ strikethrough: !_characters['morgana'] }">Morgana</span>
+      <img class="enabled" [src]="_characters['morgana'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
     </a>
     <a mat-button class="character-row evil" (click)="toggleCharacter('mordred')">
       <img class="portrait" src="/assets/characters/mordred.jpg" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['mordred'] }">Mordred</span>
-      <img class="enabled" [src]="characters['mordred'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
+      <span class="name" [ngClass]="{ strikethrough: !_characters['mordred'] }">Mordred</span>
+      <img class="enabled" [src]="_characters['mordred'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
     </a>
     <a mat-button class="character-row evil" (click)="toggleCharacter('oberon')">
       <img class="portrait" src="/assets/characters/oberon.jpg" />
-      <span class="name" [ngClass]="{ strikethrough: !characters['oberon'] }">Oberon</span>
-      <img class="enabled" [src]="characters['oberon'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
+      <span class="name" [ngClass]="{ strikethrough: !_characters['oberon'] }">Oberon</span>
+      <img class="enabled" [src]="_characters['oberon'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
     </a>
   </div>
   <div class="footer-menu">
     <a mat-button (click)="openPlayerDialog()" class="player-button">
       <img class="player-button-image" src="/assets/buttons/player-dialog.jpg" />
-      <span class="player-button-text">{{ settingsService.playerNumber }}</span>
+      <span class="player-button-text">{{ _playerNumber }}</span>
     </a>
-    <a mat-button class="play-button">
+    <a mat-button (click)="play()" class="play-button">
       <img src="/assets/buttons/play.jpg" />
     </a>
     <a mat-button (click)="openSettingsDialog()" class="settings-button">

@@ -13,7 +13,12 @@ export class SettingsService {
   private _verbose: boolean;
   private _flair: boolean;
   private _tiger: boolean;
-
+  private _characters: object = {
+    percival: false,
+    mordred: false,
+    oberon: false,
+    morgana: false
+  };
 
   get playerNumber(): number {
     return this._playerNumber;
@@ -51,12 +56,24 @@ export class SettingsService {
   set tiger(b: boolean) {
     this._tiger = b;
   }
+  get characters() {
+    return this._characters;
+  }
+  set characters(o: object) {
+    this._characters = o;
+  }
 
   loadSettings(): void {
     this.playerNumber = 5;
-    this.announcer = 'screaming';
+    this.announcer = 'cathy';
     this.verbose = false;
     this.flair = false;
     this.tiger = true;
+    this._characters = {
+      percival: true,
+      mordred: false,
+      oberon: false,
+      morgana: false
+    };
   }
 }
