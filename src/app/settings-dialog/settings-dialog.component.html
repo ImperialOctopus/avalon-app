@@ -1,7 +1,7 @@
 <div class="settings-container">
   <div class="form-container">
     <mat-form-field>
-      <mat-select [(ngModel)]="_announcer" name="_announcer" placeholder="Announcer Voice">
+      <mat-select [(ngModel)]="_announcer" placeholder="Announcer Voice">
         <mat-option value="cathy">Cathy</mat-option>
         <mat-option value="duck">Duck</mat-option>
         <mat-option value="screaming">Screaming</mat-option>
@@ -9,15 +9,15 @@
     </mat-form-field>
   </div>
   <div class="form-container">
-    <mat-slide-toggle>Verbose</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="_verbose">Verbose {{_announcer}}</mat-slide-toggle>
   </div>
   <div class="form-container">
-    <mat-slide-toggle>Unnecessary flair</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="_flair">Unnecessary flair</mat-slide-toggle>
   </div>
   <div class="form-container">
-    <mat-slide-toggle>Tiger mode</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="_tiger">Tiger mode</mat-slide-toggle>
   </div>
-  <div class="form-container">
-    <button mat-raised-button>Close</button>
+  <div class="button-container">
+    <button (click)="save()" mat-raised-button>Save</button>
   </div>
 </div>

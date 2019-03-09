@@ -31,7 +31,7 @@ export class PlayerDialogComponent implements OnInit {
     }
   }
 
-  close() {
+  save() {
     this.settingsService.playerNumber = this._playerNumber;
     this.dialogRef.close();
   }

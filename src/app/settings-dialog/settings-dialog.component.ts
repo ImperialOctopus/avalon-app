@@ -28,10 +28,10 @@ export class SettingsDialogComponent implements OnInit {
   }
 
   save() {
-    console.log('Save');
-  }
-
-  close() {
+    this.settingsService.announcer = this._announcer;
+    this.settingsService.verbose = this._verbose;
+    this.settingsService.flair = this._flair;
+    this.settingsService.tiger = this._tiger;
     this.dialogRef.close();
   }
 }
