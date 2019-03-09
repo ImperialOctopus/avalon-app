@@ -9,12 +9,30 @@ import { Router } from '@angular/router';
 })
 export class PlayComponent implements OnInit {
 
+  _characters: object = {
+    percival: false,
+    mordred: false,
+    oberon: false,
+    morgana: false
+  };
+  _mute: boolean;
+
   constructor(
     private router: Router,
     private settingsService: SettingsService
   ) { }
 
   ngOnInit() {
-    this.settingsService.loadSettings();
+    // this.settingsService.loadSettings(); Uncomment when loadSettings is implemented
+    this._characters = this.settingsService.characters;
+    this._mute = this.settingsService.mute;
+    console.log(this._characters);
+  }
+
+  stop() {
+    console.log('stop');
+  }
+  pause() {
+    console.log('pause');
   }
 }
