@@ -2,9 +2,9 @@
 
 Variations:
 
-- Verbose (expert)
+- Character Specific
+- Verbose
 - Flair
-- Voice-specific
 
 Voices:
 
@@ -12,17 +12,30 @@ Voices:
 - Cathy
 - Duck
 
-## Verbose
+## {Character Specific} (Verbose) [Flair]
 
-Everyone close your eyes (and extend your hand into a fist in front of you)
-Minions of Mordred (not Oberon) open your eyes and look around so that you know all agents of Evil
+Everyone close your eyes
+  (and extend your hand into a fist in front of you)
+  [and shut up]
+Minions of Mordred / open your eyes
+  {(except Oberon)}
+  (and look around so that you know the other agents of Evil)
 Minions of Mordred close your eyes
-Minions of Mordred (not Mordred himself) extend your thumb (so that Merlin will know of you)
-Merlin, open your eyes (and see the agents of evil)
+  -(Eyes closed)
+Minions of Mordred / thumbs up
+  {(not Mordred himself)}
+  (so that Merlin will know of you)
+Merlin, open your eyes
+  [Merlin]
+  (and see the agents of evil)
 Minions of Mordred put your thumbs down
 Merlin, close your eyes
-Merlin and Morgana extend your thumbs (so that Percival may know of you)
-Percival, open your eyes (so you may know Merlin and Morgana)
+  -(Thumbs down, eyes closed)
+Merlin and Morgana, thumbs up (so that Percival may know of you)
+Percival, open your eyes
+  [Percival]
+  (so you may know Merlin and Morgana)
 Merlin and Morgan put your thumbs down
 Percival close your eyes
+  -(Thumbs down, eyes closed)
 Everyone open your eyes
