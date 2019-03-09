@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
 
   servantNumber: number;
   minionNumber: number;
+  _mute: boolean;
 
   constructor(
     private router: Router,
@@ -38,6 +39,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.settingsService.loadSettings();
+    this._mute = this.settingsService.mute;
     this.update();
   }
 
@@ -86,5 +88,9 @@ export class MenuComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       // Settings menu closed
     });
+  }
+  muteButton() {
+    this._mute = !this._mute;
+    this.settingsService.mute = this._mute;
   }
 }

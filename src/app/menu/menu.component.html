@@ -1,8 +1,10 @@
 <div class="app-container">
   <div class="title-container">
+    <a mat-button (click)="muteButton()" class="mute-button">
+      <img [src]="_mute ? '/assets/buttons/mute.jpg' : '/assets/buttons/sound.jpg'" />
+    </a>
     <span>AVALON</span>
   </div>
-
   <div class="character-list">
     <a mat-button class="character-row">
       <img src="/assets/characters/loyal-servant.jpg" class="portrait" />
