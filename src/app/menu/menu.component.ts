@@ -27,8 +27,9 @@ export class MenuComponent implements OnInit {
     morgana: false
   };
 
-  servantNumber: number;
-  minionNumber: number;
+  _playerNumber: number;
+  _servantNumber: number;
+  _minionNumber: number;
   _mute: boolean;
 
   constructor(
@@ -51,7 +52,7 @@ export class MenuComponent implements OnInit {
     if (char === 'percival') {
       this.characters['percival'] = !this.characters['percival'];
     } else {
-      if (this.characters[char] || this.minionNumber > 0) {
+      if (this.characters[char] || this._minionNumber > 0) {
         this.characters[char] = !this.characters[char];
       }
     }
@@ -59,15 +60,16 @@ export class MenuComponent implements OnInit {
   }
 
   update() {
-    this.minionNumber =
-      this.evil[this.settingsService.playerNumber] -
+    this._playerNumber = this.settingsService.playerNumber;
+    this._minionNumber =
+      this.evil[this._playerNumber] -
       (~~this.characters['mordred'] +
         ~~this.characters['morgana'] +
         ~~this.characters['oberon'] +
         1);
-    this.servantNumber =
-      this.settingsService.playerNumber -
-      this.evil[this.settingsService.playerNumber] -
+    this._servantNumber =
+      this._playerNumber -
+      this.evil[this._playerNumber] -
       ~~this.characters['percival'] -
       1;
   }
