@@ -8,16 +8,24 @@ export class SettingsService {
   constructor() { }
 
   private _playerNumber: number;
+  private _mute: boolean;
   private _announcer: string;
   private _verbose: boolean;
   private _flair: boolean;
   private _tiger: boolean;
+
 
   get playerNumber(): number {
     return this._playerNumber;
   }
   set playerNumber(n: number) {
     this._playerNumber = n;
+  }
+  get mute(): boolean {
+    return this._mute;
+  }
+  set mute(b: boolean) {
+    this._mute = b;
   }
   get announcer(): string {
     return this._announcer;
