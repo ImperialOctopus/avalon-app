@@ -76,4 +76,7 @@ export class SettingsService {
       morgana: false
     };
   }
+  saveSettings(): void {
+    console.log('Saved');
+  }
 }
