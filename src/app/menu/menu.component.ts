@@ -49,11 +49,40 @@ export class MenuComponent implements OnInit {
   }
 
   toggleCharacter(char) {
+    // Genuinely disgusting: please fix
     if (char === 'percival') {
       this.characters['percival'] = !this.characters['percival'];
-    } else {
-      if (this.characters[char] || this._minionNumber > 0) {
-        this.characters[char] = !this.characters[char];
+    } else { // Evil characters
+      if (this.characters[char]) { // Disabling
+        this.characters[char] = false;
+      } else if (this._minionNumber > 0) { // Safe to enable
+        this.characters[char] = true;
+      } else { // Must disable a character
+        if (char === 'morgana') {
+          if (this.characters['oberon']) {
+            this.characters['oberon'] = false;
+            this.characters['morgana'] = true;
+          } else if (this.characters['mordred']) {
+            this.characters['mordred'] = false;
+            this.characters['morgana'] = true;
+          }
+        } else if (char === 'mordred') {
+          if (this.characters['oberon']) {
+            this.characters['oberon'] = false;
+            this.characters['mordred'] = true;
+          } else if (this.characters['morgana']) {
+            this.characters['morgana'] = false;
+            this.characters['mordred'] = true;
+          }
+        } else {
+          if (this.characters['mordred']) {
+            this.characters['mordred'] = false;
+            this.characters['oberon'] = true;
+          } else if (this.characters['morgana']) {
+            this.characters['morgana'] = false;
+            this.characters['oberon'] = true;
+          }
+        }
       }
     }
     this.update();
