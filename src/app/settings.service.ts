@@ -65,6 +65,7 @@ export class SettingsService {
 
   loadSettings(): void {
     this.playerNumber = 5;
+    this.mute = true;
     this.announcer = 'cathy';
     this.verbose = false;
     this.flair = false;
@@ -75,5 +76,8 @@ export class SettingsService {
       oberon: false,
       morgana: false
     };
+  }
+  saveSettings(): void {
+    console.log('Saved');
   }
 }

@@ -52,6 +52,7 @@ export class MenuComponent implements OnInit {
     this.settingsService.playerNumber = this._playerNumber;
     this.settingsService.mute = this._mute;
     this.settingsService.characters = this._characters;
+    this.settingsService.saveSettings();
   }
 
   play() {

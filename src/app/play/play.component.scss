@@ -1,0 +1,108 @@
+$font-family: "Pacifico",
+cursive;
+
+.app-container {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 768px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-flow: column;
+
+  .mat-button {
+    position: absolute;
+    padding: 0;
+    text-align: unset;
+
+    .mat-button-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.title-container {
+  height: 100px;
+
+  span {
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .mute-button {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.centre-container {
+  width: 100%;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .center-card {
+    margin: auto;
+
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    span {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+.footer-menu {
+  height: 150px;
+
+  .stop-button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .pause-button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

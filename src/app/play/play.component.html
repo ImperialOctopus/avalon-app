@@ -1,1 +1,22 @@
-
+<div class="app-container">
+  <div class="title-container">
+    <a mat-button (click)="muteButton()" class="mute-button">
+      <img [src]="_mute ? '/assets/buttons/sound-off.jpg' : '/assets/buttons/sound-on.jpg'" />
+    </a>
+    <span>PLAY</span>
+  </div>
+  <div class="centre-container">
+    <div class="center-card">
+      <img [src]="_cardImage" />
+      <span>{{ _cardText }}</span>
+    </div>
+  </div>
+  <div class="footer-menu">
+    <a mat-button (click)="stopButton()" class="stop-button">
+      <img src="/assets/buttons/close.jpg" />
+    </a>
+    <a mat-button (click)="pauseButton()" class="pause-button">
+      <img [src]="_pause ? '/assets/buttons/sound-play.jpg' : '/assets/buttons/sound-pause.jpg'" />
+    </a>
+  </div>
+</div>
