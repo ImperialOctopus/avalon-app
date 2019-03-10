@@ -16,6 +16,7 @@ export class PlayComponent implements OnInit {
     morgana: false
   };
   _mute: boolean;
+  _pause: boolean;
 
   constructor(
     private router: Router,
@@ -26,6 +27,7 @@ export class PlayComponent implements OnInit {
     // this.settingsService.loadSettings(); Uncomment when loadSettings is implemented
     this._characters = this.settingsService.characters;
     this._mute = this.settingsService.mute;
+    this._pause = false;
     console.log(this._characters);
   }
 
@@ -33,6 +35,6 @@ export class PlayComponent implements OnInit {
     console.log('stop');
   }
   pause() {
-    console.log('pause');
+    this._pause = !this._pause;
   }
 }

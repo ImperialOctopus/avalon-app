@@ -10,10 +10,10 @@
   </div>
   <div class="footer-menu">
     <a mat-button (click)="stop()" class="stop-button">
-      <img src="/assets/buttons/player-dialog.jpg" />
+      <img src="/assets/buttons/close.jpg" />
     </a>
     <a mat-button (click)="pause()" class="pause-button">
-      <img src="/assets/buttons/settings.jpg" />
+      <img [src]="_pause ? '/assets/buttons/sound-play.jpg' : '/assets/buttons/sound-pause.jpg'" />
     </a>
   </div>
 </div>
