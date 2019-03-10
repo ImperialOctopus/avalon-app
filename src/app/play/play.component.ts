@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
+import { Howl, Howler } from 'howler';
 
 @Component({
   selector: 'app-play',
@@ -34,6 +35,12 @@ export class PlayComponent implements OnInit {
 
     this._cardImage = '/assets/characters/merlin.jpg';
     this._cardText = 'Text sample';
+
+    const sound = new Howl({
+      src: ['/assets/audio/sound.mp3']
+    });
+
+    sound.play();
   }
 
   stopButton() {
