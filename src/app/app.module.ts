@@ -23,8 +23,12 @@ import { SettingsDialogComponent } from './settings-dialog/settings-dialog.compo
 
 const appRoutes: Routes = [
   { path: '', component: MenuComponent },
-  { path: 'play/', component: PlayComponent },
-  { path: '**', component: MenuComponent }
+  { path: 'play', component: PlayComponent },
+  {
+    path: '**',
+    redirectTo: '/',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -37,7 +41,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false }
+    ),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
