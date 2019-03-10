@@ -37,7 +37,7 @@ export class PlayComponent implements OnInit {
     this._cardText = 'Text sample';
 
     const sound = new Howl({
-      src: ['/assets/audio/sound.mp3']
+      src: ['/assets/audio/onion-capers.mp3']
     });
 
     sound.play();
