@@ -23,7 +23,7 @@ import { SettingsDialogComponent } from './settings-dialog/settings-dialog.compo
 
 const appRoutes: Routes = [
   { path: '', component: MenuComponent },
-  { path: 'play/:n', component: PlayComponent },
+  { path: 'play/', component: PlayComponent },
   { path: '**', component: MenuComponent }
 ];
 
