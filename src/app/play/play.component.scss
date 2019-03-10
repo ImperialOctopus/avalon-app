@@ -57,6 +57,24 @@ cursive;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+
+  .center-card {
+    margin: auto;
+
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    span {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+  }
 }
 
 .footer-menu {

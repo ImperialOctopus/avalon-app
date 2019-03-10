@@ -18,6 +18,9 @@ export class PlayComponent implements OnInit {
   _mute: boolean;
   _pause: boolean;
 
+  _cardImage: string;
+  _cardText: string;
+
   constructor(
     private router: Router,
     private settingsService: SettingsService
@@ -28,7 +31,9 @@ export class PlayComponent implements OnInit {
     this._characters = this.settingsService.characters;
     this._mute = this.settingsService.mute;
     this._pause = false;
-    console.log(this._characters);
+
+    this._cardImage = '/assets/characters/merlin.jpg';
+    this._cardText = 'Text sample';
   }
 
   stopButton() {
@@ -40,5 +45,6 @@ export class PlayComponent implements OnInit {
   muteButton() {
     this._mute = !this._mute;
     this.settingsService.mute = this._mute;
+    this.settingsService.saveSettings();
   }
 }

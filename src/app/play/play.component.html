@@ -6,7 +6,10 @@
     <span>PLAY</span>
   </div>
   <div class="centre-container">
-
+    <div class="center-card">
+      <img [src]="_cardImage" />
+      <span>{{ _cardText }}</span>
+    </div>
   </div>
   <div class="footer-menu">
     <a mat-button (click)="stopButton()" class="stop-button">
