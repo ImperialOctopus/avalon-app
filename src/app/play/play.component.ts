@@ -32,7 +32,7 @@ export class PlayComponent implements OnInit {
   }
 
   stop() {
-    console.log('stop');
+    this.router.navigate(['/']);
   }
   pause() {
     this._pause = !this._pause;

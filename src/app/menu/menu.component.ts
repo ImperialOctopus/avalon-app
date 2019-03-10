@@ -56,7 +56,6 @@ export class MenuComponent implements OnInit {
   }
 
   play() {
-    console.log("Play");
     this.router.navigate(['/play']);
   }
 
