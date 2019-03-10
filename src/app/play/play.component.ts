@@ -31,10 +31,14 @@ export class PlayComponent implements OnInit {
     console.log(this._characters);
   }
 
-  stop() {
+  stopButton() {
     this.router.navigate(['/']);
   }
-  pause() {
+  pauseButton() {
     this._pause = !this._pause;
+  }
+  muteButton() {
+    this._mute = !this._mute;
+    this.settingsService.mute = this._mute;
   }
 }
