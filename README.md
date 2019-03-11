@@ -21,7 +21,10 @@ ng build
 ## Speech Synthesis
 
 ``` bash
-cd speech_synthesis
+npm install -g audiosprite
 gem install google-cloud-text_to_speech
+cd speech_synthesis
 ruby google-cloud.rb
+cd output-folder
+audiosprite *.mp3
 ```

@@ -1,0 +1,110 @@
+{
+  "resources": [
+    "output.ogg",
+    "output.m4a",
+    "output.mp3",
+    "output.ac3"
+  ],
+  "spritemap": {
+    "and-extend-your": {
+      "start": 0,
+      "end": 2.9760090702947846,
+      "loop": false
+    },
+    "and-look-around": {
+      "start": 4,
+      "end": 7.408004535147392,
+      "loop": false
+    },
+    "and-see-the-agen": {
+      "start": 9,
+      "end": 10.8,
+      "loop": false
+    },
+    "and-shut-up": {
+      "start": 12,
+      "end": 12.96,
+      "loop": false
+    },
+    "close-your-eyes": {
+      "start": 14,
+      "end": 15.32,
+      "loop": false
+    },
+    "everyone": {
+      "start": 17,
+      "end": 17.91201814058957,
+      "loop": false
+    },
+    "except-mordred": {
+      "start": 19,
+      "end": 20.27201814058957,
+      "loop": false
+    },
+    "except-oberon": {
+      "start": 22,
+      "end": 23.296009070294783,
+      "loop": false
+    },
+    "eyes-closed": {
+      "start": 25,
+      "end": 26.2,
+      "loop": false
+    },
+    "merlin-and-morga": {
+      "start": 28,
+      "end": 29.44,
+      "loop": false
+    },
+    "merlin": {
+      "start": 31,
+      "end": 31.76800453514739,
+      "loop": false
+    },
+    "minions-of-mordr": {
+      "start": 33,
+      "end": 34.39201814058957,
+      "loop": false
+    },
+    "open-your-eyes": {
+      "start": 36,
+      "end": 37.272018140589566,
+      "loop": false
+    },
+    "percival": {
+      "start": 39,
+      "end": 39.864013605442175,
+      "loop": false
+    },
+    "put-your-thumbs": {
+      "start": 41,
+      "end": 42.32,
+      "loop": false
+    },
+    "so-that-merlin-w": {
+      "start": 44,
+      "end": 45.99201814058957,
+      "loop": false
+    },
+    "so-that-percival": {
+      "start": 47,
+      "end": 49.06401360544218,
+      "loop": false
+    },
+    "so-you-may-know": {
+      "start": 51,
+      "end": 53.23201814058957,
+      "loop": false
+    },
+    "stick-up-your-th": {
+      "start": 55,
+      "end": 56.416009070294784,
+      "loop": false
+    },
+    "thumbs-down": {
+      "start": 58,
+      "end": 59.056009070294785,
+      "loop": false
+    }
+  }
+}
