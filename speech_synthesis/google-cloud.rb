@@ -19,7 +19,7 @@ inputfile = File.new(input_file, "r")
 inputfile.each_line() { |line|
   line.chomp!
   input_text = { :text => line }
-  output_file = output_directory + input_text[:text].gsub(" ", "-").downcase + ".mp3"
+  output_file = output_directory + input_text[:text].gsub(" ", "-").downcase[0..15].chomp("-") + ".mp3"
   #output_file = "hello.mp3"
   response = client.synthesize_speech(input_text, voice, audio_config)
   # The response's audio_content is binary.
