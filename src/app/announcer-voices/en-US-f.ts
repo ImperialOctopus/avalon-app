@@ -88,9 +88,5 @@ export const en_US_f: Announcer = new Announcer(
       58000,
       1056.0090702947846
     ]
-  },
-  {
-    verbose: false,
-    flair: false
   }
 );

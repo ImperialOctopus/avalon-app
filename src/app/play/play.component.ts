@@ -43,6 +43,8 @@ export class PlayComponent implements OnInit {
       src: en_US_f.files,
       sprite: en_US_f.spritelist
     });
+    this.soundList = en_US_f.loadScript(this.settingsService.announcerSettings());
+    this.sound.mute(this._mute);
     this.sound.on('end', () => { this.playNext(); });
     this.playNext();
   }
@@ -53,18 +55,27 @@ export class PlayComponent implements OnInit {
       this._cardImage = element.image;
       this._cardText = element.title;
       this.sound.play(element.sound);
+    } else {
+      this.stop();
     }
   }
 
-  stopButton() {
+  stop() {
+    this.sound.stop();
     this.router.navigate(['/']);
   }
-  pauseButton() {
+  pause() {
     this._pause = !this._pause;
+    if (this._pause) {
+      this.sound.pause();
+    } else {
+      this.sound.play();
+    }
   }
-  muteButton() {
+  mute() {
     this._mute = !this._mute;
     this.settingsService.mute = this._mute;
     this.settingsService.saveSettings();
+    this.sound.mute(this._mute);
   }
 }
