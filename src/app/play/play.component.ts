@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
 import { Howl, Howler } from 'howler';
-import { en_US_f } from '../announcer-voices/en-US-f';
+import { en_gb_C } from '../announcer-voices/en-gb-C';
 import { Announcer } from '../announcer';
 
 @Component({
@@ -33,10 +33,10 @@ export class PlayComponent implements OnInit {
     this._pause = false;
 
     this.sound = new Howl({
-      src: en_US_f.files,
-      sprite: en_US_f.spritelist
+      src: en_gb_C.files,
+      sprite: en_gb_C.spritelist
     });
-    this.soundList = en_US_f.loadScript(this.settingsService.verbose,
+    this.soundList = en_gb_C.loadScript(this.settingsService.verbose,
       this.settingsService.flair,
       this.settingsService.characters['percival'],
       this.settingsService.characters['oberon'],
