@@ -1,3 +1,4 @@
+import { SoundElement } from '../sound-element';
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
@@ -23,7 +24,7 @@ export class PlayComponent implements OnInit {
   _cardText: string;
 
   sound: Howl;
-  soundList: object;
+  soundList: Array<SoundElement>;
 
   constructor(
     private router: Router,
@@ -40,9 +41,9 @@ export class PlayComponent implements OnInit {
     this._cardText = 'Text sample';
 
     this.soundList = [
-      'merlin',
-      'close-your-eyes',
-      'and-shut-up'
+      new SoundElement('merlin', 'Merlin', '/assets/characters/merlin.jpg'),
+      new SoundElement('close-your-eyes', 'Close your eyes', '/assets/characters/merlin.jpg'),
+      new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/merlin.jpg')
     ];
 
     this.sound = new Howl({
@@ -141,7 +142,10 @@ export class PlayComponent implements OnInit {
 
   playNext() {
     if (this.soundList.length > 0) {
-      this.sound.play(this.soundList.shift());
+      const element: SoundElement = this.soundList.shift();
+      this._cardImage = element.image;
+      this._cardText = element.title;
+      this.sound.play(element.sound);
     }
   }
 
