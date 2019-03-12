@@ -26,5 +26,5 @@ gem install google-cloud-text_to_speech
 cd speech_synthesis
 ruby google-cloud.rb
 cd output-folder
-audiosprite *.mp3
+audiosprite -f howler *.mp3
 ```
