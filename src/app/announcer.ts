@@ -21,64 +21,71 @@ export class Announcer {
     if (flair) {
       array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
     }
+    array.push(new SoundElement('silence-1000', '', '/assets/characters/loyal-servant.jpg'));
     array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', '/assets/characters/minion.jpg'));
     if (oberon) {
-      // {(except Oberon)}
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('except-oberon', 'Except Oberon', '/assets/characters/oberon.jpg'));
     }
     array.push(new SoundElement('open-your-eyes', 'Open your eyes', '/assets/characters/minion.jpg'));
     if (verbose) {
-      // (and look around so that you know the other agents of Evil)
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('and-look-around', 'And look around...', '/assets/characters/minion.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/minion.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/minion.jpg'));
       array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', '/assets/characters/minion.jpg'));
       array.push(new SoundElement('close-your-eyes', 'Close your eyes', '/assets/characters/minion.jpg'));
     } else {
-      // -(Eyes closed)
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/minion.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/minion.jpg'));
+      array.push(new SoundElement('eyes-closed', 'Eyes closed', '/assets/characters/minion.jpg'));
     }
 
     array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', '/assets/characters/minion.jpg'));
     if (mordred) {
-      // {(not Mordred himself)}
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('except-mordred', 'Except Mordred', '/assets/characters/mordred.jpg'));
     }
     array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', '/assets/characters/minion.jpg'));
     if (verbose) {
-      // (so that Merlin will know of you)
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('so-that-merlin-w', 'So that Merlin will know of you', '/assets/characters/merlin.jpg'));
     }
+    array.push(new SoundElement('silence-1000', '', '/assets/characters/minion.jpg'));
     array.push(new SoundElement('merlin', 'Merlin', '/assets/characters/merlin.jpg'));
     array.push(new SoundElement('open-your-eyes', 'Open your eyes', '/assets/characters/merlin.jpg'));
     if (verbose) {
-      // (and see the agents of evil)
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('and-see-the-agen', 'And see the agents of evil', '/assets/characters/merlin.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/merlin.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/merlin.jpg'));
       array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', '/assets/characters/minion.jpg'));
       array.push(new SoundElement('put-your-thumbs', 'Put your thumbs away', '/assets/characters/minion.jpg'));
       array.push(new SoundElement('merlin', 'Merlin', '/assets/characters/merlin.jpg'));
       array.push(new SoundElement('close-your-eyes', 'Close your eyes', '/assets/characters/merlin.jpg'));
     } else {
-      // -(Thumbs down, eyes closed)
-      array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/merlin.jpg'));
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/merlin.jpg'));
+      array.push(new SoundElement('thumbs-down', 'Thumbs down, eyes closed', '/assets/characters/merlin.jpg'));
+      array.push(new SoundElement('eyes-closed', 'Thumbs down, eyes closed', '/assets/characters/merlin.jpg'));
     }
     if (percival) {
       array.push(new SoundElement('merlin-and-morga', 'Merlin and Morgana', '/assets/characters/morgana.jpg'));
       array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', '/assets/characters/morgana.jpg'));
       if (verbose) {
-        // (so that Percival may know of you)
-        array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+        array.push(new SoundElement('so-that-percival', 'So that Percival may know of you', '/assets/characters/percival.jpg'));
       }
+      array.push(new SoundElement('silence-1000', '', '/assets/characters/morgana.jpg'));
       array.push(new SoundElement('percival', 'Percival', '/assets/characters/percival.jpg'));
       array.push(new SoundElement('open-your-eyes', 'Open your eyes', '/assets/characters/percival.jpg'));
       if (verbose) {
-        // (so you may know Merlin and Morgana)
-        array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+        array.push(new SoundElement('so-you-may-know', 'So you may know Merlin and Morgana', '/assets/characters/percival.jpg'));
+        array.push(new SoundElement('silence-1000', '', '/assets/characters/percival.jpg'));
+        array.push(new SoundElement('silence-1000', '', '/assets/characters/percival.jpg'));
         array.push(new SoundElement('merlin-and-morga', 'Merlin and Morgana', '/assets/characters/morgana.jpg'));
         array.push(new SoundElement('put-your-thumbs', 'Put your thumbs away', '/assets/characters/morgana.jpg'));
         array.push(new SoundElement('percival', 'Percival', '/assets/characters/percival.jpg'));
         array.push(new SoundElement('close-your-eyes', 'Close your eyes', '/assets/characters/percival.jpg'));
       } else {
-        // -(Thumbs down, eyes closed)
-        array.push(new SoundElement('and-shut-up', 'And shut up!', '/assets/characters/loyal-servant.jpg'));
+        array.push(new SoundElement('silence-1000', '', '/assets/characters/percival.jpg'));
+        array.push(new SoundElement('silence-1000', '', '/assets/characters/percival.jpg'));
+        array.push(new SoundElement('thumbs-down', 'Thumbs down, eyes closed', '/assets/characters/percival.jpg'));
+        array.push(new SoundElement('eyes-closed', 'Thumbs down, eyes closed', '/assets/characters/percival.jpg'));
       }
     }
     array.push(new SoundElement('everyone', 'Everyone', '/assets/characters/loyal-servant.jpg'));
