@@ -22,6 +22,9 @@ export class PlayComponent implements OnInit {
   _cardImage: string;
   _cardText: string;
 
+  sound: Howl;
+  soundList: object;
+
   constructor(
     private router: Router,
     private settingsService: SettingsService
@@ -36,7 +39,13 @@ export class PlayComponent implements OnInit {
     this._cardImage = '/assets/characters/merlin.jpg';
     this._cardText = 'Text sample';
 
-    const sound = new Howl({
+    this.soundList = [
+      'merlin',
+      'close-your-eyes',
+      'and-shut-up'
+    ];
+
+    this.sound = new Howl({
       src: [
         '/assets/audio/en-US_f.ogg',
         '/assets/audio/en-US_f.m4a',
@@ -126,8 +135,14 @@ export class PlayComponent implements OnInit {
         ]
       }
     });
+    this.sound.on('end', () => { this.playNext(); });
+    this.playNext();
+  }
 
-    sound.play('merlin');
+  playNext() {
+    if (this.soundList.length > 0) {
+      this.sound.play(this.soundList.shift());
+    }
   }
 
   stopButton() {
