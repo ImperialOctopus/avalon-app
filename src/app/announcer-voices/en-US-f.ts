@@ -1,102 +1,104 @@
-{
-  "urls": [
-    "en-US_f.ogg",
-    "en-US_f.m4a",
-    "en-US_f.mp3",
-    "en-US_f.ac3"
+import { Announcer } from './../announcer';
+
+export const en_US_f: Announcer = new Announcer(
+  [
+    '/assets/audio/en-US_f.ogg',
+    '/assets/audio/en-US_f.m4a',
+    '/assets/audio/en-US_f.mp3',
+    '/assets/audio/en-US_f.ac3'
   ],
-  "sprite": {
-    "and-extend-your": [
+  {
+    'and-extend-your': [
       0,
       2976.0090702947846
     ],
-    "and-look-around": [
+    'and-look-around': [
       4000,
       3408.0045351473923
     ],
-    "and-see-the-agen": [
+    'and-see-the-agen': [
       9000,
       1800.0000000000007
     ],
-    "and-shut-up": [
+    'and-shut-up': [
       12000,
       960.0000000000009
     ],
-    "close-your-eyes": [
+    'close-your-eyes': [
       14000,
       1320.0000000000002
     ],
-    "everyone": [
+    everyone: [
       17000,
       912.01814058957
     ],
-    "except-mordred": [
+    'except-mordred': [
       19000,
       1272.0181405895694
     ],
-    "except-oberon": [
+    'except-oberon': [
       22000,
       1296.009070294783
     ],
-    "eyes-closed": [
+    'eyes-closed': [
       25000,
       1199.9999999999993
     ],
-    "merlin-and-morga": [
+    'merlin-and-morga': [
       28000,
       1440.0000000000014
     ],
-    "merlin": [
+    merlin: [
       31000,
       768.0045351473907
     ],
-    "minions-of-mordr": [
+    'minions-of-mordr': [
       33000,
       1392.0181405895705
     ],
-    "open-your-eyes": [
+    'open-your-eyes': [
       36000,
       1272.018140589566
     ],
-    "percival": [
+    percival: [
       39000,
       864.0136054421746
     ],
-    "put-your-thumbs": [
+    'put-your-thumbs': [
       41000,
       1320.0000000000002
     ],
-    "silence-1000": [
+    'silence-1000': [
       44000,
       1000
     ],
-    "silence-200": [
+    'silence-200': [
       46000,
       200.00000000000284
     ],
-    "silence-500": [
+    'silence-500': [
       48000,
       500
     ],
-    "so-that-merlin-w": [
+    'so-that-merlin-w': [
       50000,
       1992.0181405895719
     ],
-    "so-that-percival": [
+    'so-that-percival': [
       53000,
       2064.0136054421773
     ],
-    "so-you-may-know": [
+    'so-you-may-know': [
       57000,
       2232.018140589567
     ],
-    "stick-up-your-th": [
+    'stick-up-your-th': [
       61000,
       1416.0090702947841
     ],
-    "thumbs-down": [
+    'thumbs-down': [
       64000,
       1056.0090702947775
     ]
   }
-}
+);
