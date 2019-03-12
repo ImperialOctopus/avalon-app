@@ -3,7 +3,8 @@ client = Google::Cloud::TextToSpeech.new
 
 input_file = "input_lines.txt"
 voice = {
-  :language_code => "en-US",
+  :language_code => "en-GB",
+  :name => "en-GB-Wavenet-C",
   :ssml_gender =>   "FEMALE"
 }
 audio_config = { :audio_encoding => "MP3" }
