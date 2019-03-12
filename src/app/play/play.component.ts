@@ -13,12 +13,6 @@ import { Announcer } from '../announcer';
 })
 export class PlayComponent implements OnInit {
 
-  _characters: object = {
-    percival: false,
-    mordred: false,
-    oberon: false,
-    morgana: false
-  };
   _mute: boolean;
   _pause: boolean;
 
@@ -35,7 +29,6 @@ export class PlayComponent implements OnInit {
 
   ngOnInit() {
     // this.settingsService.loadSettings(); Uncomment when loadSettings is implemented
-    this._characters = this.settingsService.characters;
     this._mute = this.settingsService.mute;
     this._pause = false;
 
@@ -43,7 +36,12 @@ export class PlayComponent implements OnInit {
       src: en_US_f.files,
       sprite: en_US_f.spritelist
     });
-    this.soundList = en_US_f.loadScript(this.settingsService.announcerSettings());
+    this.soundList = en_US_f.loadScript(this.settingsService.verbose,
+      this.settingsService.flair,
+      this.settingsService.characters['percival'],
+      this.settingsService.characters['oberon'],
+      this.settingsService.characters['mordred'],
+      this.settingsService.characters['morgana']);
     this.sound.mute(this._mute);
     this.sound.on('end', () => { this.playNext(); });
     this.playNext();

@@ -63,13 +63,6 @@ export class SettingsService {
     this._characters = o;
   }
 
-  announcerSettings(): object {
-    return {
-      verbose: this.verbose,
-      flair: this.flair,
-      characters: this.characters
-    };
-  }
   loadSettings(): void {
     this.playerNumber = 5;
     this.mute = false;
