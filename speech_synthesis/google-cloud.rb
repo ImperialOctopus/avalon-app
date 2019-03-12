@@ -9,7 +9,7 @@ voice = {
 }
 audio_config = { :audio_encoding => "MP3" }
 
-output_directory = voice[:name];
+output_directory = "en-GB-D";
 
 unless output_directory == "" then
   Dir.mkdir(output_directory) unless File.exists?(output_directory)
