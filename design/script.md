@@ -62,4 +62,3 @@ Merlin and Morgana
 so that Percival may know of you
 Percival [Percival]
 so you may know Merlin and Morgana
-Percival
