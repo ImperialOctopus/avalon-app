@@ -1,110 +1,90 @@
 {
-  "resources": [
-    "output.ogg",
-    "output.m4a",
-    "output.mp3",
-    "output.ac3"
+  "urls": [
+    "en-US_f.ogg",
+    "en-US_f.m4a",
+    "en-US_f.mp3",
+    "en-US_f.ac3"
   ],
-  "spritemap": {
-    "and-extend-your": {
-      "start": 0,
-      "end": 2.9760090702947846,
-      "loop": false
-    },
-    "and-look-around": {
-      "start": 4,
-      "end": 7.408004535147392,
-      "loop": false
-    },
-    "and-see-the-agen": {
-      "start": 9,
-      "end": 10.8,
-      "loop": false
-    },
-    "and-shut-up": {
-      "start": 12,
-      "end": 12.96,
-      "loop": false
-    },
-    "close-your-eyes": {
-      "start": 14,
-      "end": 15.32,
-      "loop": false
-    },
-    "everyone": {
-      "start": 17,
-      "end": 17.91201814058957,
-      "loop": false
-    },
-    "except-mordred": {
-      "start": 19,
-      "end": 20.27201814058957,
-      "loop": false
-    },
-    "except-oberon": {
-      "start": 22,
-      "end": 23.296009070294783,
-      "loop": false
-    },
-    "eyes-closed": {
-      "start": 25,
-      "end": 26.2,
-      "loop": false
-    },
-    "merlin-and-morga": {
-      "start": 28,
-      "end": 29.44,
-      "loop": false
-    },
-    "merlin": {
-      "start": 31,
-      "end": 31.76800453514739,
-      "loop": false
-    },
-    "minions-of-mordr": {
-      "start": 33,
-      "end": 34.39201814058957,
-      "loop": false
-    },
-    "open-your-eyes": {
-      "start": 36,
-      "end": 37.272018140589566,
-      "loop": false
-    },
-    "percival": {
-      "start": 39,
-      "end": 39.864013605442175,
-      "loop": false
-    },
-    "put-your-thumbs": {
-      "start": 41,
-      "end": 42.32,
-      "loop": false
-    },
-    "so-that-merlin-w": {
-      "start": 44,
-      "end": 45.99201814058957,
-      "loop": false
-    },
-    "so-that-percival": {
-      "start": 47,
-      "end": 49.06401360544218,
-      "loop": false
-    },
-    "so-you-may-know": {
-      "start": 51,
-      "end": 53.23201814058957,
-      "loop": false
-    },
-    "stick-up-your-th": {
-      "start": 55,
-      "end": 56.416009070294784,
-      "loop": false
-    },
-    "thumbs-down": {
-      "start": 58,
-      "end": 59.056009070294785,
-      "loop": false
-    }
+  "sprite": {
+    "and-extend-your": [
+      0,
+      2976.0090702947846
+    ],
+    "and-look-around": [
+      4000,
+      3408.0045351473923
+    ],
+    "and-see-the-agen": [
+      9000,
+      1800.0000000000007
+    ],
+    "and-shut-up": [
+      12000,
+      960.0000000000009
+    ],
+    "close-your-eyes": [
+      14000,
+      1320.0000000000002
+    ],
+    "everyone": [
+      17000,
+      912.01814058957
+    ],
+    "except-mordred": [
+      19000,
+      1272.0181405895694
+    ],
+    "except-oberon": [
+      22000,
+      1296.009070294783
+    ],
+    "eyes-closed": [
+      25000,
+      1199.9999999999993
+    ],
+    "merlin-and-morga": [
+      28000,
+      1440.0000000000014
+    ],
+    "merlin": [
+      31000,
+      768.0045351473907
+    ],
+    "minions-of-mordr": [
+      33000,
+      1392.0181405895705
+    ],
+    "open-your-eyes": [
+      36000,
+      1272.018140589566
+    ],
+    "percival": [
+      39000,
+      864.0136054421746
+    ],
+    "put-your-thumbs": [
+      41000,
+      1320.0000000000002
+    ],
+    "so-that-merlin-w": [
+      44000,
+      1992.0181405895719
+    ],
+    "so-that-percival": [
+      47000,
+      2064.0136054421773
+    ],
+    "so-you-may-know": [
+      51000,
+      2232.018140589567
+    ],
+    "stick-up-your-th": [
+      55000,
+      1416.0090702947841
+    ],
+    "thumbs-down": [
+      58000,
+      1056.0090702947846
+    ]
   }
 }
