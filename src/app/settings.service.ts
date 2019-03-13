@@ -50,12 +50,6 @@ export class SettingsService {
   set flair(b: boolean) {
     this._flair = b;
   }
-  get tiger(): boolean {
-    return this._tiger;
-  }
-  set tiger(b: boolean) {
-    this._tiger = b;
-  }
   get characters() {
     return this._characters;
   }
@@ -69,7 +63,6 @@ export class SettingsService {
     this.announcer = 'en-gb-C';
     this.verbose = false;
     this.flair = false;
-    this.tiger = true;
     this._characters = {
       percival: true,
       mordred: false,

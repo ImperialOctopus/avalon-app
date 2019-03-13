@@ -59,7 +59,7 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/play']);
   }
 
-  toggleCharacter(char) {
+  toggleCharacter(char: string) {
     // Genuinely disgusting: please fix
     if (char === 'percival') {
       this._characters['percival'] = !this._characters['percival'];
