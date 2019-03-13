@@ -1,27 +1,30 @@
 {
-  "index": "/index.html",
-  "assetGroups": [
-    {
-      "name": "app",
-      "installMode": "prefetch",
-      "resources": {
-        "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/*.css",
-          "/*.js"
-        ]
-      }
-    }, {
-      "name": "assets",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
-      "resources": {
-        "files": [
-          "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-        ]
-      }
+  "index": "index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "assets/icons/icon-72x72.png",
+        "index.html",
+        "*.css",
+        "*.js"
+      ]
     }
-  ]
+  }, {
+    "name": "assets",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "assets/**",
+        "*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+      ],
+      "urls": [
+        "https://fonts.gstatic.com/s/pacifico/v13/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2",
+        "https://fonts.gstatic.com/s/pacifico/v13/FwZY7-Qmy14u9lezJ-6H6Mk.woff2"
+      ]
+    }
+  }]
 }
