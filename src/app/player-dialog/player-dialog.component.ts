@@ -9,7 +9,7 @@ import { SettingsService } from '../settings.service';
 })
 export class PlayerDialogComponent implements OnInit {
 
-  private _playerNumber: number;
+  _playerNumber: number;
 
   constructor(
     private dialogRef: MatDialogRef<PlayerDialogComponent>,

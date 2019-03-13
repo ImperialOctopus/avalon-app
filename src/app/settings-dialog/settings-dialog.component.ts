@@ -10,9 +10,9 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./settings-dialog.component.scss']
 })
 export class SettingsDialogComponent implements OnInit {
-  private _announcer: string;
-  private _verbose: boolean;
-  private _flair: boolean;
+  _announcer: string;
+  _verbose: boolean;
+  _flair: boolean;
 
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
