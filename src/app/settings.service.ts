@@ -14,7 +14,6 @@ export class SettingsService {
   private _flair: boolean;
   private _tiger: boolean;
   private _characters: object = {
-    percival: false,
     mordred: false,
     oberon: false,
     morgana: false
@@ -64,7 +63,6 @@ export class SettingsService {
     this.verbose = false;
     this.flair = false;
     this._characters = {
-      percival: true,
       mordred: false,
       oberon: false,
       morgana: false

@@ -9,8 +9,7 @@ export class Announcer {
     this.spritelist = _spritelist;
   }
 
-  loadScript(
-    verbose: boolean, flair: boolean, percival: boolean, oberon: boolean, mordred: boolean, morgana: boolean): Array<SoundElement> {
+  loadScript(verbose: boolean, flair: boolean, oberon: boolean, mordred: boolean, morgana: boolean): Array<SoundElement> {
     const array: Array<SoundElement> = new Array<SoundElement>();
 
     array.push(new SoundElement('everyone', 'Everyone', '/assets/characters/loyal-servant.jpg'));
@@ -38,7 +37,6 @@ export class Announcer {
       array.push(new SoundElement('silence', '', '/assets/characters/minion.jpg'));
       array.push(new SoundElement('eyes-closed', 'Eyes closed', '/assets/characters/minion.jpg'));
     }
-
     array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', '/assets/characters/minion.jpg'));
     if (mordred) {
       array.push(new SoundElement('except-mordred', 'Except Mordred', '/assets/characters/mordred.jpg'));
@@ -64,7 +62,7 @@ export class Announcer {
       array.push(new SoundElement('thumbs-down', 'Thumbs down, eyes closed', '/assets/characters/merlin.jpg'));
       array.push(new SoundElement('eyes-closed', 'Thumbs down, eyes closed', '/assets/characters/merlin.jpg'));
     }
-    if (percival) {
+    if (morgana) {
       array.push(new SoundElement('merlin-and-morga', 'Merlin and Morgana', '/assets/characters/morgana.jpg'));
       array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', '/assets/characters/morgana.jpg'));
       if (verbose) {

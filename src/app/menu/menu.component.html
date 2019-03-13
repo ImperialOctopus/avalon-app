@@ -15,10 +15,10 @@
       <img class="portrait" src="/assets/characters/merlin.jpg" />
       <span class="name">Merlin</span>
     </a>
-    <a mat-button class="character-row good" (click)="toggleCharacter('percival')">
+    <a mat-button class="character-row good" (click)="toggleCharacter('morgana')">
       <img class="portrait" src="/assets/characters/percival.jpg" />
-      <span class="name" [ngClass]="{ strikethrough: !_characters['percival'] }">Percival</span>
-      <img class="enabled" [src]="_characters['percival'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
+      <span class="name" [ngClass]="{ strikethrough: !_characters['morgana'] }">Percival</span>
+      <img class="enabled" [src]="_characters['morgana'] ? '/assets/buttons/character-on.jpg' : '/assets/buttons/character-off.jpg'" />
     </a>
     <a mat-button class="character-row evil">
       <img class="portrait" src="/assets/characters/minion.jpg" />

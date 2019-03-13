@@ -49,7 +49,6 @@ export class PlayComponent implements OnInit {
     console.log(this._announcerObject.files);
     this.soundList = this._announcerObject.loadScript(this.settingsService.verbose,
       this.settingsService.flair,
-      this.settingsService.characters['percival'],
       this.settingsService.characters['oberon'],
       this.settingsService.characters['mordred'],
       this.settingsService.characters['morgana']);
