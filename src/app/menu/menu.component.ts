@@ -20,7 +20,6 @@ export class MenuComponent implements OnInit {
     10: 4
   };
   _characters: object = {
-    percival: false,
     mordred: false,
     oberon: false,
     morgana: false
@@ -38,9 +37,10 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.settingsService.loadSettings();
-    this.loadSettings();
-    this.updateServants();
+    this.settingsService.loadSettings().then(() => {
+      this.loadSettings();
+      this.updateServants();
+    });
   }
 
   loadSettings() {
@@ -59,40 +59,36 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/play']);
   }
 
-  toggleCharacter(char) {
+  toggleCharacter(char: string) {
     // Genuinely disgusting: please fix
-    if (char === 'percival') {
-      this._characters['percival'] = !this._characters['percival'];
-    } else { // Evil _characters
-      if (this._characters[char]) { // Disabling
-        this._characters[char] = false;
-      } else if (this._minionNumber > 0) { // Safe to enable
-        this._characters[char] = true;
-      } else { // Must disable a character
-        if (char === 'morgana') {
-          if (this._characters['oberon']) {
-            this._characters['oberon'] = false;
-            this._characters['morgana'] = true;
-          } else if (this._characters['mordred']) {
-            this._characters['mordred'] = false;
-            this._characters['morgana'] = true;
-          }
-        } else if (char === 'mordred') {
-          if (this._characters['oberon']) {
-            this._characters['oberon'] = false;
-            this._characters['mordred'] = true;
-          } else if (this._characters['morgana']) {
-            this._characters['morgana'] = false;
-            this._characters['mordred'] = true;
-          }
-        } else {
-          if (this._characters['mordred']) {
-            this._characters['mordred'] = false;
-            this._characters['oberon'] = true;
-          } else if (this._characters['morgana']) {
-            this._characters['morgana'] = false;
-            this._characters['oberon'] = true;
-          }
+    if (this._characters[char]) { // Disabling
+      this._characters[char] = false;
+    } else if (this._minionNumber > 0) { // Safe to enable
+      this._characters[char] = true;
+    } else { // Must disable a character
+      if (char === 'morgana') {
+        if (this._characters['oberon']) {
+          this._characters['oberon'] = false;
+          this._characters['morgana'] = true;
+        } else if (this._characters['mordred']) {
+          this._characters['mordred'] = false;
+          this._characters['morgana'] = true;
+        }
+      } else if (char === 'mordred') {
+        if (this._characters['oberon']) {
+          this._characters['oberon'] = false;
+          this._characters['mordred'] = true;
+        } else if (this._characters['morgana']) {
+          this._characters['morgana'] = false;
+          this._characters['mordred'] = true;
+        }
+      } else {
+        if (this._characters['mordred']) {
+          this._characters['mordred'] = false;
+          this._characters['oberon'] = true;
+        } else if (this._characters['morgana']) {
+          this._characters['morgana'] = false;
+          this._characters['oberon'] = true;
         }
       }
     }
@@ -115,7 +111,7 @@ export class MenuComponent implements OnInit {
     return evil;
   }
   getGoodNumber(): number {
-    const good = (~~this._characters['percival'] + 1);
+    const good = (~~this._characters['morgana'] + 1);
     return good;
   }
   autoDisableEvil() {

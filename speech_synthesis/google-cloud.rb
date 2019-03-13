@@ -3,12 +3,13 @@ client = Google::Cloud::TextToSpeech.new
 
 input_file = "input_lines.txt"
 voice = {
-  :language_code => "en-US",
-  :ssml_gender =>   "FEMALE"
+  :language_code => "en-GB",
+  :name => "en-GB-Wavenet-D",
+  :ssml_gender =>   "MALE"
 }
 audio_config = { :audio_encoding => "MP3" }
 
-output_directory = voice[:language_code] + "_" + voice[:ssml_gender];
+output_directory = "en-GB-D";
 
 unless output_directory == "" then
   Dir.mkdir(output_directory) unless File.exists?(output_directory)

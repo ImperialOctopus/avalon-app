@@ -60,11 +60,13 @@ cursive;
 
   .center-card {
     margin: auto;
+    width: 80%;
+    height: 200px;
 
     img {
       display: block;
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       margin: auto;
       margin-bottom: 20px;
     }
@@ -73,6 +75,8 @@ cursive;
       display: block;
       margin: auto;
       text-align: center;
+      width: 80%;
+      font-size: 40px;
     }
   }
 }
