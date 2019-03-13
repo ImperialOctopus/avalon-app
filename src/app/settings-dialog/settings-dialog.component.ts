@@ -29,6 +29,7 @@ export class SettingsDialogComponent implements OnInit {
     this.settingsService.announcer = this._announcer;
     this.settingsService.verbose = this._verbose;
     this.settingsService.flair = this._flair;
+    this.settingsService.saveSettings();
     this.dialogRef.close();
   }
 }

@@ -37,9 +37,10 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.settingsService.loadSettings();
-    this.loadSettings();
-    this.updateServants();
+    this.settingsService.loadSettings().then(() => {
+      this.loadSettings();
+      this.updateServants();
+    });
   }
 
   loadSettings() {

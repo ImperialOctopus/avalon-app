@@ -31,30 +31,30 @@ export class PlayComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.settingsService.loadSettings(); Uncomment when loadSettings is implemented
-    this._mute = this.settingsService.mute;
-    this._pause = false;
-    this._announcer = this.settingsService.announcer;
+    this.settingsService.loadSettings().then(() => {
+      this._mute = this.settingsService.mute;
+      this._pause = false;
+      this._announcer = this.settingsService.announcer;
 
-    if (this._announcer === 'en-gb-D') { // Synth Male
-      this._announcerObject = en_gb_D;
-    } else { // Synth Female default
-      this._announcerObject = en_gb_C;
-    }
+      if (this._announcer === 'en-gb-D') { // Synth Male
+        this._announcerObject = en_gb_D;
+      } else { // Synth Female default
+        this._announcerObject = en_gb_C;
+      }
 
-    this.sound = new Howl({
-      src: this._announcerObject.files,
-      sprite: this._announcerObject.spritelist
+      this.sound = new Howl({
+        src: this._announcerObject.files,
+        sprite: this._announcerObject.spritelist
+      });
+      this.soundList = this._announcerObject.loadScript(this.settingsService.verbose,
+        this.settingsService.flair,
+        this.settingsService.characters['oberon'],
+        this.settingsService.characters['mordred'],
+        this.settingsService.characters['morgana']);
+      this.sound.mute(this._mute);
+      this.sound.on('end', () => { this.playNext(); });
+      this.playNext();
     });
-    console.log(this._announcerObject.files);
-    this.soundList = this._announcerObject.loadScript(this.settingsService.verbose,
-      this.settingsService.flair,
-      this.settingsService.characters['oberon'],
-      this.settingsService.characters['mordred'],
-      this.settingsService.characters['morgana']);
-    this.sound.mute(this._mute);
-    this.sound.on('end', () => { this.playNext(); });
-    this.playNext();
   }
 
   playNext() {
