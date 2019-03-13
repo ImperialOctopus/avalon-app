@@ -66,7 +66,7 @@ export class SettingsService {
   loadSettings(): void {
     this.playerNumber = 5;
     this.mute = false;
-    this.announcer = 'cathy';
+    this.announcer = 'en-gb-C';
     this.verbose = false;
     this.flair = false;
     this.tiger = true;

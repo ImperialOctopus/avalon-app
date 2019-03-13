@@ -4,6 +4,7 @@ import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
 import { Howl, Howler } from 'howler';
 import { en_gb_C } from '../announcer-voices/en-gb-C';
+import { en_gb_D } from '../announcer-voices/en-gb-D';
 import { Announcer } from '../announcer';
 
 @Component({
@@ -15,6 +16,8 @@ export class PlayComponent implements OnInit {
 
   _mute: boolean;
   _pause: boolean;
+  _announcer: string;
+  _announcerObject: Announcer;
 
   _cardImage: string;
   _cardText: string;
@@ -31,13 +34,20 @@ export class PlayComponent implements OnInit {
     // this.settingsService.loadSettings(); Uncomment when loadSettings is implemented
     this._mute = this.settingsService.mute;
     this._pause = false;
+    this._announcer = this.settingsService.announcer;
+
+    if (this._announcer === 'en-gb-D') { // Synth Male
+      this._announcerObject = en_gb_D;
+    } else { // Synth Female default
+      this._announcerObject = en_gb_C;
+    }
 
     this.sound = new Howl({
-      src: en_gb_C.files,
-      sprite: en_gb_C.spritelist
+      src: this._announcerObject.files,
+      sprite: this._announcerObject.spritelist
     });
-    console.log(en_gb_C.files);
-    this.soundList = en_gb_C.loadScript(this.settingsService.verbose,
+    console.log(this._announcerObject.files);
+    this.soundList = this._announcerObject.loadScript(this.settingsService.verbose,
       this.settingsService.flair,
       this.settingsService.characters['percival'],
       this.settingsService.characters['oberon'],
