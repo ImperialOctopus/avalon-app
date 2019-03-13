@@ -70,5 +70,6 @@ export class SettingsService {
   }
   saveSettings(): void {
     console.log('Saved');
+    console.log(self.indexedDB);
   }
 }
