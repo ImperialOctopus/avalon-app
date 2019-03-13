@@ -25,10 +25,10 @@ cursive;
 }
 
 .title-container {
-  height: 100px;
+  height: 12vh;
 
   span {
-    font-size: 50px;
+    font-size: 7vh;
     position: absolute;
     top: 0;
     left: 50%;
@@ -36,11 +36,12 @@ cursive;
   }
 
   .mute-button {
-    width: 75px;
-    height: 75px;
+    min-width: 0;
+    width: 8vh;
+    height: auto;
     position: relative;
-    top: 10px;
-    left: 10px;
+    top: 2vh;
+    left: 2vh;
 
     img {
       height: 100%;
@@ -111,17 +112,18 @@ cursive;
 }
 
 .footer-menu {
-  height: 150px;
+  height: 14vh;
 }
 
 // Fixed position buttons
 
 .player-button {
-  width: 100px;
-  height: 100px;
+  min-width: 0;
+  width: 10vh;
+  height: auto;
   position: absolute;
-  bottom: 25px;
-  left: 25px;
+  bottom: 2vh;
+  left: 2vh;
 
   .player-button-image {
     height: 100%;
@@ -130,7 +132,7 @@ cursive;
 
   .player-button-text {
     font-family: $font-family;
-    font-size: 70px;
+    font-size: 8vh;
     position: absolute;
     left: 48%;
     top: 42%;
@@ -140,10 +142,11 @@ cursive;
 }
 
 .play-button {
-  width: 250px;
-  height: 100px;
+  min-width: 0;
+  width: 25vh;
+  height: auto;
   position: absolute;
-  bottom: 25px;
+  bottom: 2vh;
   left: 50%;
   transform: translate(-50%, 0);
 
@@ -154,11 +157,12 @@ cursive;
 }
 
 .settings-button {
-  width: 100px;
-  height: 100px;
+  min-width: 0;
+  width: 10vh;
+  height: auto;
   position: absolute;
-  bottom: 25px;
-  right: 25px;
+  bottom: 2vh;
+  right: 2vh;
 
   img {
     height: 100%;
