@@ -8,8 +8,7 @@
   "sprite": {
     "silence": [
       0,
-      1000,
-      true
+      1000
     ],
     "and-extend-your": [
       2000,
