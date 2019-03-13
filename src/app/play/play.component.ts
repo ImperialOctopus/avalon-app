@@ -16,7 +16,7 @@ export class PlayComponent implements OnInit {
   _mute: boolean;
   _pause: boolean;
 
-  _cardImage: string = ;
+  _cardImage: string;
   _cardText: string;
 
   sound: Howl;
@@ -36,20 +36,19 @@ export class PlayComponent implements OnInit {
       src: en_gb_C.files,
       sprite: en_gb_C.spritelist
     });
+    console.log(en_gb_C.files);
     this.soundList = en_gb_C.loadScript(this.settingsService.verbose,
       this.settingsService.flair,
       this.settingsService.characters['percival'],
       this.settingsService.characters['oberon'],
       this.settingsService.characters['mordred'],
       this.settingsService.characters['morgana']);
-    // this.sound.play(new SoundElement('merlin', '', '')));
-    /*this.sound.mute(this._mute);
+    this.sound.mute(this._mute);
     this.sound.on('end', () => { this.playNext(); });
-    this.playNext();*/
+    this.playNext();
   }
 
   playNext() {
-    console.log(this.soundList);
     if (this.soundList.length > 0) {
       const element: SoundElement = this.soundList.shift();
       this._cardImage = element.image;
