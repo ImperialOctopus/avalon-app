@@ -2,10 +2,10 @@ import { Announcer } from '../announcer';
 
 export const en_gb_D: Announcer = new Announcer(
   [
-    '/assets/audio/en-gb-D/output.ogg',
-    '/assets/audio/en-gb-D/output.m4a',
-    '/assets/audio/en-gb-D/output.mp3',
-    '/assets/audio/en-gb-D/output.ac3'
+    'assets/audio/en-gb-D/output.ogg',
+    'assets/audio/en-gb-D/output.m4a',
+    'assets/audio/en-gb-D/output.mp3',
+    'assets/audio/en-gb-D/output.ac3'
   ],
   {
     silence: [
