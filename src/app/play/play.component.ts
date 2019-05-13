@@ -2,7 +2,7 @@ import { SoundElement } from '../sound-element';
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 import { en_gb_C } from '../announcer-voices/en-gb-C';
 import { en_gb_D } from '../announcer-voices/en-gb-D';
 import { Announcer } from '../announcer';
