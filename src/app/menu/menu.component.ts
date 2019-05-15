@@ -19,111 +19,56 @@ export class MenuComponent implements OnInit {
     9: 3,
     10: 4
   };
-  _characters: object = {
-    mordred: false,
-    oberon: false,
-    morgana: false
-  };
 
-  _playerNumber: number;
-  _servantNumber: number;
-  _minionNumber: number;
-  _mute: boolean;
+  minions: number;
+  servants: number;
 
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private settingsService: SettingsService
+    private settings: SettingsService
   ) { }
 
   ngOnInit() {
-    this.settingsService.loadSettings().then(() => {
-      this.loadSettings();
+    this.settings.initialise().then(() => {
       this.updateServants();
     });
-  }
-
-  loadSettings() {
-    this._playerNumber = this.settingsService.playerNumber;
-    this._mute = this.settingsService.mute;
-    this._characters = this.settingsService.characters;
-  }
-  saveSettings() {
-    this.settingsService.playerNumber = this._playerNumber;
-    this.settingsService.mute = this._mute;
-    this.settingsService.characters = this._characters;
-    this.settingsService.saveSettings();
   }
 
   play() {
     this.router.navigate(['/play']);
   }
 
-  toggleCharacter(char: string) {
-    // Genuinely disgusting: please fix
-    if (this._characters[char]) { // Disabling
-      this._characters[char] = false;
-    } else if (this._minionNumber > 0) { // Safe to enable
-      this._characters[char] = true;
-    } else { // Must disable a character
-      if (char === 'morgana') {
-        if (this._characters['oberon']) {
-          this._characters['oberon'] = false;
-          this._characters['morgana'] = true;
-        } else if (this._characters['mordred']) {
-          this._characters['mordred'] = false;
-          this._characters['morgana'] = true;
-        }
-      } else if (char === 'mordred') {
-        if (this._characters['oberon']) {
-          this._characters['oberon'] = false;
-          this._characters['mordred'] = true;
-        } else if (this._characters['morgana']) {
-          this._characters['morgana'] = false;
-          this._characters['mordred'] = true;
-        }
-      } else {
-        if (this._characters['mordred']) {
-          this._characters['mordred'] = false;
-          this._characters['oberon'] = true;
-        } else if (this._characters['morgana']) {
-          this._characters['morgana'] = false;
-          this._characters['oberon'] = true;
-        }
-      }
-    }
-    this.saveSettings();
+  toggleCharacter(char: Character) {
+    this.settings.characters[char] = !this.settings.characters[char];
+    this.limitEvil();
     this.updateServants();
   }
 
-  updateServants() {
-    this.autoDisableEvil();
-    this._minionNumber =
-      this.evil[this._playerNumber] -
-      this.getEvilNumber();
-    this._servantNumber =
-      (this._playerNumber - this.evil[this._playerNumber]) -
-      this.getGoodNumber();
+  limitEvil() {
+    while (this.evilCharacters() > this.evil[this.settings.playerNumber]) {
+      if (this.settings.characters[Character.Oberon]) {
+        this.settings.characters[Character.Oberon] = false;
+      } else if (this.settings.characters[Character.Mordred]) {
+        this.settings.characters[Character.Mordred] = false;
+      } else if (this.settings.characters[Character.Morgana]) {
+        this.settings.characters[Character.Morgana] = false;
+      }
+    }
   }
 
-  getEvilNumber(): number {
-    const evil = (~~this._characters['mordred'] + ~~this._characters['morgana'] + ~~this._characters['oberon'] + 1);
-    return evil;
+  evilCharacters(): number {
+    return Number(this.settings.characters[Character.Morgana]) +
+      Number(this.settings.characters[Character.Mordred]) +
+      Number(this.settings.characters[Character.Oberon]);
   }
-  getGoodNumber(): number {
-    const good = (~~this._characters['morgana'] + 1);
-    return good;
-  }
-  autoDisableEvil() {
-    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this._characters['oberon'] = false;
-    }
-    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this._characters['mordred'] = false;
-    }
-    if (this.evil[this._playerNumber] - this.getEvilNumber() < 0) {
-      this._characters['morgana'] = false;
-    }
+
+  updateServants() {
+    this.minions = this.evil[this.settings.playerNumber] - this.evilCharacters();
+    this.servants = this.settings.playerNumber
+      - this.evil[this.settings.playerNumber]
+      - Number(this.settings.characters[Character.Percival])
+      - 1;
   }
 
   openPlayerDialog() {
