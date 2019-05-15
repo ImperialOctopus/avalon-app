@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
 import { SettingsService } from '../settings.service';
 import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
+import { Character } from '../character';
 
 @Component({
   selector: 'app-menu',
@@ -67,7 +68,7 @@ export class MenuComponent implements OnInit {
     this.minions = this.evil[this.settings.playerNumber] - this.evilCharacters();
     this.servants = this.settings.playerNumber
       - this.evil[this.settings.playerNumber]
-      - Number(this.settings.characters[Character.Percival])
+      - Number(this.settings.characters[Character.Morgana])
       - 1;
   }
 
@@ -76,9 +77,7 @@ export class MenuComponent implements OnInit {
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      this.loadSettings();
       this.updateServants();
-      // Player menu closed
     });
   }
   openSettingsDialog() {
@@ -86,12 +85,11 @@ export class MenuComponent implements OnInit {
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      this.loadSettings();
-      // Settings menu closed
+      this.updateServants();
     });
   }
   muteButton() {
-    this._mute = !this._mute;
-    this.saveSettings();
+    this.settings.mute = !this.settings.mute;
+    this.settings.saveSettings();
   }
 }

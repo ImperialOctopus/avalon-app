@@ -15,13 +15,12 @@ import { ScriptService } from '../script.service';
 })
 export class PlayComponent implements OnInit {
 
-  _mute: boolean;
-  _pause: boolean;
-  _announcer: string;
-  _announcerObject: Announcer;
+  paused: boolean;
+  announcer: string;
+  announcerObject: Announcer;
 
-  _cardImage: string;
-  _cardText: string;
+  cardImage: string;
+  cardText: string;
 
   sound: Howl;
   soundList: Array<SoundElement>;
@@ -33,27 +32,22 @@ export class PlayComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.settingsService.loadSettings().then(() => {
-      this._mute = this.settingsService.mute;
-      this._pause = false;
-      this._announcer = this.settingsService.announcer;
-
-      if (this._announcer === 'en-gb-D') { // Synth Male
-        this._announcerObject = en_gb_D;
+    this.settings.initialise().then(() => {
+      if (this.settings.announcer === 'en-gb-D') { // Synth Male
+        this.announcerObject = en_gb_D;
       } else { // Synth Female default
-        this._announcerObject = en_gb_C;
+        this.announcerObject = en_gb_C;
       }
 
       this.sound = new Howl({
-        src: this._announcerObject.files,
-        sprite: this._announcerObject.spritelist
+        src: this.announcerObject.files,
+        sprite: this.announcerObject.spritelist
       });
-      this.soundList = this.scriptService.loadScript(this.settingsService.verbose,
-        this.settingsService.flair,
-        this.settingsService.characters['oberon'],
-        this.settingsService.characters['mordred'],
-        this.settingsService.characters['morgana']);
-      this.sound.mute(this._mute);
+      this.soundList = this.scriptService.loadScript(
+        this.settings.verbose,
+        this.settings.flair,
+        this.settings.characters);
+      this.sound.mute(this.settings.mute);
       this.sound.on('end', () => { this.playNext(); });
       this.playNext();
     });
@@ -62,8 +56,8 @@ export class PlayComponent implements OnInit {
   playNext() {
     if (this.soundList.length > 0) {
       const element: SoundElement = this.soundList.shift();
-      this._cardImage = element.image;
-      this._cardText = element.title;
+      this.cardImage = element.image;
+      this.cardText = element.title;
       this.sound.play(element.sound);
     } else {
       this.stop();
@@ -76,17 +70,16 @@ export class PlayComponent implements OnInit {
     this.router.navigate(['/']);
   }
   pause() {
-    this._pause = !this._pause;
-    if (this._pause) {
+    this.paused = !this.paused;
+    if (this.paused) {
       this.sound.pause();
     } else {
       this.sound.play();
     }
   }
   mute() {
-    this._mute = !this._mute;
-    this.settingsService.mute = this._mute;
-    this.settingsService.saveSettings();
-    this.sound.mute(this._mute);
+    this.settings.mute = !this.settings.mute;
+    this.sound.mute(this.settings.mute);
+    this.settings.saveSettings();
   }
 }

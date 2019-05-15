@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SoundElement } from './sound-element';
+import { Character } from './character';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class ScriptService {
 
   constructor() { }
 
-  loadScript(verbose: boolean, flair: boolean, oberon: boolean, mordred: boolean, morgana: boolean): Array<SoundElement> {
+  loadScript(verbose: boolean, flair: boolean, characters: object): Array<SoundElement> {
     const array: Array<SoundElement> = new Array<SoundElement>();
 
     array.push(new SoundElement('everyone', 'Everyone', 'assets/characters/loyal-servant.jpg'));
@@ -21,7 +22,7 @@ export class ScriptService {
     }
     array.push(new SoundElement('silence', '', 'assets/characters/loyal-servant.jpg'));
     array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', 'assets/characters/minion.jpg'));
-    if (oberon) {
+    if (characters[Character.Oberon]) {
       array.push(new SoundElement('except-oberon', 'Except Oberon', 'assets/characters/oberon.jpg'));
     }
     array.push(new SoundElement('open-your-eyes', 'Open your eyes', 'assets/characters/minion.jpg'));
@@ -37,7 +38,7 @@ export class ScriptService {
       array.push(new SoundElement('eyes-closed', 'Eyes closed', 'assets/characters/minion.jpg'));
     }
     array.push(new SoundElement('minions-of-mordr', 'Minions of Mordred', 'assets/characters/minion.jpg'));
-    if (mordred) {
+    if (characters[Character.Mordred]) {
       array.push(new SoundElement('except-mordred', 'Except Mordred', 'assets/characters/mordred.jpg'));
     }
     array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', 'assets/characters/minion.jpg'));
@@ -61,7 +62,7 @@ export class ScriptService {
       array.push(new SoundElement('thumbs-down', 'Thumbs down, eyes closed', 'assets/characters/merlin.jpg'));
       array.push(new SoundElement('eyes-closed', 'Thumbs down, eyes closed', 'assets/characters/merlin.jpg'));
     }
-    if (morgana) {
+    if (characters[Character.Morgana]) {
       array.push(new SoundElement('merlin-and-morga', 'Merlin and Morgana', 'assets/characters/morgana.jpg'));
       array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', 'assets/characters/morgana.jpg'));
       if (verbose) {
