@@ -6,6 +6,7 @@ import { Howl } from 'howler';
 import { en_gb_C } from '../announcer-voices/en-gb-C';
 import { en_gb_D } from '../announcer-voices/en-gb-D';
 import { Announcer } from '../announcer';
+import { ScriptService } from '../script.service';
 
 @Component({
   selector: 'app-play',
@@ -27,7 +28,8 @@ export class PlayComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private settingsService: SettingsService
+    private settings: SettingsService,
+    private scriptService: ScriptService
   ) { }
 
   ngOnInit() {
@@ -46,7 +48,7 @@ export class PlayComponent implements OnInit {
         src: this._announcerObject.files,
         sprite: this._announcerObject.spritelist
       });
-      this.soundList = this._announcerObject.loadScript(this.settingsService.verbose,
+      this.soundList = this.scriptService.loadScript(this.settingsService.verbose,
         this.settingsService.flair,
         this.settingsService.characters['oberon'],
         this.settingsService.characters['mordred'],
@@ -70,6 +72,7 @@ export class PlayComponent implements OnInit {
 
   stop() {
     this.sound.stop();
+    this.sound.unload();
     this.router.navigate(['/']);
   }
   pause() {

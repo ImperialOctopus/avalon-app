@@ -7,88 +7,56 @@ import { get, set } from 'idb-keyval';
 export class SettingsService {
   constructor() { }
 
-  private _playerNumber: number;
-  private _mute: boolean;
-  private _announcer: string;
-  private _verbose: boolean;
-  private _flair: boolean;
-  private _characters: object;
+  playerNumber: number;
+  mute: boolean;
+  announcer: string;
+  verbose: boolean;
+  flair: boolean;
+  characters: object;
 
-  get playerNumber(): number {
-    return this._playerNumber;
-  }
-  set playerNumber(n: number) {
-    this._playerNumber = n;
-  }
-  get mute(): boolean {
-    return this._mute;
-  }
-  set mute(b: boolean) {
-    this._mute = b;
-  }
-  get announcer(): string {
-    return this._announcer;
-  }
-  set announcer(s: string) {
-    this._announcer = s;
-  }
-  get verbose(): boolean {
-    return this._verbose;
-  }
-  set verbose(b: boolean) {
-    this._verbose = b;
-  }
-  get flair(): boolean {
-    return this._flair;
-  }
-  set flair(b: boolean) {
-    this._flair = b;
-  }
-  get characters() {
-    return this._characters;
-  }
-  set characters(o: object) {
-    this._characters = o;
-  }
+  async initialise(): Promise<void> {
+    await Promise.all([
+      this.playerNumber = await get('playerNumber'),
+      this.mute = await get('mute'),
+      this.announcer = await get('announcer'),
+      this.verbose = await get('verbose'),
+      this.flair = await get('flair'),
+      this.characters = await get('characters')
+    ]);
 
-  get data() {
-    return async () => {
-      await get('hello');
-    };
+    if (this.playerNumber === undefined) {
+      this.playerNumber = 5;
+    }
+    if (this.mute === undefined) {
+      this.mute = true;
+    }
+    if (this.announcer === undefined) {
+      this.announcer = 'en-gb-C';
+    }
+    if (this.verbose === undefined) {
+      this.verbose = true;
+    }
+    if (this.flair === undefined) {
+      this.flair = false;
+    }
+    if (this.characters === undefined) {
+      this.characters = {
+        Characters.Percival: false,
+        mordred: false,
+        oberon: false,
+        morgana: false
+      };
+    }
+    this.saveSettings();
   }
 
-  loadSettings(): Promise<void> {
+  saveSettings(): Promise<any> {
     return Promise.all([
-      get('playerNumber').then((d: number) => this.playerNumber = d),
-      get('mute').then((d: boolean) => this.mute = d),
-      get('announcer').then((d: string) => this.announcer = d),
-      get('verbose').then((d: boolean) => this.verbose = d),
-      get('flair').then((d: boolean) => this.flair = d),
-      get('characters').then((d: object) => this.characters = d)]).then(() => {
-        console.log(this.playerNumber);
-        console.log(this.playerNumber === undefined);
-        if (this.playerNumber === undefined) { this.playerNumber = 5; }
-        if (this.mute === undefined) { this.mute = true; }
-        if (this.announcer === undefined) { this.announcer = 'en-gb-C'; }
-        if (this.verbose === undefined) { this.verbose = true; }
-        if (this.flair === undefined) { this.flair = false; }
-        if (this.characters === undefined) {
-          this.characters = {
-            mordred: false,
-            oberon: false,
-            morgana: false
-          };
-        }
-        this.saveSettings();
-      });
-  }
-
-  saveSettings(): void {
-    set('playerNumber', this.playerNumber);
-    set('mute', this.mute);
-    set('announcer', this.announcer);
-    set('verbose', this.verbose);
-    set('flair', this.flair);
-    set('characters', this.characters);
+      set('playerNumber', this.playerNumber),
+      set('mute', this.mute),
+      set('announcer', this.announcer),
+      set('verbose', this.verbose),
+      set('flair', this.flair),
+      set('characters', this.characters)]);
   }
 }
