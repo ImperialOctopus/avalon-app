@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { get, set } from 'idb-keyval';
+import { Character } from './character';
 
 @Injectable({
   providedIn: 'root'
@@ -40,12 +41,11 @@ export class SettingsService {
       this.flair = false;
     }
     if (this.characters === undefined) {
-      this.characters = {
-        Characters.Percival: false,
-        mordred: false,
-        oberon: false,
-        morgana: false
-      };
+      this.characters = [];
+      this.characters[Character.Percival] = false;
+      this.characters[Character.Morgana] = false;
+      this.characters[Character.Mordred] = false;
+      this.characters[Character.Oberon] = false;
     }
     this.saveSettings();
   }
