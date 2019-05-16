@@ -43,10 +43,7 @@ export class PlayComponent implements OnInit {
         src: this.announcerObject.files,
         sprite: this.announcerObject.spritelist
       });
-      this.soundList = this.scriptService.loadScript(
-        this.settings.verbose,
-        this.settings.flair,
-        this.settings.characters);
+      this.soundList = this.scriptService.loadScript();
       this.sound.mute(this.settings.mute);
       this.sound.on('end', () => { this.playNext(); });
       this.playNext();

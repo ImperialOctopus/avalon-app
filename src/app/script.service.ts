@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { SoundElement } from './sound-element';
 import { Character } from './character';
+import { SettingsService } from './settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScriptService {
 
-  constructor() { }
+  constructor(private settings: SettingsService) { }
 
-  loadScript(verbose: boolean, flair: boolean, characters: object): Array<SoundElement> {
+  loadScript(): Array<SoundElement> {
+    const verbose = this.settings.verbose;
+    const flair = this.settings.flair;
+    const characters = this.settings.characters;
     const array: Array<SoundElement> = new Array<SoundElement>();
 
     array.push(new SoundElement('everyone', 'Everyone', 'assets/characters/loyal-servant.jpg'));
