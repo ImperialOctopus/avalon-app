@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { get, set } from 'idb-keyval';
+import { get, set, clear } from 'idb-keyval';
 import { Character } from './character';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class SettingsService {
 
   async initialise(): Promise<void> {
     await Promise.all([
-      this.playerNumber = await get('playerNumber'),
+      this.playerNumber = await get<number>('playerNumber'),
       this.mute = await get('mute'),
       this.announcer = await get('announcer'),
       this.verbose = await get('verbose'),
@@ -44,7 +44,7 @@ export class SettingsService {
     if (this.flair === undefined) {
       this.flair = false;
     }
-    if (this.characters === undefined) {
+    if (this.characters[Character.Morgana] === undefined) {
       this.characters = {
         [Character.Morgana]: false,
         [Character.Mordred]: false,

@@ -43,20 +43,16 @@ export class MenuComponent implements OnInit {
 
   toggleCharacter(char: Character) {
     this.settings.characters[char] = !this.settings.characters[char];
-    this.limitEvil();
-    this.updateServants();
-  }
-
-  limitEvil() {
     while (this.evilCharacters() > this.evil[this.settings.playerNumber]) {
-      if (this.settings.characters[Character.Oberon]) {
+      if (this.settings.characters[Character.Oberon] && char !== Character.Oberon) {
         this.settings.characters[Character.Oberon] = false;
-      } else if (this.settings.characters[Character.Mordred]) {
+      } else if (this.settings.characters[Character.Mordred] && char !== Character.Mordred) {
         this.settings.characters[Character.Mordred] = false;
-      } else if (this.settings.characters[Character.Morgana]) {
+      } else if (this.settings.characters[Character.Morgana] && char !== Character.Morgana) {
         this.settings.characters[Character.Morgana] = false;
       }
     }
+    this.updateServants();
   }
 
   evilCharacters(): number {
