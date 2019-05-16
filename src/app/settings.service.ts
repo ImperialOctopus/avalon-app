@@ -13,7 +13,11 @@ export class SettingsService {
   announcer: string;
   verbose: boolean;
   flair: boolean;
-  characters: object;
+  characters = {
+    [Character.Morgana]: false,
+    [Character.Mordred]: false,
+    [Character.Oberon]: false
+  };
 
   async initialise(): Promise<void> {
     await Promise.all([
@@ -41,11 +45,11 @@ export class SettingsService {
       this.flair = false;
     }
     if (this.characters === undefined) {
-      this.characters = [];
-      this.characters[Character.Percival] = false;
-      this.characters[Character.Morgana] = false;
-      this.characters[Character.Mordred] = false;
-      this.characters[Character.Oberon] = false;
+      this.characters = {
+        [Character.Morgana]: false,
+        [Character.Mordred]: false,
+        [Character.Oberon]: false
+      };
     }
     this.saveSettings();
   }

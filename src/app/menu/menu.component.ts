@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
     10: 4
   };
 
+  character = Character;
   minions: number;
   servants: number;
 
