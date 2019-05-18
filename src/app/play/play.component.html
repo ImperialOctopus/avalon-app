@@ -1,22 +1,19 @@
-<div class="app-container">
-  <div class="title-container">
-    <a mat-button (click)="mute()" class="mute-button">
-      <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'" />
-    </a>
-    <span>PLAY</span>
+<div class="container">
+  <a (click)="muteButton()" class="mute-button">
+    <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'" />
+  </a>
+  <div class="title">
+    <span>Play Page</span>
   </div>
-  <div class="centre-container">
-    <div class="center-card">
-      <img [src]="cardImage" />
-      <span>{{ cardText }}</span>
-    </div>
+  <div class="centre-card">
+    <img [src]="cardImage" />
+    <span>{{ cardText }}</span>
   </div>
-  <div class="footer-menu">
-    <a mat-button (click)="stop()" class="stop-button">
-      <img src="assets/buttons/home.png" />
-    </a>
-    <a mat-button (click)="pause()" class="pause-button">
-      <img [src]="paused ? 'assets/buttons/sound-play.png' : 'assets/buttons/sound-pause.png'" />
-    </a>
-  </div>
+
+  <a (click)="stop()" class="stop-button">
+    <img src="assets/buttons/home.png" />
+  </a>
+  <a (click)="pause()" class="pause-button">
+    <img [src]="paused ? 'assets/buttons/sound-play.png' : 'assets/buttons/sound-pause.png'" />
+  </a>
 </div>

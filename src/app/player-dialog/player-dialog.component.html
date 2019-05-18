@@ -1,17 +1,15 @@
-<div class="dialog-container">
-  <div class="arrow">
-    <a (click)="down()" mat-button>
-      <img src="assets/buttons/left-arrow.jpg" />
+<div class="dialog">
+  <div class="button">
+    <a (click)="down()">
+      <img src="assets/buttons/left-arrow.png" />
     </a>
   </div>
   <div class="number">
-    <a (click)="save()" mat-button>
-      <span>{{ _playerNumber }}</span>
-    </a>
+    <span>{{ settings.playerNumber }}</span>
   </div>
-  <div class="arrow">
-    <a (click)="up()" mat-button>
-      <img src="assets/buttons/right-arrow.jpg" />
+  <div class="button">
+    <a (click)="up()">
+      <img src="assets/buttons/right-arrow.png" />
     </a>
   </div>
 </div>
