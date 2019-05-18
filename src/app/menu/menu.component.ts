@@ -58,7 +58,7 @@ export class MenuComponent implements OnInit {
   evilCharacters(): number {
     return Number(this.settings.characters[Character.Morgana]) +
       Number(this.settings.characters[Character.Mordred]) +
-      Number(this.settings.characters[Character.Oberon]);
+      Number(this.settings.characters[Character.Oberon]) + 1;
   }
 
   updateServants() {
