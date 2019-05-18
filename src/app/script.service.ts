@@ -66,7 +66,7 @@ export class ScriptService {
       array.push(new SoundElement('thumbs-down', 'Thumbs down, eyes closed', 'assets/characters/merlin.png'));
       array.push(new SoundElement('eyes-closed', 'Thumbs down, eyes closed', 'assets/characters/merlin.png'));
     }
-    if (characters[Character.Morgana]) {
+    if (characters[Character.Morgana] && characters[Character.Percival]) {
       array.push(new SoundElement('merlin-and-morga', 'Merlin and Morgana', 'assets/characters/morgana.png'));
       array.push(new SoundElement('stick-up-your-th', 'Stick up your thumbs', 'assets/characters/morgana.png'));
       if (verbose) {

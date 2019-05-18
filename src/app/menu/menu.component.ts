@@ -65,7 +65,7 @@ export class MenuComponent implements OnInit {
     this.minions = this.evil[this.settings.playerNumber] - this.evilCharacters();
     this.servants = this.settings.playerNumber
       - this.evil[this.settings.playerNumber]
-      - Number(this.settings.characters[Character.Morgana])
+      - Number(this.settings.characters[Character.Percival])
       - 1;
   }
 

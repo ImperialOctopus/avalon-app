@@ -14,6 +14,7 @@ export class SettingsService {
   verbose: boolean;
   flair: boolean;
   characters = {
+    [Character.Percival]: false,
     [Character.Morgana]: false,
     [Character.Mordred]: false,
     [Character.Oberon]: false
@@ -44,8 +45,9 @@ export class SettingsService {
     if (this.flair === undefined) {
       this.flair = false;
     }
-    if (this.characters[Character.Morgana] === undefined) {
+    if (this.characters[Character.Percival] === undefined) {
       this.characters = {
+        [Character.Percival]: false,
         [Character.Morgana]: false,
         [Character.Mordred]: false,
         [Character.Oberon]: false
