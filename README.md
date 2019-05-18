@@ -28,3 +28,10 @@ ruby google-cloud.rb
 cd output-folder
 audiosprite -f howler -s 1 *.mp3
 ```
+
+## Credits
+
+Character images created using 0x72's pixel art character generator at <https://0x72.itch.io/pixeldudesmaker>.
+
+UI icons from tavoarts at <https://tavoarts.itch.io/basic-pixel-gui-pack>.
+

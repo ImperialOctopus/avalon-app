@@ -1,5 +1,4 @@
-$font-family: "Pacifico",
-cursive;
+$font-family: 'VT323', monospace;
 
 .app-container {
   background-color: white;
@@ -46,6 +45,10 @@ cursive;
     img {
       height: 100%;
       width: 100%;
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
   }
 }
@@ -81,6 +84,10 @@ cursive;
     min-height: 20px;
     height: 100%;
     width: auto;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   .name {
@@ -108,14 +115,16 @@ cursive;
     min-height: 20px;
     height: 40%;
     width: auto;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 }
 
 .footer-menu {
   height: 14vh;
 }
-
-// Fixed position buttons
 
 .player-button {
   min-width: 0;
@@ -128,6 +137,10 @@ cursive;
   .player-button-image {
     height: 100%;
     width: 100%;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   .player-button-text {
@@ -153,6 +166,10 @@ cursive;
   img {
     height: 100%;
     width: 100%;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 }
 
@@ -167,5 +184,9 @@ cursive;
   img {
     height: 100%;
     width: 100%;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 }
