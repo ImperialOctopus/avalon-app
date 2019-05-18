@@ -1,7 +1,7 @@
 <div class="app-container">
   <div class="title-container">
     <a mat-button (click)="mute()" class="mute-button">
-      <img [src]="settings.mute ? 'assets/buttons/sound-off.jpg' : 'assets/buttons/sound-on.jpg'" />
+      <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'" />
     </a>
     <span>PLAY</span>
   </div>
@@ -13,10 +13,10 @@
   </div>
   <div class="footer-menu">
     <a mat-button (click)="stop()" class="stop-button">
-      <img src="assets/buttons/close.jpg" />
+      <img src="assets/buttons/home.png" />
     </a>
     <a mat-button (click)="pause()" class="pause-button">
-      <img [src]="paused ? 'assets/buttons/sound-play.jpg' : 'assets/buttons/sound-pause.jpg'" />
+      <img [src]="paused ? 'assets/buttons/sound-play.png' : 'assets/buttons/sound-pause.png'" />
     </a>
   </div>
 </div>

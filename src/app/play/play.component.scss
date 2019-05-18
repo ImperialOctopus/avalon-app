@@ -1,5 +1,4 @@
-$font-family: "Pacifico",
-cursive;
+$font-family: 'VT323', monospace;
 
 .app-container {
   background-color: white;
@@ -47,6 +46,10 @@ cursive;
     img {
       height: 100%;
       width: 100%;
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
   }
 }
@@ -71,6 +74,10 @@ cursive;
       width: auto;
       margin: auto;
       margin-bottom: 20px;
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
 
     span {
@@ -97,6 +104,10 @@ cursive;
     img {
       height: 100%;
       width: 100%;
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
   }
 
@@ -111,6 +122,10 @@ cursive;
     img {
       height: 100%;
       width: 100%;
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
   }
 }
