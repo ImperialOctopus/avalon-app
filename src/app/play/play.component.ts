@@ -74,7 +74,7 @@ export class PlayComponent implements OnInit {
       this.sound.play();
     }
   }
-  mute() {
+  muteButton() {
     this.settings.mute = !this.settings.mute;
     this.sound.mute(this.settings.mute);
     this.settings.saveSettings();
