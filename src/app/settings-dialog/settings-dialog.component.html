@@ -1,19 +1,27 @@
-<div class="settings-container">
-  <div class="form-container">
-    <mat-form-field>
-      <mat-select [(ngModel)]="_announcer" placeholder="Announcer Voice">
-        <mat-option value="en-gb-C">Synth Female</mat-option>
-        <mat-option value="en-gb-D">Synth Male</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="form-container">
-    <mat-slide-toggle [(ngModel)]="_verbose">Verbose</mat-slide-toggle>
-  </div>
-  <div class="form-container">
-    <mat-slide-toggle [(ngModel)]="_flair">Unnecessary flair</mat-slide-toggle>
-  </div>
-  <div class="button-container">
-    <button (click)="save()" mat-raised-button>Save</button>
-  </div>
+<div class="dialog">
+  <a class="row" (click)="changeAnnouncer('en-gb-C')">
+    <img src="assets/characters/merlin.png">
+    <span>Announcer: Synth Male</span>
+    <img
+      [src]="settings.announcer == 'en-gb-C' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
+  </a>
+  <a class="row" (click)="changeAnnouncer('en-gb-D')">
+    <img src="assets/characters/merlin.png">
+    <span>Announcer: Synth Female</span>
+    <img
+      [src]="settings.announcer == 'en-gb-D' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
+  </a>
+  <a class="row" (click)="verbose()">
+    <img src="assets/characters/merlin.png">
+    <span>Verbose</span>
+    <img [src]="settings.verbose ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
+  </a>
+  <a class="row" (click)="flair()">
+    <img src="assets/characters/merlin.png">
+    <span>Unnecessary Flair</span>
+    <img [src]="settings.flair ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
+  </a>
+  <a class="close" (click)="close()">
+    <img src="assets/characters/merlin.png">
+  </a>
 </div>
