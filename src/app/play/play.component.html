@@ -3,11 +3,11 @@
     <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'">
   </a>
   <div class="title">
-    <span>Play Page</span>
+    <h1>Avalon Announcer</h1>
   </div>
   <div class="centre-card">
     <img [src]="cardImage">
-    <span>{{ cardText }}</span>
+    <p>{{ cardText }}</p>
   </div>
 
   <a (click)="stop()" class="stop-button">

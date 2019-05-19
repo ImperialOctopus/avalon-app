@@ -3,7 +3,7 @@
     <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'">
   </a>
   <div class="title">
-    <span>Avalon Announcer</span>
+    <h1>Avalon Announcer</h1>
   </div>
   <a (click)="openInfoDialog()" class="info-button">
     <img src="assets/buttons/info.png">
@@ -17,6 +17,7 @@
     <a class="character-row good">
       <img class="portrait" src="assets/characters/merlin.png">
       <span class="name">Merlin</span>
+      <span class="number">1</span>
     </a>
     <a class="character-row good" (click)="toggleCharacter(character.Percival)">
       <img class="portrait" src="assets/characters/percival.png">
@@ -32,6 +33,7 @@
     <a class="character-row evil">
       <img class="portrait" src="assets/characters/assassin.png">
       <span class="name">Assassin</span>
+      <span class="number">1</span>
     </a>
     <a class="character-row evil" (click)="toggleCharacter(character.Morgana)">
       <img class="portrait" src="assets/characters/morgana.png">

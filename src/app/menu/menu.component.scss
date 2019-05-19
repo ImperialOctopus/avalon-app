@@ -28,9 +28,10 @@ $font-family: 'VT323', monospace;
   justify-self: center;
   align-self: center;
 
-  span {
+  h1 {
     text-align: center;
-    font-size: 7vh;
+    font-weight: normal;
+    font-size: 4rem;
   }
 }
 
@@ -77,9 +78,11 @@ $font-family: 'VT323', monospace;
 }
 .character-row.evil {
   border-left: 8px #B62F31 solid;
+  border-right: 8px #B62F31 solid;
 }
 .character-row.good {
   border-left: 8px #447CCF solid;
+  border-right: 8px #447CCF solid;
 }
 
 .mute-button {
