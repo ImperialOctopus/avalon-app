@@ -18,7 +18,7 @@ $font-family: 'VT323', monospace;
   grid-template-columns: 100px auto 100px;
   grid-template-rows: 100px auto 100px;
   grid-template-areas:
-    "mute header ."
+    "mute header info"
     "main main main"
     "players start settings";
 }
@@ -83,6 +83,14 @@ $font-family: 'VT323', monospace;
 
 .mute-button {
   grid-area: mute;
+  padding: 10px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.info-button {
+  grid-area: info;
   padding: 10px;
   img {
     height: 100%;

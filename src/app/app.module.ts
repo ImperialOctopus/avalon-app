@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PlayerDialogComponent } from './player-dialog/player-dialog.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: MenuComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     MenuComponent,
     PlayComponent,
     PlayerDialogComponent,
-    SettingsDialogComponent
+    SettingsDialogComponent,
+    InfoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PlayerDialogComponent, SettingsDialogComponent]
+  entryComponents: [PlayerDialogComponent, SettingsDialogComponent, InfoDialogComponent]
 })
 export class AppModule { }
