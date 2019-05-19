@@ -6,19 +6,33 @@ import { Character } from './character';
   providedIn: 'root'
 })
 export class SettingsService {
-  constructor() { }
-
   playerNumber: number;
   mute: boolean;
   announcer: string;
   verbose: boolean;
   flair: boolean;
-  characters = {
-    [Character.Percival]: false,
-    [Character.Morgana]: false,
-    [Character.Mordred]: false,
-    [Character.Oberon]: false
+  characters: {
+    [Character.Percival]: boolean,
+    [Character.Morgana]: boolean,
+    [Character.Mordred]: boolean,
+    [Character.Oberon]: boolean
   };
+
+  constructor() {
+    this.playerNumber = 5;
+    this.mute = true;
+    this.announcer = 'en-gb-C';
+    this.verbose = false;
+    this.flair = false;
+    this.characters = {
+      [Character.Percival]: false,
+      [Character.Morgana]: false,
+      [Character.Mordred]: false,
+      [Character.Oberon]: false
+    };
+  }
+
+
 
   async initialise(): Promise<void> {
     await Promise.all([
@@ -27,8 +41,7 @@ export class SettingsService {
       this.announcer = await get('announcer'),
       this.verbose = await get('verbose'),
       this.flair = await get('flair'),
-      this.characters = await get('characters')
-    ]);
+      this.characters = await get('characters')]);
 
     if (this.playerNumber === undefined) {
       this.playerNumber = 5;
@@ -45,7 +58,7 @@ export class SettingsService {
     if (this.flair === undefined) {
       this.flair = false;
     }
-    if (this.characters[Character.Percival] === undefined) {
+    if (this.characters === undefined || this.characters[Character.Percival] === undefined) {
       this.characters = {
         [Character.Percival]: false,
         [Character.Morgana]: false,
@@ -53,6 +66,7 @@ export class SettingsService {
         [Character.Oberon]: false
       };
     }
+
     this.saveSettings();
   }
 

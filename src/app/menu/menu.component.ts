@@ -30,7 +30,10 @@ export class MenuComponent implements OnInit {
     private router: Router,
     private dialog: MatDialog,
     public settings: SettingsService
-  ) { }
+  ) {
+    this.minions = 0;
+    this.servants = 0;
+  }
 
   ngOnInit() {
     this.settings.initialise().then(() => {
