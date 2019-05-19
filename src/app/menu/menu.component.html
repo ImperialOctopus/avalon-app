@@ -1,10 +1,13 @@
 <div class="container">
   <a (click)="muteButton()" class="mute-button">
-    <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'" />
+    <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'">
   </a>
   <div class="title">
     <span>Avalon Announcer</span>
   </div>
+  <a (click)="openInfoDialog()" class="info-button">
+    <img src="assets/buttons/sound-off.png">
+  </a>
   <div class="character-list">
     <a class="character-row good">
       <img class="portrait" src="assets/characters/loyal-servant.png" />
