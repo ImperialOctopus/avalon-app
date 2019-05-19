@@ -1,16 +1,17 @@
 $font-family: 'VT323', monospace;
 
 .dialog {
+  min-width: 300px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
     ". . .";
 }
 
 .button {
-  height: 80%;
+  height: 100%;
   justify-self: center;
   align-self: center;
   img {
