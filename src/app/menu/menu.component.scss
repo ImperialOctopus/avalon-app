@@ -1,5 +1,11 @@
 $font-family: 'VT323', monospace;
 
+/*
+.strikethrough {
+  text-decoration: line-through;
+}
+*/
+
 .container {
   font-family: $font-family;
 
@@ -119,3 +125,4 @@ $font-family: 'VT323', monospace;
     height: 100%;
   }
 }
+
