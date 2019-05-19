@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private settings: SettingsService
+    public settings: SettingsService
   ) { }
 
   ngOnInit() {

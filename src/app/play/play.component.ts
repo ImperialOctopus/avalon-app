@@ -27,7 +27,7 @@ export class PlayComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private settings: SettingsService,
+    public settings: SettingsService,
     private scriptService: ScriptService
   ) { }
 

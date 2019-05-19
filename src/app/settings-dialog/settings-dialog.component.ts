@@ -11,7 +11,7 @@ import { SettingsService } from '../settings.service';
 export class SettingsDialogComponent {
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
-    private settings: SettingsService
+    public settings: SettingsService
   ) { }
 
   changeAnnouncer(a: string) {

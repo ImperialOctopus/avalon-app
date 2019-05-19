@@ -9,7 +9,7 @@ import { SettingsService } from '../settings.service';
 export class PlayerDialogComponent {
 
   constructor(
-    private settings: SettingsService
+    public settings: SettingsService
   ) { }
 
   down() {
