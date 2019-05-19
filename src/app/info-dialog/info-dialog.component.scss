@@ -9,6 +9,16 @@ $font-family: 'VT323', monospace;
 }
 .main {
   font-size: 1.5rem;
+  p {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: #447CCF;
+  }
+  a:hover {
+    color: #00519d;
+  }
 }
 .close {
   height: 100%;
