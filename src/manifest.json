@@ -2,11 +2,12 @@
   "name": "Avalon Announcer",
   "short_name": "Avalon",
   "theme_color": "#6495ED",
-  "background_color": "#E6E6FA",
+  "background_color": "#9ac5ff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "icons": [{
+  "icons": [
+    {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
