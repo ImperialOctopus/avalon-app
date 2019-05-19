@@ -35,3 +35,4 @@ Character images created using 0x72's pixel art character generator at <https://
 
 UI icons from tavoarts at <https://tavoarts.itch.io/basic-pixel-gui-pack>.
 
+Background from <https://opengameart.org/content/forest-background>.

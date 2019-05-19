@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PlayerDialogComponent } from '../player-dialog/player-dialog.component';
-import { SettingsService } from '../settings.service';
 import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
+import { InfoDialogComponent } from '../info-dialog/info-dialog.component';
+import { SettingsService } from '../settings.service';
 import { Character } from '../character';
 
 @Component({
@@ -69,6 +70,11 @@ export class MenuComponent implements OnInit {
       - 1;
   }
 
+  openInfoDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
+    const dialogRef = this.dialog.open(InfoDialogComponent, dialogConfig);
+  }
   openPlayerDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
@@ -81,9 +87,6 @@ export class MenuComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
     const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
-    dialogRef.afterClosed().subscribe(result => {
-      this.updateServants();
-    });
   }
   muteButton() {
     this.settings.mute = !this.settings.mute;

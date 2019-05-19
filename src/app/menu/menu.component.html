@@ -10,56 +10,56 @@
   </a>
   <div class="character-list">
     <a class="character-row good">
-      <img class="portrait" src="assets/characters/loyal-servant.png" />
+      <img class="portrait" src="assets/characters/loyal-servant.png">
       <span class="name">Loyal Servant</span>
       <span class="number">{{ servants }}</span>
     </a>
     <a class="character-row good">
-      <img class="portrait" src="assets/characters/merlin.png" />
+      <img class="portrait" src="assets/characters/merlin.png">
       <span class="name">Merlin</span>
     </a>
     <a class="character-row good" (click)="toggleCharacter(character.Percival)">
-      <img class="portrait" src="assets/characters/percival.png" />
+      <img class="portrait" src="assets/characters/percival.png">
       <span class="name" [ngClass]="{ strikethrough: !settings.characters[character.Percival] }">Percival</span>
       <img class="enabled"
-        [src]="settings.characters[character.Percival] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'" />
+        [src]="settings.characters[character.Percival] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
     </a>
     <a class="character-row evil">
-      <img class="portrait" src="assets/characters/minion.png" />
+      <img class="portrait" src="assets/characters/minion.png">
       <span class="name">Minion of Mordred</span>
       <span class="number">{{ minions }}</span>
     </a>
     <a class="character-row evil">
-      <img class="portrait" src="assets/characters/assassin.png" />
+      <img class="portrait" src="assets/characters/assassin.png">
       <span class="name">Assassin</span>
     </a>
     <a class="character-row evil" (click)="toggleCharacter(character.Morgana)">
-      <img class="portrait" src="assets/characters/morgana.png" />
+      <img class="portrait" src="assets/characters/morgana.png">
       <span class="name" [ngClass]="{ strikethrough: !settings.characters[character.Morgana] }">Morgana</span>
       <img class="enabled"
-        [src]="settings.characters[character.Morgana] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'" />
+        [src]="settings.characters[character.Morgana] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
     </a>
     <a class="character-row evil" (click)="toggleCharacter(character.Mordred)">
-      <img class="portrait" src="assets/characters/mordred.png" />
+      <img class="portrait" src="assets/characters/mordred.png">
       <span class="name" [ngClass]="{ strikethrough: !settings.characters[character.Mordred] }">Mordred</span>
       <img class="enabled"
-        [src]="settings.characters[character.Mordred] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'" />
+        [src]="settings.characters[character.Mordred] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
     </a>
     <a class="character-row evil" (click)="toggleCharacter(character.Oberon)">
-      <img class="portrait" src="assets/characters/oberon.png" />
+      <img class="portrait" src="assets/characters/oberon.png">
       <span class="name" [ngClass]="{ strikethrough: !settings.characters[character.Oberon] }">Oberon</span>
       <img class="enabled"
-        [src]="settings.characters[character.Oberon] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'" />
+        [src]="settings.characters[character.Oberon] ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
     </a>
   </div>
   <a (click)="openPlayerDialog()" class="player-button">
-    <img src="assets/buttons/player-dialog.png" />
+    <img src="assets/buttons/player-dialog.png">
     <span>{{ settings.playerNumber }}</span>
   </a>
   <a (click)="play()" class="play-button">
-    <img src="assets/buttons/start.png" />
+    <img src="assets/buttons/start.png">
   </a>
   <a (click)="openSettingsDialog()" class="settings-button">
-    <img src="assets/buttons/settings.png" />
+    <img src="assets/buttons/settings.png">
   </a>
 </div>
