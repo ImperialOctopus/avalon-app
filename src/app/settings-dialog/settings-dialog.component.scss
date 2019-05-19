@@ -1,16 +1,15 @@
 $font-family: 'VT323', monospace;
 
-.settings-container {
-  display: flex;
-  flex-direction: column;
-
-  .form-container {
-    margin: 15px;
-  }
-
-  .button-container {
-    margin: 15px;
-    display: flex;
-    justify-content: center;
-  }
+.dialog {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 60px) 40px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: auto;
+}
+.close {
+  justify-self: center;
 }

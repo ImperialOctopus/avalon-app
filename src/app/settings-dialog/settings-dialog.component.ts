@@ -1,6 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { FormControl } from '@angular/forms';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
 
@@ -9,27 +8,28 @@ import { SettingsService } from '../settings.service';
   templateUrl: './settings-dialog.component.html',
   styleUrls: ['./settings-dialog.component.scss']
 })
-export class SettingsDialogComponent implements OnInit {
-  _announcer: string;
-  _verbose: boolean;
-  _flair: boolean;
-
+export class SettingsDialogComponent {
   constructor(
     private dialogRef: MatDialogRef<SettingsDialogComponent>,
-    private settingsService: SettingsService
+    private settings: SettingsService
   ) { }
 
-  ngOnInit() {
-    this._announcer = this.settingsService.announcer;
-    this._verbose = this.settingsService.verbose;
-    this._flair = this.settingsService.flair;
+  changeAnnouncer(a: string) {
+    this.settings.announcer = a;
+    this.settings.saveSettings();
   }
 
-  save() {
-    this.settingsService.announcer = this._announcer;
-    this.settingsService.verbose = this._verbose;
-    this.settingsService.flair = this._flair;
-    this.settingsService.saveSettings();
+  verbose() {
+    this.settings.verbose = !this.settings.verbose;
+    this.settings.saveSettings();
+  }
+
+  flair() {
+    this.settings.flair = !this.settings.flair;
+    this.settings.saveSettings();
+  }
+
+  close() {
     this.dialogRef.close();
   }
 }
