@@ -11,6 +11,12 @@
     <img class="row-enabled"
       [src]="settings.announcer == 'en-gb-D' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
   </a>
+  <a class="row" (click)="changeAnnouncer('cathy')">
+    <img class="row-image" src="assets/settings/cathy-icon.png">
+    <span class="row-text">Announcer: Cathy</span>
+    <img class="row-enabled"
+      [src]="settings.announcer == 'cathy' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'">
+  </a>
   <a class="row" (click)="verbose()">
     <img class="row-image" src="assets/settings/question.png">
     <span class="row-text">Verbose</span>

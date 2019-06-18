@@ -3,10 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { Router } from '@angular/router';
 import { Howl } from 'howler';
-import { en_gb_C } from '../announcer-voices/en-gb-C';
-import { en_gb_D } from '../announcer-voices/en-gb-D';
 import { Announcer } from '../announcer';
 import { ScriptService } from '../script.service';
+
+import { en_gb_C } from '../announcer-voices/en-gb-C';
+import { en_gb_D } from '../announcer-voices/en-gb-D';
+import { cathy } from '../announcer-voices/cathy';
 
 @Component({
   selector: 'app-play',
@@ -33,10 +35,19 @@ export class PlayComponent implements OnInit {
 
   ngOnInit() {
     this.settings.initialise().then(() => {
-      if (this.settings.announcer === 'en-gb-D') { // Synth Male
-        this.announcerObject = en_gb_D;
-      } else { // Synth Female default
-        this.announcerObject = en_gb_C;
+      switch (this.settings.announcer) {
+        case 'en-gb-D': {
+          this.announcerObject = en_gb_D;
+          break;
+        }
+        case 'en-gb-C': {
+          this.announcerObject = en_gb_C;
+          break;
+        }
+        case 'cathy': {
+          this.announcerObject = cathy;
+          break;
+        }
       }
 
       this.sound = new Howl({
