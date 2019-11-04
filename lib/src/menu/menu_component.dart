@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
-import 'todo_list_service.dart';
-
 @Component(
   selector: 'todo-list',
   styleUrls: ['todo_list_component.css'],
@@ -17,15 +15,10 @@ import 'todo_list_service.dart';
     NgFor,
     NgIf,
   ],
-  providers: [ClassProvider(TodoListService)],
+  providers: [],
 )
-class TodoListComponent implements OnInit {
-  final TodoListService todoListService;
-
-  List<String> items = [];
-  String newTodo = '';
-
-  TodoListComponent(this.todoListService);
+class MenuComponent implements OnInit {
+  MenuComponent();
 
   @override
   Future<Null> ngOnInit() async {
