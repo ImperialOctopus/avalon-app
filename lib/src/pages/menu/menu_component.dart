@@ -13,19 +13,31 @@ import '../../settings_service.dart';
   styleUrls: ['menu_component.css'],
   templateUrl: 'menu_component.html',
   directives: [
+    AutoDismissDirective,
+    AutoFocusDirective,
+    MaterialIconComponent,
+    MaterialButtonComponent,
+    MaterialTooltipDirective,
+    MaterialDialogComponent,
+    ModalComponent,
     MaterialCheckboxComponent,
     MaterialFabComponent,
-    MaterialIconComponent,
     materialInputDirectives,
     NgFor,
     NgIf,
     NgClass,
     routerDirectives,
   ],
-  providers: [ClassProvider(SettingsService), ClassProvider(CharacterService)],
+  providers: [
+    ClassProvider(SettingsService),
+    ClassProvider(CharacterService),
+    overlayBindings,
+  ],
   exports: [Routes, Character, Setting],
 )
 class MenuComponent implements OnInit {
+  bool showAutoDismissDialog = false;
+
   final SettingsService _settings;
   final CharacterService _characters;
   MenuComponent(this._settings, this._characters);
@@ -42,7 +54,7 @@ class MenuComponent implements OnInit {
   CharacterService get characters => _characters;
   SettingsService get settings => _settings;
 
-  void openInfoDialog() {}
+  void openInfoDialog() => showAutoDismissDialog = true;
   void openPlayerDialog() {}
   void openSettingsDialog() {}
 

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
+import '../../settings_service.dart';
+
 @Component(
   selector: 'play_page',
   styleUrls: ['play_component.css'],
@@ -15,11 +17,15 @@ import 'package:angular_components/angular_components.dart';
     NgFor,
     NgIf,
   ],
-  providers: [],
+  providers: [ClassProvider(SettingsService)],
 )
 class PlayComponent implements OnInit {
-  PlayComponent();
+  final SettingsService _settings;
+  PlayComponent(this._settings);
 
   @override
-  Future<void> ngOnInit() async {}
+  Future<void> ngOnInit() async {
+    await _settings.loadSettings();
+    print(_settings.getSetting(Setting.characters));
+  }
 }

@@ -1,3 +1,6 @@
+@import "package:angular_components/css/material/material";
+@import "package:angular_components/material_dialog/mixins";
+
 $font-family: "VT323", monospace;
 
 .container {
@@ -129,5 +132,27 @@ $font-family: "VT323", monospace;
   padding: 10px;
   img {
     height: 100%;
+  }
+}
+
+.info-dialog {
+  @include material-dialog-fullscreen($mat-grid * 100, $mat-grid * 80);
+
+  &.fullscreen-mode {
+    @include material-dialog-header-padding($mat-grid $mat-grid * 2);
+
+    [header] {
+      align-items: center;
+      display: flex;
+
+      material-button {
+        color: $mat-white;
+        margin-right: $mat-grid * 2;
+      }
+
+      h1 {
+        margin: $mat-grid-type / 2 0 0;
+      }
+    }
   }
 }
