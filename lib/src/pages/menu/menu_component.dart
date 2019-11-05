@@ -19,10 +19,11 @@ import '../../routes.dart';
     materialInputDirectives,
     NgFor,
     NgIf,
+    NgClass,
     routerDirectives,
   ],
   providers: [ClassProvider(SettingsService), ClassProvider(CharacterService)],
-  exports: [Routes],
+  exports: [Routes, Character],
 )
 class MenuComponent implements OnInit {
   final SettingsService _settings;
@@ -35,7 +36,7 @@ class MenuComponent implements OnInit {
   }
 
   void toggleMute() {
-    _settings.toggleBoolSetting(Setting.mute)
+    _settings.toggleBoolSetting(Setting.mute);
   }
 
   /*

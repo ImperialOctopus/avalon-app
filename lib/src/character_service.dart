@@ -37,6 +37,9 @@ class CharacterService {
         1;
   }
 
+  int get minions => 3;
+  int get servants => 4;
+
   void toggleCharacter(Character character) {
     setCharacter(character, !getCharacter(character));
 
