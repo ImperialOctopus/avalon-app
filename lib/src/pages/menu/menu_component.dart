@@ -4,7 +4,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
 @Component(
-  selector: 'menu',
+  selector: 'menu_page',
   styleUrls: ['menu_component.css'],
   templateUrl: 'menu_component.html',
   directives: [
