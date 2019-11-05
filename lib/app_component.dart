@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 
-import 'src/todo_list/todo_list_component.dart';
+import 'src/menu/menu_component.dart';
 
 // AngularDart info: https://webdev.dartlang.org/angular
 // Components info: https://webdev.dartlang.org/components
@@ -9,8 +9,7 @@ import 'src/todo_list/todo_list_component.dart';
   selector: 'avalon-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [TodoListComponent],
+  directives: [MenuComponent],
+  providers: [ClassProvider(MenuComponent)],
 )
-class AppComponent {
-  // Nothing here yet. All logic is in TodoListComponent.
-}
+class AppComponent {}
