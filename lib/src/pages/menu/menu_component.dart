@@ -2,7 +2,10 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
+import 'package:angular_router/angular_router.dart';
 import 'package:avalon_app/src/settings_service.dart';
+
+import '../../routes.dart';
 
 @Component(
   selector: 'menu_page',
@@ -15,8 +18,10 @@ import 'package:avalon_app/src/settings_service.dart';
     materialInputDirectives,
     NgFor,
     NgIf,
+    routerDirectives,
   ],
   providers: [ClassProvider(SettingsService)],
+  exports: [Routes],
 )
 class MenuComponent implements OnInit {
   static const Map<int, int> evilProportion = {
@@ -28,14 +33,40 @@ class MenuComponent implements OnInit {
     10: 4,
   };
 
-  int minions = 0;
-  int servants = 0;
-
   final SettingsService _settingsService;
   MenuComponent(this._settingsService);
 
   @override
   Future<void> ngOnInit() async {
-    _settingsService.loadSettings();
+    await _settingsService.loadSettings();
+  }
+
+  void toggleCharacter(String character) {
+    Characters
+    switch (character) {
+      case "percival":
+        
+        break;
+      case "morgana":
+        
+        break;
+      case "mordred":
+        
+        break;
+      case "oberon":
+        
+        break;
+      default:
+    }
+    this.settings.characters[char] = !this.settings.characters[char];
+    while (this.evilCharacters() > this.evil[this.settings.playerNumber]) {
+      if (this.settings.characters[Character.Oberon] && char !== Character.Oberon) {
+        this.settings.characters[Character.Oberon] = false;
+      } else if (this.settings.characters[Character.Mordred] && char !== Character.Mordred) {
+        this.settings.characters[Character.Mordred] = false;
+      } else if (this.settings.characters[Character.Morgana] && char !== Character.Morgana) {
+        this.settings.characters[Character.Morgana] = false;
+      }
+    }
   }
 }

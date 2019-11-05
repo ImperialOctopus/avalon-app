@@ -6,6 +6,9 @@ enum Setting {
   mute,
   verbose,
   flair,
+  characters,
+}
+enum Character {
   percival,
   morgana,
   mordred,
@@ -19,10 +22,12 @@ class SettingsService {
     Setting.mute: true,
     Setting.verbose: false,
     Setting.flair: false,
-    Setting.percival: false,
-    Setting.morgana: false,
-    Setting.mordred: false,
-    Setting.oberon: false,
+    Setting.characters: {
+      0: false,
+      1: false,
+      2: false,
+      3: false,
+    }
   };
   Map<Setting, dynamic> _settings = Map<Setting, dynamic>();
   Box _box;
@@ -45,5 +50,14 @@ class SettingsService {
   void setSetting(Setting setting, dynamic value) {
     _settings[setting] = value;
     _box.put(setting.index, value);
+  }
+
+  bool getCharacter(Character character) {
+    return _settings[Setting.characters][character.index];
+  }
+
+  void setCharacter(Character character, bool value) {
+    _settings[Setting.characters][character.index] = value;
+    _box.put(Setting.characters.index, _settings[Setting.characters]);
   }
 }
