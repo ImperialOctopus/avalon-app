@@ -1,7 +1,7 @@
 import 'package:angular_router/angular_router.dart';
 
 import 'pages/menu/menu_component.template.dart' as menu_template;
-import 'pages/play/play_component_template.dart' as play_template;
+import 'pages/play/play_component.template.dart' as play_template;
 
 class Routes {
   static final menu_page = RouteDefinition(
