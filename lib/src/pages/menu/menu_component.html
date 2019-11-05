@@ -131,3 +131,14 @@
     <img src="assets/buttons/settings.png" />
   </a>
 </div>
+
+<modal [(visible)]="showAutoDismissDialog">
+  <material-dialog
+    info
+    class="info-dialog"
+    [autoDismissable]="showAutoDismissDialog"
+    (dismiss)="showAutoDismissDialog = false"
+  >
+    <info-dialog></info-dialog>
+  </material-dialog>
+</modal>

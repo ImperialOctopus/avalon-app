@@ -8,7 +8,7 @@ enum Character {
 }
 
 class CharacterService {
-  static const Map<int, int> evilProportion = {
+  static const Map<int, int> _evilProportion = {
     5: 2,
     6: 2,
     7: 3,
@@ -25,26 +25,16 @@ class CharacterService {
   }
 
   void setCharacter(Character character, bool value) {
-    var newMap = _settings.getSetting(Setting.characters);
+    var newMap = Map.from(_settings.getSetting(Setting.characters));
     newMap[character.index] = value;
     _settings.setSetting(Setting.characters, newMap);
   }
 
-  int get evilCharacters {
-    return (getCharacter(Character.morgana) ? 1 : 0) +
-        (getCharacter(Character.mordred) ? 1 : 0) +
-        (getCharacter(Character.oberon) ? 1 : 0) +
-        1;
-  }
-
-  int get minions => 3;
-  int get servants => 4;
-
   void toggleCharacter(Character character) {
     setCharacter(character, !getCharacter(character));
 
-    while (evilCharacters >
-        evilProportion[_settings.getSetting(Setting.playerNumber)]) {
+    while (_specialEvil >
+        _evilProportion[_settings.getSetting(Setting.playerNumber)]) {
       if (getCharacter(Character.oberon) && character != Character.oberon) {
         setCharacter(Character.oberon, false);
       } else if (getCharacter(Character.mordred) &&
@@ -56,4 +46,23 @@ class CharacterService {
       }
     }
   }
+
+  int get _playerNumber => _settings.getSetting(Setting.playerNumber);
+
+  int get _totalEvil => _evilProportion[_playerNumber];
+  int get _totalGood => _playerNumber - _totalEvil;
+
+  int get _specialEvil {
+    return (getCharacter(Character.morgana) ? 1 : 0) +
+        (getCharacter(Character.mordred) ? 1 : 0) +
+        (getCharacter(Character.oberon) ? 1 : 0) +
+        1;
+  }
+
+  int get _specialGood {
+    return (getCharacter(Character.percival) ? 1 : 0) + 1;
+  }
+
+  int get minions => _totalEvil - _specialEvil;
+  int get servants => _totalGood - _specialGood;
 }

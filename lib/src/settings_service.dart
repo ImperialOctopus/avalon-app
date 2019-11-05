@@ -23,7 +23,7 @@ class SettingsService {
       3: false,
     },
   };
-  Map<Setting, dynamic> _settings = Map<Setting, dynamic>();
+  Map<Setting, dynamic> _settings = Map.from(defaultSettings);
   Box _box;
 
   SettingsService();
