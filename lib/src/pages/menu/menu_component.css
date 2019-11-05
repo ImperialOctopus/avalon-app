@@ -1,0 +1,133 @@
+$font-family: "VT323", monospace;
+
+.container {
+  font-family: $font-family;
+
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 768px;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    "mute header info"
+    "main main main"
+    "players start settings";
+}
+
+.title {
+  grid-area: header;
+  justify-self: center;
+  align-self: center;
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 4rem;
+  }
+}
+
+.character-list {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.character-row {
+  display: grid;
+
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: auto;
+  grid-template-areas: "left main right";
+
+  .portrait {
+    grid-area: left;
+    height: 90%;
+    align-self: center;
+    justify-self: center;
+  }
+  .name {
+    grid-area: main;
+    align-self: center;
+    font-size: 30px;
+  }
+
+  .number {
+    grid-area: right;
+    align-self: center;
+    justify-self: center;
+    font-size: 50px;
+  }
+
+  .enabled {
+    grid-area: right;
+    align-self: center;
+    justify-self: center;
+    height: 60%;
+  }
+}
+.character-row.evil {
+  border-left: 8px #b62f31 solid;
+  border-right: 8px #b62f31 solid;
+}
+.character-row.good {
+  border-left: 8px #447ccf solid;
+  border-right: 8px #447ccf solid;
+}
+
+.mute-button {
+  grid-area: mute;
+  padding: 10px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.info-button {
+  grid-area: info;
+  padding: 10px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.player-button {
+  grid-area: players;
+  padding: 10px;
+  display: grid;
+  grid-template:
+    [row1-start] "main" auto [row1-end]
+    / auto;
+  img {
+    grid-area: main;
+    height: 100%;
+  }
+  span {
+    grid-area: main;
+    justify-self: center;
+    align-self: center;
+    font-size: 8vh;
+  }
+}
+.play-button {
+  grid-area: start;
+  justify-self: center;
+  align-self: center;
+  height: 80%;
+  img {
+    height: 100%;
+  }
+}
+
+.settings-button {
+  grid-area: settings;
+  justify-self: center;
+  padding: 10px;
+  img {
+    height: 100%;
+  }
+}
