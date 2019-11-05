@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
+import 'package:avalon_app/src/settings_service.dart';
 
 @Component(
   selector: 'menu_page',
@@ -15,7 +16,7 @@ import 'package:angular_components/angular_components.dart';
     NgFor,
     NgIf,
   ],
-  providers: [],
+  providers: [ClassProvider(SettingsService)],
 )
 class MenuComponent implements OnInit {
   static const Map<int, int> evilProportion = {
@@ -30,9 +31,11 @@ class MenuComponent implements OnInit {
   int minions = 0;
   int servants = 0;
 
+  final SettingsService _settingsService;
+  MenuComponent(this._settingsService);
+
   @override
   Future<void> ngOnInit() async {
-    // TODO Get settings
-    // TODO Update servant and minion numbers (?)
+    _settingsService.loadSettings();
   }
 }
