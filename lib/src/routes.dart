@@ -14,6 +14,10 @@ class Routes {
   );
 
   static final all = <RouteDefinition>[
+    RouteDefinition.redirect(
+      path: '',
+      redirectTo: menu_page.toUrl(),
+    ),
     menu_page,
     play_page,
   ];
