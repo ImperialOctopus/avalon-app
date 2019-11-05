@@ -18,7 +18,17 @@ import 'package:angular_components/angular_components.dart';
   providers: [],
 )
 class MenuComponent implements OnInit {
-  MenuComponent();
+  static const Map<int, int> evilProportion = {
+    5: 2,
+    6: 2,
+    7: 3,
+    8: 3,
+    9: 3,
+    10: 4,
+  };
+
+  int minions;
+  int servants;
 
   @override
   Future<void> ngOnInit() async {}
