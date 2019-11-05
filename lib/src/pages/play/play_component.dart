@@ -4,9 +4,9 @@ import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
 @Component(
-  selector: 'todo-list',
-  styleUrls: ['todo_list_component.css'],
-  templateUrl: 'todo_list_component.html',
+  selector: 'play_page',
+  styleUrls: ['play_component.css'],
+  templateUrl: 'play_component.html',
   directives: [
     MaterialCheckboxComponent,
     MaterialFabComponent,
@@ -17,8 +17,8 @@ import 'package:angular_components/angular_components.dart';
   ],
   providers: [],
 )
-class MenuComponent implements OnInit {
-  MenuComponent();
+class PlayComponent implements OnInit {
+  PlayComponent();
 
   @override
   Future<void> ngOnInit() async {}
