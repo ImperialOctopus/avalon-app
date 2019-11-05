@@ -21,14 +21,5 @@ class MenuComponent implements OnInit {
   MenuComponent();
 
   @override
-  Future<void> ngOnInit() async {
-    items = await todoListService.getTodoList();
-  }
-
-  void add() {
-    items.add(newTodo);
-    newTodo = '';
-  }
-
-  String remove(int index) => items.removeAt(index);
+  Future<void> ngOnInit() async {}
 }
