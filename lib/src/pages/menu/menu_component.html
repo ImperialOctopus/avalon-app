@@ -2,7 +2,7 @@
   <a (click)="muteButton()" class="mute-button">
     <img
       [src]="
-        settings.mute
+        _settings.getSetting(Setting.mute)
           ? 'assets/buttons/sound-off.png'
           : 'assets/buttons/sound-on.png'
       "
@@ -18,24 +18,29 @@
     <a class="character-row good">
       <img class="portrait" src="assets/characters/loyal-servant.png" />
       <span class="name">Loyal Servant</span>
-      <span class="number">{{ servants }}</span>
+      <span class="number">{{ _characters.servants }}</span>
     </a>
     <a class="character-row good">
       <img class="portrait" src="assets/characters/merlin.png" />
       <span class="name">Merlin</span>
       <span class="number">1</span>
     </a>
-    <a class="character-row good" (click)="toggleCharacter(character.Percival)">
+    <a
+      class="character-row good"
+      (click)="_characters.toggleCharacter(Character.percival)"
+    >
       <img class="portrait" src="assets/characters/percival.png" />
       <span
         class="name"
-        [ngClass]="{ strikethrough: !settings.characters[character.Percival] }"
+        [ngClass]="{
+          strikethrough: !_characters.getCharacter(Character.percival)
+        }"
         >Percival</span
       >
       <img
         class="enabled"
         [src]="
-          settings.characters[character.Percival]
+          _characters.getCharacter(Character.percival)
             ? 'assets/buttons/character-on.png'
             : 'assets/buttons/character-off.png'
         "
@@ -44,56 +49,71 @@
     <a class="character-row evil">
       <img class="portrait" src="assets/characters/minion.png" />
       <span class="name">Minion of Mordred</span>
-      <span class="number">{{ minions }}</span>
+      <span class="number">{{ _characters.minions }}</span>
     </a>
     <a class="character-row evil">
       <img class="portrait" src="assets/characters/assassin.png" />
       <span class="name">Assassin</span>
       <span class="number">1</span>
     </a>
-    <a class="character-row evil" (click)="toggleCharacter(character.Morgana)">
+    <a
+      class="character-row evil"
+      (click)="_characters.toggleCharacter(Character.morgana)"
+    >
       <img class="portrait" src="assets/characters/morgana.png" />
       <span
         class="name"
-        [ngClass]="{ strikethrough: !settings.characters[character.Morgana] }"
+        [ngClass]="{
+          strikethrough: !_characters.getCharacter(Character.morgana)
+        }"
         >Morgana</span
       >
       <img
         class="enabled"
         [src]="
-          settings.characters[character.Morgana]
+          _characters.getCharacter(Character.morgana)
             ? 'assets/buttons/character-on.png'
             : 'assets/buttons/character-off.png'
         "
       />
     </a>
-    <a class="character-row evil" (click)="toggleCharacter(character.Mordred)">
+    <a
+      class="character-row evil"
+      (click)="_characters.toggleCharacter(Character.mordred)"
+    >
       <img class="portrait" src="assets/characters/mordred.png" />
       <span
         class="name"
-        [ngClass]="{ strikethrough: !settings.characters[character.Mordred] }"
+        [ngClass]="{
+          strikethrough: !_characters.getCharacter(Character.mordred)
+        }"
         >Mordred</span
       >
       <img
         class="enabled"
         [src]="
-          settings.characters[character.Mordred]
+          _characters.getCharacter(Character.mordred)
             ? 'assets/buttons/character-on.png'
             : 'assets/buttons/character-off.png'
         "
       />
     </a>
-    <a class="character-row evil" (click)="toggleCharacter(character.Oberon)">
+    <a
+      class="character-row evil"
+      (click)="_characters.toggleCharacter(Character.oberon)"
+    >
       <img class="portrait" src="assets/characters/oberon.png" />
       <span
         class="name"
-        [ngClass]="{ strikethrough: !settings.characters[character.Oberon] }"
+        [ngClass]="{
+          strikethrough: !_characters.getCharacter(Character.oberon)
+        }"
         >Oberon</span
       >
       <img
         class="enabled"
         [src]="
-          settings.characters[character.Oberon]
+          _characters.getCharacter(Character.oberon)
             ? 'assets/buttons/character-on.png'
             : 'assets/buttons/character-off.png'
         "
@@ -102,7 +122,7 @@
   </div>
   <a (click)="openPlayerDialog()" class="player-button">
     <img src="assets/buttons/player-dialog.png" />
-    <span>{{ settings?.playerNumber }}</span>
+    <span>{{ _settings.getSetting(Setting.playerNumber) }}</span>
   </a>
   <a [routerLink]="Routes.play_page.toUrl()" class="play-button">
     <img src="assets/buttons/start.png" />
