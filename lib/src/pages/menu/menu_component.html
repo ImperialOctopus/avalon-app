@@ -1,8 +1,8 @@
 <div class="container">
-  <a (click)="muteButton()" class="mute-button">
+  <a (click)="toggleMute()" class="mute-button">
     <img
       [src]="
-        _settings.getSetting(Setting.mute)
+        settings.getSetting(Setting.mute)
           ? 'assets/buttons/sound-off.png'
           : 'assets/buttons/sound-on.png'
       "

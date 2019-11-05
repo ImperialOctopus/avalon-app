@@ -23,7 +23,7 @@ import '../../settings_service.dart';
     routerDirectives,
   ],
   providers: [ClassProvider(SettingsService), ClassProvider(CharacterService)],
-  exports: [Routes, Character],
+  exports: [Routes, Character, Setting],
 )
 class MenuComponent implements OnInit {
   final SettingsService _settings;
@@ -41,6 +41,10 @@ class MenuComponent implements OnInit {
 
   CharacterService get characters => _characters;
   SettingsService get settings => _settings;
+
+  void openInfoDialog() {}
+  void openPlayerDialog() {}
+  void openSettingsDialog() {}
 
   /*
   openInfoDialog() {
