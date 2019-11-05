@@ -4,9 +4,9 @@ import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
 @Component(
-  selector: 'todo-list',
-  styleUrls: ['todo_list_component.css'],
-  templateUrl: 'todo_list_component.html',
+  selector: 'menu',
+  styleUrls: ['menu_component.css'],
+  templateUrl: 'menu_component.html',
   directives: [
     MaterialCheckboxComponent,
     MaterialFabComponent,
