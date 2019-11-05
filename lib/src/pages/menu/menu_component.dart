@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:avalon_app/src/character_service.dart';
-import 'package:avalon_app/src/settings_service.dart';
 
+import '../../character_service.dart';
 import '../../routes.dart';
+import '../../settings_service.dart';
 
 @Component(
   selector: 'menu_page',
@@ -38,6 +38,9 @@ class MenuComponent implements OnInit {
   void toggleMute() {
     _settings.toggleBoolSetting(Setting.mute);
   }
+
+  CharacterService get characters => _characters;
+  SettingsService get settings => _settings;
 
   /*
   openInfoDialog() {
