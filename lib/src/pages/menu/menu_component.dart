@@ -27,9 +27,12 @@ class MenuComponent implements OnInit {
     10: 4,
   };
 
-  int minions;
-  int servants;
+  int minions = 0;
+  int servants = 0;
 
   @override
-  Future<void> ngOnInit() async {}
+  Future<void> ngOnInit() async {
+    // TODO Get settings
+    // TODO Update servant and minion numbers (?)
+  }
 }
