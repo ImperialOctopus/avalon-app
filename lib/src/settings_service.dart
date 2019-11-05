@@ -45,4 +45,8 @@ class SettingsService {
     _settings[setting] = value;
     _box.put(setting.index, value);
   }
+
+  void toggleBoolSetting(Setting setting) {
+    setSetting(setting, !getSetting(setting));
+  }
 }

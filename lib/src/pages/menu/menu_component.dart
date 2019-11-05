@@ -34,5 +34,28 @@ class MenuComponent implements OnInit {
     await _settings.loadSettings();
   }
 
-  
+  void toggleMute() {
+    _settings.toggleBoolSetting(Setting.mute)
+  }
+
+  /*
+  openInfoDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
+    const dialogRef = this.dialog.open(InfoDialogComponent, dialogConfig);
+  }
+  openPlayerDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
+    const dialogRef = this.dialog.open(PlayerDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      this.updateServants();
+    });
+  }
+  openSettingsDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
+    const dialogRef = this.dialog.open(SettingsDialogComponent, dialogConfig);
+  }
+  */
 }
