@@ -8,12 +8,6 @@ enum Setting {
   flair,
   characters,
 }
-enum Character {
-  percival,
-  morgana,
-  mordred,
-  oberon,
-}
 
 class SettingsService {
   static const defaultSettings = {
@@ -27,7 +21,7 @@ class SettingsService {
       1: false,
       2: false,
       3: false,
-    }
+    },
   };
   Map<Setting, dynamic> _settings = Map<Setting, dynamic>();
   Box _box;
@@ -50,14 +44,5 @@ class SettingsService {
   void setSetting(Setting setting, dynamic value) {
     _settings[setting] = value;
     _box.put(setting.index, value);
-  }
-
-  bool getCharacter(Character character) {
-    return _settings[Setting.characters][character.index];
-  }
-
-  void setCharacter(Character character, bool value) {
-    _settings[Setting.characters][character.index] = value;
-    _box.put(Setting.characters.index, _settings[Setting.characters]);
   }
 }
