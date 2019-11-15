@@ -55,12 +55,16 @@ class MenuComponent implements OnInit {
     await _settings.loadSettings();
   }
 
+  CharacterService get characters => _characters;
+  SettingsService get settings => _settings;
+
   void toggleMute() {
     _settings.toggleBoolSetting(Setting.mute);
   }
 
-  CharacterService get characters => _characters;
-  SettingsService get settings => _settings;
+  void toggleCharacter(Character character) {
+    _characters.toggleCharacter(character);
+  }
 
   void openInfoDialog() => infoDialogVisible = true;
   void openPlayerDialog() => playerDialogVisible = true;

@@ -11,6 +11,7 @@ import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_dialog/material_dialog.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_tooltip/material_tooltip.dart';
+import 'package:avalon_app/src/character_service.dart';
 
 import '../../settings_service.dart';
 
@@ -31,11 +32,26 @@ import '../../settings_service.dart';
   ],
   providers: [
     overlayBindings,
-    ClassProvider(SettingsService),
   ],
   exports: [Setting],
 )
 class PlayerDialogComponent {
-  void down() {}
-  void up() {}
+  final SettingsService _settings;
+  final CharacterService _characters;
+  PlayerDialogComponent(this._settings, this._characters);
+
+  int get playerNumber => _settings.getSetting(Setting.playerNumber);
+
+  void down() {
+    if (playerNumber > 5) {
+      _settings.setSetting(Setting.playerNumber, playerNumber - 1);
+      _characters.autoDisableCharacters();
+    }
+  }
+
+  void up() {
+    if (playerNumber < 10) {
+      _settings.setSetting(Setting.playerNumber, playerNumber + 1);
+    }
+  }
 }
