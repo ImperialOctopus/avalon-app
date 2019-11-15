@@ -1,1 +1,15 @@
-<p>Player dialog.</p>
+<div class="container">
+  <div class="button">
+    <a (click)="down()">
+      <img src="assets/buttons/left-arrow.png" />
+    </a>
+  </div>
+  <div class="number">
+    <span>{{ settings.getSetting(Setting.playerNumber) }}</span>
+  </div>
+  <div class="button">
+    <a (click)="up()">
+      <img src="assets/buttons/right-arrow.png" />
+    </a>
+  </div>
+</div>

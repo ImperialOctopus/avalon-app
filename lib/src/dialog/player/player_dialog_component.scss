@@ -1,0 +1,23 @@
+.container {
+  min-width: 300px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  .number {
+    justify-self: center;
+    align-self: center;
+    span {
+      font-size: 70px;
+    }
+  }
+  .button {
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    img {
+      height: 100%;
+    }
+  }
+}
