@@ -32,7 +32,10 @@ class CharacterService {
 
   void toggleCharacter(Character character) {
     setCharacter(character, !getCharacter(character));
+    autoDisableCharacters(character: character);
+  }
 
+  void autoDisableCharacters({Character character}) {
     while (_specialEvil >
         _evilProportion[_settings.getSetting(Setting.playerNumber)]) {
       if (getCharacter(Character.oberon) && character != Character.oberon) {
