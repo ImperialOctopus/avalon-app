@@ -14,7 +14,8 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
 
 @Component(
   selector: 'info-dialog',
-  providers: [overlayBindings],
+  templateUrl: 'info_dialog_component.html',
+  styleUrls: ['info_dialog_component.css'],
   directives: [
     AutoDismissDirective,
     AutoFocusDirective,
@@ -26,7 +27,6 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
     NgFor,
     NgIf
   ],
-  templateUrl: 'info_dialog_component.html',
-  styleUrls: ['info_dialog_component.css'],
+  providers: [overlayBindings],
 )
 class InfoDialogComponent {}
