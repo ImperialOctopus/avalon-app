@@ -13,7 +13,7 @@ import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_tooltip/material_tooltip.dart';
 
 @Component(
-  selector: 'info-dialog',
+  selector: 'player-dialog',
   providers: [overlayBindings],
   directives: [
     AutoDismissDirective,
@@ -26,7 +26,7 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
     NgFor,
     NgIf
   ],
-  templateUrl: 'info_dialog_component.html',
-  styleUrls: ['info_dialog_component.css'],
+  templateUrl: 'player_dialog_component.html',
+  styleUrls: ['player_dialog_component.css'],
 )
-class InfoDialogComponent {}
+class PlayerDialogComponent {}
