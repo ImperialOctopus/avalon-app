@@ -12,9 +12,12 @@ import 'package:angular_components/material_dialog/material_dialog.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_tooltip/material_tooltip.dart';
 
+import '../../settings_service.dart';
+
 @Component(
   selector: 'player-dialog',
-  providers: [overlayBindings],
+  templateUrl: 'player_dialog_component.html',
+  styleUrls: ['player_dialog_component.css'],
   directives: [
     AutoDismissDirective,
     AutoFocusDirective,
@@ -26,7 +29,13 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
     NgFor,
     NgIf
   ],
-  templateUrl: 'player_dialog_component.html',
-  styleUrls: ['player_dialog_component.css'],
+  providers: [
+    overlayBindings,
+    ClassProvider(SettingsService),
+  ],
+  exports: [Setting],
 )
-class PlayerDialogComponent {}
+class PlayerDialogComponent {
+  void down() {}
+  void up() {}
+}
