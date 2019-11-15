@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  p {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: #447ccf;
+  }
+  a:hover {
+    color: #00519d;
+  }
+}
