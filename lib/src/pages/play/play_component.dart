@@ -6,7 +6,7 @@ import 'package:angular_components/angular_components.dart';
 import '../../settings_service.dart';
 
 @Component(
-  selector: 'play_page',
+  selector: 'play-page',
   styleUrls: ['play_component.css'],
   templateUrl: 'play_component.html',
   directives: [

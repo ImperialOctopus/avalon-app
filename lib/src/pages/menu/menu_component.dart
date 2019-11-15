@@ -7,9 +7,12 @@ import 'package:angular_router/angular_router.dart';
 import '../../character_service.dart';
 import '../../routes.dart';
 import '../../settings_service.dart';
+import '../../dialog/info/info_dialog_component.dart';
+import '../../dialog/settings/settings_dialog_component.dart';
+import '../../dialog/player/player_dialog_component.dart';
 
 @Component(
-  selector: 'menu_page',
+  selector: 'menu-page',
   styleUrls: ['menu_component.css'],
   templateUrl: 'menu_component.html',
   directives: [
@@ -27,6 +30,9 @@ import '../../settings_service.dart';
     NgIf,
     NgClass,
     routerDirectives,
+    InfoDialogComponent,
+    SettingsDialogComponent,
+    PlayerDialogComponent,
   ],
   providers: [
     ClassProvider(SettingsService),
@@ -36,7 +42,9 @@ import '../../settings_service.dart';
   exports: [Routes, Character, Setting],
 )
 class MenuComponent implements OnInit {
-  bool showAutoDismissDialog = false;
+  bool infoDialogVisible = false;
+  bool playerDialogVisible = false;
+  bool settingsDialogVisible = false;
 
   final SettingsService _settings;
   final CharacterService _characters;
@@ -54,9 +62,9 @@ class MenuComponent implements OnInit {
   CharacterService get characters => _characters;
   SettingsService get settings => _settings;
 
-  void openInfoDialog() => showAutoDismissDialog = true;
-  void openPlayerDialog() {}
-  void openSettingsDialog() {}
+  void openInfoDialog() => infoDialogVisible = true;
+  void openPlayerDialog() => playerDialogVisible = true;
+  void openSettingsDialog() => settingsDialogVisible = true;
 
   /*
   openInfoDialog() {

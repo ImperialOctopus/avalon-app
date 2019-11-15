@@ -29,8 +29,4 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
   templateUrl: 'info_dialog_component.html',
   styleUrls: ['info_dialog_component.css'],
 )
-class MaterialDialogExample {
-  bool showAutoDismissDialog = false;
-
-  bool isInFullscreenMode = false;
-}
+class InfoDialogComponent {}

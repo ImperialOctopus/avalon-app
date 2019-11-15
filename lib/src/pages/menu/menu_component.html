@@ -132,13 +132,36 @@
   </a>
 </div>
 
-<modal [(visible)]="showAutoDismissDialog">
+<modal [(visible)]="infoDialogVisible">
   <material-dialog
     info
+    headered
     class="info-dialog"
-    [autoDismissable]="showAutoDismissDialog"
-    (dismiss)="showAutoDismissDialog = false"
+    [autoDismissable]="infoDialogVisible"
+    (dismiss)="infoDialogVisible = false"
   >
     <info-dialog></info-dialog>
+  </material-dialog>
+</modal>
+<modal [(visible)]="playerDialogVisible">
+  <material-dialog
+    info
+    headered
+    class="player-dialog"
+    [autoDismissable]="playerDialogVisible"
+    (dismiss)="playerDialogVisible = false"
+  >
+    <player-dialog></player-dialog>
+  </material-dialog>
+</modal>
+<modal [(visible)]="settingsDialogVisible">
+  <material-dialog
+    info
+    headered
+    class="settings-dialog"
+    [autoDismissable]="settingsDialogVisible"
+    (dismiss)="settingsDialogVisible = false"
+  >
+    <settings-dialog></settings-dialog>
   </material-dialog>
 </modal>
