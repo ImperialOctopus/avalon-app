@@ -1,3 +1,4 @@
+import 'package:avalon_app/src/announcers/announcer.dart';
 import 'package:hive/hive.dart';
 
 enum Setting {
@@ -12,7 +13,7 @@ enum Setting {
 class SettingsService {
   static const defaultSettings = {
     Setting.playerNumber: 5,
-    Setting.announcer: 'en-gb-C',
+    Setting.announcer: 0,
     Setting.mute: true,
     Setting.verbose: false,
     Setting.flair: false,
@@ -38,11 +39,31 @@ class SettingsService {
   }
 
   dynamic getSetting(Setting setting) {
-    return _settings[setting];
+    switch (setting) {
+      case Setting.announcer:
+        {
+          return Announcer.values[_settings[Setting.announcer]];
+        }
+        break;
+      default:
+        {
+          return _settings[setting];
+        }
+    }
   }
 
   void setSetting(Setting setting, dynamic value) {
-    _settings[setting] = value;
+    switch (setting) {
+      case Setting.announcer:
+        {
+          _settings[setting] = Announcer.values[value];
+        }
+        break;
+      default:
+        {
+          _settings[setting] = value;
+        }
+    }
     _box.put(setting.index, value);
   }
 

@@ -1,6 +1,6 @@
-import 'package:avalon_app/src/announcers/announcer.dart';
+import 'announcer_base.dart';
 
-class AnnouncerCathy extends Announcer {
+class AnnouncerCathy extends AnnouncerBase {
   @override
   final List<String> files = const [
     'assets/audio/cathy/output.ogg',
