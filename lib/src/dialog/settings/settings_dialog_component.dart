@@ -31,7 +31,7 @@ import '../../settings_service.dart';
     NgIf
   ],
   providers: [overlayBindings],
-  exports: [Setting],
+  exports: [Setting, AnnouncerID],
 )
 class SettingsDialogComponent {
   final SettingsService _settings;
@@ -41,7 +41,7 @@ class SettingsDialogComponent {
   bool get verbose => _settings.getSetting(Setting.verbose);
   bool get flair => _settings.getSetting(Setting.flair);
 
-  void setAnnouncer(String announcer) =>
+  void setAnnouncer(AnnouncerID announcer) =>
       _settings.setSetting(Setting.announcer, announcer);
 
   void toggleSetting(Setting setting) => _settings.toggleBoolSetting(setting);
