@@ -11,7 +11,9 @@ import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_dialog/material_dialog.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_tooltip/material_tooltip.dart';
-import 'package:avalon_app/src/settings_service.dart';
+
+import '../../announcers/announcer.dart';
+import '../../settings_service.dart';
 
 @Component(
   selector: 'settings-dialog',
@@ -35,7 +37,7 @@ class SettingsDialogComponent {
   final SettingsService _settings;
   SettingsDialogComponent(this._settings);
 
-  String get announcer => _settings.getSetting(Setting.announcer);
+  AnnouncerID get announcer => _settings.getSetting(Setting.announcer);
   bool get verbose => _settings.getSetting(Setting.verbose);
   bool get flair => _settings.getSetting(Setting.flair);
 

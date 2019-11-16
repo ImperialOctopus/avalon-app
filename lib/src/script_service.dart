@@ -1,9 +1,10 @@
+import 'announcers/announcer.dart';
 import 'character_service.dart';
 import 'sound_element.dart';
 
 class ScriptService {
   List<SoundElement> buildScript({
-    String announcer = "en-gb-C",
+    AnnouncerID announcer = AnnouncerID.en_gb_c,
     bool verbose = false,
     bool flair = false,
     Map<Character, bool> characters = const {
