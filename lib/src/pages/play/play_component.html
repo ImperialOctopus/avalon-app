@@ -1,20 +1,23 @@
-<!--<div class="container">
-    <a (click)="muteButton()" class="mute-button">
-      <img [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'">
-    </a>
-    <div class="title">
-      <h1>Avalon Announcer</h1>
-    </div>
-    <div class="centre-card">
-      <img [src]="cardImage">
-      <p>{{ cardText }}</p>
-    </div>
-  
-    <a (click)="stop()" class="stop-button">
-      <img src="assets/buttons/home.png">
-    </a>
-    <a (click)="pause()" class="pause-button">
-      <img [src]="paused ? 'assets/buttons/sound-play.png' : 'assets/buttons/sound-pause.png'">
-    </a>
+<div class="container">
+  <a (click)="muteButton()" class="mute-button">
+    <img
+      [src]="settings.mute ? 'assets/buttons/sound-off.png' : 'assets/buttons/sound-on.png'"
+    />
+  </a>
+  <div class="title">
+    <h1>Avalon Announcer</h1>
   </div>
--->
+  <div class="centre-card">
+    <img [src]="cardImage" />
+    <p>{{ cardText }}</p>
+  </div>
+
+  <a (click)="stop()" class="stop-button">
+    <img src="assets/buttons/home.png" />
+  </a>
+  <a (click)="pause()" class="pause-button">
+    <img
+      [src]="paused ? 'assets/buttons/sound-play.png' : 'assets/buttons/sound-pause.png'"
+    />
+  </a>
+</div>
