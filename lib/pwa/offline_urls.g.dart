@@ -51,6 +51,7 @@ final List<String> offlineUrls = [
   './assets/settings-icons/en-gb-D-icon.png',
   './assets/settings-icons/question.png',
   './main.dart.js',
+  './manifest.json',
   './packages/\$sdk/_internal/ddc_sdk.sum',
   './packages/\$sdk/_internal/strong.sum',
   './packages/\$sdk/dev_compiler/amd/dart_sdk.js',
@@ -64,7 +65,6 @@ final List<String> offlineUrls = [
   './packages/\$sdk/dev_compiler/kernel/common/run.js',
   './packages/\$sdk/dev_compiler/kernel/es6/dart_sdk.js',
   './packages/\$sdk/dev_compiler/web/dart_stack_trace_mapper.js',
-  './packages/\$sdk/dev_compiler/web/ddc_web_compiler.js',
   './packages/angular_components/app_layout/g3doc/simple_app_bar.png',
   './packages/angular_components/material_datepicker/proto/date.proto',
   './packages/angular_components/material_datepicker/proto/date_range.proto',
@@ -328,4 +328,4 @@ final List<String> offlineUrls = [
 ];
 
 /// Last modified timestamp of the files
-final String lastModified = '2019-11-03T16:40:23.000Z';
+final String lastModified = '2019-11-16T16:15:45.000Z';
