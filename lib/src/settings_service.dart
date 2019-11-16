@@ -33,8 +33,11 @@ class SettingsService {
     _box = await Hive.openBox('avalon-app');
 
     defaultSettings.forEach((Setting setting, dynamic value) {
-      _settings[setting] =
-          _box.get(setting.index, defaultValue: defaultSettings[setting]);
+      try {
+        _settings[setting] = _box.get(setting.index, defaultValue: value);
+      } catch (e) {
+        _settings[setting] = value;
+      }
     });
   }
 
