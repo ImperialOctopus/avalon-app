@@ -6,11 +6,11 @@ class ScriptService {
     String announcer = "en-gb-C",
     bool verbose = false,
     bool flair = false,
-    Map<int, bool> characters = const {
-      0: false,
-      1: false,
-      2: false,
-      3: false,
+    Map<Character, bool> characters = const {
+      Character.percival: false,
+      Character.morgana: false,
+      Character.mordred: false,
+      Character.oberon: false,
     },
   }) {
     List<SoundElement> array = List<SoundElement>();
@@ -31,7 +31,7 @@ class ScriptService {
         SoundElement('silence', '', 'assets/characters/loyal-servant.png'));
     array.add(SoundElement('minions-of-mordr', 'Minions of Mordred',
         'assets/characters/minion.png'));
-    if (characters[Character.oberon.index]) {
+    if (characters[Character.oberon]) {
       array.add(SoundElement(
           'except-oberon', 'Except Oberon', 'assets/characters/oberon.png'));
     }
@@ -54,7 +54,7 @@ class ScriptService {
     }
     array.add(SoundElement('minions-of-mordr', 'Minions of Mordred',
         'assets/characters/minion.png'));
-    if (characters[Character.mordred.index]) {
+    if (characters[Character.mordred]) {
       array.add(SoundElement(
           'except-mordred', 'Except Mordred', 'assets/characters/mordred.png'));
     }
@@ -89,8 +89,7 @@ class ScriptService {
       array.add(SoundElement('eyes-closed', 'Thumbs down, eyes closed',
           'assets/characters/merlin.png'));
     }
-    if (characters[Character.morgana.index] &&
-        characters[Character.percival.index]) {
+    if (characters[Character.morgana] && characters[Character.percival]) {
       array.add(SoundElement('merlin-and-morga', 'Merlin and Morgana',
           'assets/characters/morgana.png'));
       array.add(SoundElement('stick-up-your-th', 'Stick up your thumbs',
