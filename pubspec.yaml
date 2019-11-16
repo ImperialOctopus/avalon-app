@@ -13,7 +13,8 @@ dependencies:
   angular_router: ^2.0.0-alpha
   hive: ^1.1.1
   pwa: ^0.2.0
-  howler: ^1.0.3
+  howler:
+    path: ./howler-1.0.3/
 
 dev_dependencies:
   angular_test: ^2.3.0
