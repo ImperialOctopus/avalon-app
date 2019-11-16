@@ -59,24 +59,8 @@ class PlayComponent implements OnInit {
       flair: _settings.getSetting(Setting.flair),
       characters: _characters.getAll(),
     );
-    switch (_settings.getSetting(Setting.announcer)) {
-      case 'en-gb-D':
-        {
-          _announcer = AnnouncerCathy();
-        }
-        break;
-      case 'en-gb-C':
-        {
-          _announcer = AnnouncerCathy();
-        }
-        break;
-      case 'cathy':
-        {
-          _announcer = AnnouncerCathy();
-        }
-        break;
-    }
-    _announcer = _howl = Howl(
+    _announcer = Announcer.idMap[_settings.getSetting(Setting.announcer)];
+    _howl = Howl(
       src: _announcer.files,
       sprite: _announcer.spriteList,
       mute: _settings.getSetting(Setting.mute),

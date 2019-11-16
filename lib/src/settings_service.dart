@@ -42,7 +42,7 @@ class SettingsService {
     switch (setting) {
       case Setting.announcer:
         {
-          return Announcer.values[_settings[Setting.announcer]];
+          return AnnouncerID.values[_settings[Setting.announcer]];
         }
         break;
       default:
@@ -56,7 +56,7 @@ class SettingsService {
     switch (setting) {
       case Setting.announcer:
         {
-          _settings[setting] = Announcer.values[value];
+          _settings[setting] = AnnouncerID.values[value];
         }
         break;
       default:

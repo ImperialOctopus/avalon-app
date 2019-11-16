@@ -1,4 +1,6 @@
-import 'package:avalon_app/src/announcers/announcer_cathy.dart';
+import 'announcer_cathy.dart';
+import 'announcer_en_gb_c.dart';
+import 'announcer_en_gb_d.dart';
 
 enum AnnouncerID { cathy, en_gb_c, en_gb_d }
 
