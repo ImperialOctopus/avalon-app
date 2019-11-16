@@ -11,7 +11,7 @@ abstract class Announcer {
     AnnouncerID.en_gb_d: AnnouncerEnGbD(),
   };
   final List<String> files = null;
-  final Map<String, List<double>> spriteList = null;
+  final Map<String, List<int>> spriteList = null;
 
   const Announcer();
 }

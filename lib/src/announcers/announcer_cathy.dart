@@ -10,7 +10,7 @@ class AnnouncerCathy extends Announcer {
   ];
 
   @override
-  final Map<String, List<double>> spriteList = const {
+  final Map<String, List<int>> spriteList = const {
     'silence': [0, 1000],
     'everyone': [2000, 1335],
     'close-your-eyes': [5000, 1671],
@@ -31,7 +31,7 @@ class AnnouncerCathy extends Announcer {
     'merlin-and-morga': [58000, 2879],
     'so-that-percival': [62000, 2943],
     'percival': [66000, 975],
-    'so-you-may-know': [68000, 4086]
+    'so-you-may-know': [68000, 4086],
   };
 
   const AnnouncerCathy();

@@ -3,35 +3,35 @@ import 'announcer.dart';
 class AnnouncerEnGbC extends Announcer {
   @override
   final List<String> files = const [
-    'assets/audio/cathy/output.ogg',
-    'assets/audio/cathy/output.m4a',
-    'assets/audio/cathy/output.mp3',
-    'assets/audio/cathy/output.ac3',
+    'assets/audio/en-gb-C/output.ogg',
+    'assets/audio/en-gb-C/output.m4a',
+    'assets/audio/en-gb-C/output.mp3',
+    'assets/audio/en-gb-C/output.ac3',
   ];
 
   @override
-  final Map<String, List<double>> spriteList = const {
+  final Map<String, List<int>> spriteList = const {
     'silence': [0, 1000],
-    'everyone': [2000, 1335],
-    'close-your-eyes': [5000, 1671],
-    'and-extend-your': [8000, 3465],
-    'and-shut-up': [13000, 1253],
-    'minions-of-mordr': [16000, 1845],
-    'except-oberon': [19000, 1642],
-    'open-your-eyes': [22000, 1219],
-    'and-look-around': [25000, 4167],
-    'eyes-closed': [31000, 1184],
-    'except-mordred': [34000, 1787],
-    'stick-up-your-th': [37000, 1491],
-    'so-that-merlin-w': [40000, 3030],
-    'merlin': [45000, 1782],
-    'and-see-the-agen': [48000, 3036],
-    'put-your-thumbs': [53000, 1625],
-    'thumbs-down': [56000, 952],
-    'merlin-and-morga': [58000, 2879],
-    'so-that-percival': [62000, 2943],
-    'percival': [66000, 975],
-    'so-you-may-know': [68000, 4086]
+    'and-extend-your': [2000, 3168],
+    'and-look-around': [7000, 3624],
+    'and-see-the-agen': [12000, 1992],
+    'and-shut-up': [15000, 1128],
+    'close-your-eyes': [18000, 1416],
+    'everyone': [21000, 960],
+    'except-mordred': [23000, 1368],
+    'except-oberon': [26000, 1392],
+    'eyes-closed': [29000, 1176],
+    'merlin-and-morga': [32000, 1512],
+    'merlin': [35000, 864],
+    'minions-of-mordr': [37000, 1560],
+    'open-your-eyes': [40000, 1368],
+    'percival': [43000, 984],
+    'put-your-thumbs': [45000, 1439],
+    'so-that-merlin-w': [48000, 2088],
+    'so-that-percival': [52000, 2256],
+    'so-you-may-know': [56000, 2424],
+    'stick-up-your-th': [60000, 1560],
+    'thumbs-down': [63000, 1128],
   };
 
   const AnnouncerEnGbC();
