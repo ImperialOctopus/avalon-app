@@ -6,7 +6,9 @@ import 'package:howler/howler.dart';
 
 import '../../announcers/announcer.dart';
 import '../../announcers/announcer_cathy.dart';
+import '../../script_service.dart';
 import '../../settings_service.dart';
+import '../../sound_element.dart';
 
 @Component(
   selector: 'play-page',
@@ -20,7 +22,10 @@ import '../../settings_service.dart';
     NgFor,
     NgIf,
   ],
-  providers: [ClassProvider(SettingsService)],
+  providers: [
+    ClassProvider(SettingsService),
+    ClassProvider(ScriptService),
+  ],
 )
 class PlayComponent implements OnInit {
   Announcer _announcer;
@@ -46,6 +51,8 @@ class PlayComponent implements OnInit {
   }
 
   void playNext() {
-
+    if (_soundList.isNotEmpty) {
+      SoundElement element = _soundList;
+    }
   }
 }
