@@ -59,7 +59,7 @@ class SettingsService {
     switch (setting) {
       case Setting.announcer:
         {
-          _settings[setting] = AnnouncerID.values[value];
+          _settings[setting] = value.index;
         }
         break;
       default:
@@ -67,7 +67,7 @@ class SettingsService {
           _settings[setting] = value;
         }
     }
-    _box.put(setting.index, value);
+    _box.put(setting.index, _settings[setting]);
   }
 
   void toggleBoolSetting(Setting setting) {
