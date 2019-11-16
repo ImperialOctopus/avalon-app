@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:avalon_app/src/character_service.dart';
 import 'package:howler/howler.dart';
 
 import '../../announcers/announcer.dart';
@@ -26,8 +27,10 @@ import '../../sound_element.dart';
   ],
   providers: [
     ClassProvider(SettingsService),
+    ClassProvider(CharacterService),
     ClassProvider(ScriptService),
   ],
+  exports: [Setting],
 )
 class PlayComponent implements OnInit {
   bool paused = false;
@@ -40,8 +43,11 @@ class PlayComponent implements OnInit {
 
   final Router _router;
   final SettingsService _settings;
+  final CharacterService _characters;
   final ScriptService _script;
-  PlayComponent(this._router, this._settings, this._script);
+  PlayComponent(this._router, this._settings, this._characters, this._script);
+
+  SettingsService get settings => _settings;
 
   @override
   Future<void> ngOnInit() async {
@@ -51,7 +57,7 @@ class PlayComponent implements OnInit {
       announcer: _settings.getSetting(Setting.announcer),
       verbose: _settings.getSetting(Setting.verbose),
       flair: _settings.getSetting(Setting.flair),
-      characters: _settings.getSetting(Setting.characters),
+      characters: _characters.getAll(),
     );
     switch (_settings.getSetting(Setting.announcer)) {
       case 'en-gb-D':
@@ -74,8 +80,8 @@ class PlayComponent implements OnInit {
       src: _announcer.files,
       sprite: _announcer.spriteList,
       mute: _settings.getSetting(Setting.mute),
+      onend: (void _a, void _b, void _c, void _d) => playNext(),
     );
-    _howl.on('end', (void _a, void _b, void _c, void _d) => playNext(), null);
     playNext();
   }
 

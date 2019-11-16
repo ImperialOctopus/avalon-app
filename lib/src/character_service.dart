@@ -20,6 +20,12 @@ class CharacterService {
   final SettingsService _settings;
   CharacterService(this._settings);
 
+  Map<Character, bool> getAll() {
+    Map<dynamic, dynamic> charList = _settings.getSetting(Setting.characters);
+    return Map.fromIterable(Character.values,
+        key: (v) => v, value: (v) => charList[v.index] as bool);
+  }
+
   bool getCharacter(Character character) {
     return _settings.getSetting(Setting.characters)[character.index];
   }
