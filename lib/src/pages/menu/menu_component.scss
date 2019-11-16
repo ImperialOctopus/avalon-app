@@ -3,13 +3,12 @@
 
 .container {
   background-color: white;
-  width: 100%;
   height: 100%;
   margin: auto;
   max-width: 768px;
   display: grid;
-  grid-template-columns: 100px auto 100px;
-  grid-template-rows: 100px auto 100px;
+  grid-template-columns: 100px minmax(0px, 1fr) 100px;
+  grid-template-rows: 100px minmax(0px, 1fr) 100px;
   grid-template-areas:
     "mute header info"
     "main main main"
@@ -32,15 +31,13 @@
   grid-area: main;
 
   display: grid;
-  grid-template-columns: auto;
   grid-template-rows: repeat(8, 1fr);
 }
 
 .character-row {
   display: grid;
 
-  grid-template-columns: 100px auto 100px;
-  grid-template-rows: auto;
+  grid-template-columns: 100px minmax(0px, 1fr) 100px;
   grid-template-areas: "left main right";
 
   .portrait {
@@ -82,6 +79,7 @@
   grid-area: mute;
   padding: 10px;
   img {
+    object-fit: contain;
     height: 100%;
     width: 100%;
   }
@@ -90,6 +88,7 @@
   grid-area: info;
   padding: 10px;
   img {
+    object-fit: contain;
     height: 100%;
     width: 100%;
   }
@@ -98,12 +97,12 @@
   grid-area: players;
   padding: 10px;
   display: grid;
-  grid-template:
-    "main" auto
-    / auto;
+  grid-template: "main";
   img {
     grid-area: main;
+    object-fit: contain;
     height: 100%;
+    width: 100%;
   }
   span {
     grid-area: main;
@@ -114,19 +113,21 @@
 }
 .play-button {
   grid-area: start;
-  justify-self: center;
+  height: 80px;
   align-self: center;
-  height: 80%;
   img {
+    object-fit: contain;
     height: 100%;
+    width: 100%;
   }
 }
 
 .settings-button {
   grid-area: settings;
-  justify-self: center;
   padding: 10px;
   img {
+    object-fit: contain;
     height: 100%;
+    width: 100%;
   }
 }
