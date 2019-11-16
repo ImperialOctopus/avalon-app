@@ -6,8 +6,8 @@ import 'package:pwa/client.dart' as pwa;
 import 'main.template.dart' as self;
 
 @GenerateInjector([
-  //routerProvidersHash,
-  routerProviders,
+  routerProvidersHash,
+  //routerProviders,
 ])
 final InjectorFactory injector = self.injector$Injector;
 
