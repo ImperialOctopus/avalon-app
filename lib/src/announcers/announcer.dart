@@ -1,6 +1,6 @@
 abstract class Announcer {
-  static const List<String> files = [];
-  static const List<dynamic> spriteList = [];
+  final List<String> files = null;
+  final Map<String, List<double>> spriteList = null;
 
   const Announcer();
 }
