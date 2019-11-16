@@ -26,6 +26,6 @@ class PlayComponent implements OnInit {
   @override
   Future<void> ngOnInit() async {
     await _settings.loadSettings();
-    print(_settings.getSetting(Setting.characters));
+    
   }
 }
