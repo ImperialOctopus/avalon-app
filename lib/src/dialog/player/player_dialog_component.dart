@@ -40,18 +40,18 @@ class PlayerDialogComponent {
   final CharacterService _characters;
   PlayerDialogComponent(this._settings, this._characters);
 
-  int get _playerNumber => _settings.getSetting(Setting.playerNumber);
+  int get playerNumber => _settings.getSetting(Setting.playerNumber);
 
   void down() {
-    if (_playerNumber > 5) {
-      _settings.setSetting(Setting.playerNumber, _playerNumber - 1);
+    if (playerNumber > 5) {
+      _settings.setSetting(Setting.playerNumber, playerNumber - 1);
       _characters.autoDisableCharacters();
     }
   }
 
   void up() {
-    if (_playerNumber < 10) {
-      _settings.setSetting(Setting.playerNumber, _playerNumber + 1);
+    if (playerNumber < 10) {
+      _settings.setSetting(Setting.playerNumber, playerNumber + 1);
     }
   }
 }

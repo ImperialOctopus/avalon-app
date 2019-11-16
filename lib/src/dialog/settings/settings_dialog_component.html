@@ -1,1 +1,42 @@
-<p>Click outside the dialog to dismiss.</p>
+<div class="container">
+  <a class="row" (click)="setAnnouncer('en-gb-C')">
+    <img class="row-image" src="assets/settings/en-gb-C-icon.png" />
+    <span class="row-text">Announcer: Synth Female</span>
+    <img
+      class="row-enabled"
+      [src]="announcer == 'en-gb-C' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'"
+    />
+  </a>
+  <a class="row" (click)="setAnnouncer('en-gb-D')">
+    <img class="row-image" src="assets/settings/en-gb-D-icon.png" />
+    <span class="row-text">Announcer: Synth Male</span>
+    <img
+      class="row-enabled"
+      [src]="announcer == 'en-gb-D' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'"
+    />
+  </a>
+  <a class="row" (click)="setAnnouncer('cathy')">
+    <img class="row-image" src="assets/settings/cathy-icon.png" />
+    <span class="row-text">Announcer: Cathy</span>
+    <img
+      class="row-enabled"
+      [src]="announcer == 'cathy' ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'"
+    />
+  </a>
+  <a class="row" (click)="toggleSetting(Setting.verbose)">
+    <img class="row-image" src="assets/settings/question.png" />
+    <span class="row-text">Verbose</span>
+    <img
+      class="row-enabled"
+      [src]="verbose ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'"
+    />
+  </a>
+  <a class="row" (click)="toggleSetting(Setting.flair)">
+    <img class="row-image" src="assets/settings/duck.png" />
+    <span class="row-text">Unnecessary Flair</span>
+    <img
+      class="row-enabled"
+      [src]="flair ? 'assets/buttons/character-on.png' : 'assets/buttons/character-off.png'"
+    />
+  </a>
+</div>
