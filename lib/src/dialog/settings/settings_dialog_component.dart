@@ -11,10 +11,12 @@ import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_dialog/material_dialog.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_tooltip/material_tooltip.dart';
+import 'package:avalon_app/src/settings_service.dart';
 
 @Component(
   selector: 'settings-dialog',
-  providers: [overlayBindings],
+  templateUrl: 'settings_dialog_component.html',
+  styleUrls: ['settings_dialog_component.css'],
   directives: [
     AutoDismissDirective,
     AutoFocusDirective,
@@ -26,7 +28,19 @@ import 'package:angular_components/material_tooltip/material_tooltip.dart';
     NgFor,
     NgIf
   ],
-  templateUrl: 'settings_dialog_component.html',
-  styleUrls: ['settings_dialog_component.css'],
+  providers: [overlayBindings],
+  exports: [Setting],
 )
-class SettingsDialogComponent {}
+class SettingsDialogComponent {
+  final SettingsService _settings;
+  SettingsDialogComponent(this._settings);
+
+  String get announcer => _settings.getSetting(Setting.announcer);
+  bool get verbose => _settings.getSetting(Setting.verbose);
+  bool get flair => _settings.getSetting(Setting.flair);
+
+  void setAnnouncer(String announcer) =>
+      _settings.setSetting(Setting.announcer, announcer);
+
+  void toggleSetting(Setting setting) => _settings.toggleBoolSetting(setting);
+}
