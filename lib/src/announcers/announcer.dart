@@ -1,4 +1,6 @@
 abstract class Announcer {
-  List<String> files;
-  List<dynamic> spriteList;
+  static const List<String> files = [];
+  static const List<dynamic> spriteList = [];
+
+  const Announcer();
 }
