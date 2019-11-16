@@ -1,4 +1,3 @@
-import 'package:avalon_app/src/character_service.dart';
 import 'package:hive/hive.dart';
 
 enum Setting {
