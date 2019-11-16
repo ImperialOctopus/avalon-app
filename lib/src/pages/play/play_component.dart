@@ -76,7 +76,7 @@ class PlayComponent implements OnInit {
         }
         break;
     }
-    _howl = Howl(
+    _announcer = _howl = Howl(
       src: _announcer.files,
       sprite: _announcer.spriteList,
       mute: _settings.getSetting(Setting.mute),
