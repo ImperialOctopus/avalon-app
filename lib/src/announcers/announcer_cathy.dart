@@ -1,6 +1,6 @@
-import 'announcer_base.dart';
+import 'announcer.dart';
 
-class AnnouncerCathy extends AnnouncerBase {
+class AnnouncerCathy extends Announcer {
   @override
   final List<String> files = const [
     'assets/audio/cathy/output.ogg',
