@@ -2,7 +2,7 @@ import 'character_service.dart';
 import 'sound_element.dart';
 
 class ScriptService {
-  static List<SoundElement> buildScript({
+  List<SoundElement> buildScript({
     String announcer = "en-gb-C",
     bool verbose = false,
     bool flair = false,

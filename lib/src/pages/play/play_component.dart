@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
+import 'package:angular_router/angular_router.dart';
 import 'package:howler/howler.dart';
 
 import '../../announcers/announcer.dart';
 import '../../announcers/announcer_cathy.dart';
+import '../../routes.dart';
 import '../../script_service.dart';
 import '../../settings_service.dart';
 import '../../sound_element.dart';
@@ -28,31 +30,82 @@ import '../../sound_element.dart';
   ],
 )
 class PlayComponent implements OnInit {
+  bool paused = false;
+  String cardImage = "";
+  String cardText = "";
+
   Announcer _announcer;
   Howl _howl;
   List<SoundElement> _soundList;
 
+  final Router _router;
   final SettingsService _settings;
   final ScriptService _script;
-  PlayComponent(this._settings, this._script);
+  PlayComponent(this._router, this._settings, this._script);
 
   @override
   Future<void> ngOnInit() async {
     await _settings.loadSettings();
-    _soundList = _script.loadScript();
-    _announcer = AnnouncerCathy();
+
+    _soundList = _script.buildScript(
+      announcer: _settings.getSetting(Setting.announcer),
+      verbose: _settings.getSetting(Setting.verbose),
+      flair: _settings.getSetting(Setting.flair),
+      characters: _settings.getSetting(Setting.characters),
+    );
+    switch (_settings.getSetting(Setting.announcer)) {
+      case 'en-gb-D':
+        {
+          _announcer = AnnouncerCathy();
+        }
+        break;
+      case 'en-gb-C':
+        {
+          _announcer = AnnouncerCathy();
+        }
+        break;
+      case 'cathy':
+        {
+          _announcer = AnnouncerCathy();
+        }
+        break;
+    }
     _howl = Howl(
       src: _announcer.files,
       sprite: _announcer.spriteList,
       mute: _settings.getSetting(Setting.mute),
     );
-    _howl.on('end', (void _a, void _b, void _c, void _d) => playNext(), 0);
+    _howl.on('end', (void _a, void _b, void _c, void _d) => playNext(), null);
     playNext();
   }
 
   void playNext() {
     if (_soundList.isNotEmpty) {
-      SoundElement element = _soundList;
+      SoundElement element = _soundList.removeAt(0);
+      cardImage = element.image;
+      cardText = element.title;
+      _howl.play(element.sound);
+    } else {
+      endPlayback();
     }
+  }
+
+  void togglePause() {
+    paused = !paused;
+    if (paused) {
+      _howl.pause(null);
+    } else {
+      _howl.play();
+    }
+  }
+
+  void toggleMute() {
+    _settings.toggleBoolSetting(Setting.mute);
+    _howl.mute(_settings.getSetting(Setting.mute));
+  }
+
+  void endPlayback() {
+    _howl.unload();
+    _router.navigate(Routes.menu_page.toUrl());
   }
 }
